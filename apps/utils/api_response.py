@@ -6,7 +6,7 @@ from typing import Iterable, Tuple
 from rest_framework import response, status
 
 DEFAULT_PAGE_KEYS = ("page", "pageNumber")
-DEFAULT_PAGE_SIZE_KEYS = ("page_size", "pageSize", "perPage")
+DEFAULT_PAGE_SIZE_KEYS = ("page_size", "pageSize", "perPage", "limit")
 
 def _first_query_value(request, keys: Iterable[str]) -> str | None:
     for key in keys:

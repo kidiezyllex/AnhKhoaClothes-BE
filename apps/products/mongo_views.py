@@ -471,39 +471,27 @@ class ProductViewSet(viewsets.ViewSet):
         if category_id:
             try:
                 category_object_id = ObjectId(category_id)
-
                 queryset1 = queryset.filter(category_id=category_object_id)
-                count1 = queryset1.count()
-
-                if count1 > 0:
+                if queryset1.count() > 0:
                     queryset = queryset1
                 else:
                     queryset2 = Product.objects.all().filter(__raw__={"category_id": category_object_id})
-                    count2 = queryset2.count()
-
-                    if count2 > 0:
+                    if queryset2.count() > 0:
                         queryset = queryset2
                     else:
                         queryset3 = Product.objects.all().filter(__raw__={"category_id": category_id})
-                        count3 = queryset3.count()
-
-                        if count3 > 0:
+                        if queryset3.count() > 0:
                             queryset = queryset3
-                        else:
-                            try:
-                                queryset4 = Product.objects.all().filter(category_id=category_id)
-                                count4 = queryset4.count()
-                                if count4 > 0:
-                                    queryset = queryset4
-                            except:
-                                pass
-
-            except Exception as e:
+            except Exception:
                 queryset = queryset.filter(__raw__={"category_id": category_id})
 
         article_type = request.query_params.get("articleType")
         if article_type:
             queryset = queryset.filter(articleType__iexact=article_type)
+
+        status_filter = request.query_params.get("status")
+        if status_filter:
+            queryset = queryset.filter(status__iexact=status_filter)
 
         search = request.query_params.get("search")
         if search:

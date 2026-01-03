@@ -145,6 +145,7 @@ class Product(me.Document):
     images = fields.ListField(fields.StringField(), default=list)
     rating = fields.FloatField(default=0.0, min_value=0.0, max_value=5.0)
     sale = fields.DecimalField(default=0.0, precision=5, decimal_places=2)
+    status = fields.StringField(max_length=50, default="ACTIVE") # ACTIVE, INACTIVE
 
     created_at = fields.DateTimeField(default=datetime.utcnow)
     updated_at = fields.DateTimeField(default=datetime.utcnow)
