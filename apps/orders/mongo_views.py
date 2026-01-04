@@ -258,4 +258,31 @@ class OrderViewSet(viewsets.ViewSet):
                 "count": total_count,
             },
         )
+    @action(detail=False, methods=["get"], url_path="user/(?P<user_id>[^/.]+)", permission_classes=[permissions.AllowAny], authentication_classes=[])
+    def user_orders(self, request, user_id=None):
+        if not user_id:
+            return api_error("User ID is required.", status_code=status.HTTP_400_BAD_REQUEST)
+        
+        try:
+            from bson import ObjectId
+            user_id_obj = ObjectId(user_id)
+        except Exception:
+             return api_error("Invalid User ID format.", status_code=status.HTTP_400_BAD_REQUEST)
 
+        queryset = Order.objects.filter(user_id=user_id_obj).order_by("-created_at")
+
+        page, page_size = get_pagination_params(request)
+        orders, total_count, total_pages, current_page, page_size = paginate_queryset(
+            queryset, page, page_size
+        )
+        serializer = OrderSerializer(orders, many=True)
+        return api_success(
+            "User orders retrieved successfully",
+            {
+                "orders": serializer.data,
+                "page": current_page,
+                "pages": total_pages,
+                "perPage": page_size,
+                "count": total_count,
+            },
+        )

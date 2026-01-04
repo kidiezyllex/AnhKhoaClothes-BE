@@ -396,65 +396,6 @@ class UserViewSet(viewsets.ViewSet):
     def change_password_alt(self, request):
         return self.change_password(request)
 
-class UserAddressViewSet(viewsets.ViewSet):
-    permission_classes = [permissions.AllowAny]
-
-    def list(self, request):
-        if not request.user or not hasattr(request.user, 'id') or not request.user.is_authenticated:
-            return api_error("Login required.", status_code=status.HTTP_401_UNAUTHORIZED)
-            
-        addresses = UserAddress.objects.filter(user_id=request.user.id)
-        serializer = UserAddressSerializer(addresses, many=True)
-        return api_success(
-            "Addresses retrieved successfully",
-            {
-                "addresses": serializer.data
-            }
-        )
-
-    def create(self, request):
-        if not request.user or not hasattr(request.user, 'id') or not request.user.is_authenticated:
-            return api_error("Login required.", status_code=status.HTTP_401_UNAUTHORIZED)
-            
-        serializer = UserAddressSerializer(data=request.data, context={'request': request})
-        serializer.is_valid(raise_exception=True)
-        serializer.save()
-        
-        return api_success(
-            "Address created successfully",
-            serializer.data,
-            status_code=status.HTTP_201_CREATED
-        )
-
-    def update(self, request, pk=None):
-        if not request.user or not hasattr(request.user, 'id') or not request.user.is_authenticated:
-            return api_error("Login required.", status_code=status.HTTP_401_UNAUTHORIZED)
-            
-        try:
-            address = UserAddress.objects.get(id=ObjectId(pk), user_id=request.user.id)
-        except UserAddress.DoesNotExist:
-            return api_error("Address not found", status_code=status.HTTP_404_NOT_FOUND)
-            
-        serializer = UserAddressSerializer(address, data=request.data, partial=True)
-        serializer.is_valid(raise_exception=True)
-        serializer.save()
-        
-        return api_success(
-            "Address updated successfully",
-            serializer.data
-        )
-
-    def destroy(self, request, pk=None):
-        if not request.user or not hasattr(request.user, 'id') or not request.user.is_authenticated:
-            return api_error("Login required.", status_code=status.HTTP_401_UNAUTHORIZED)
-
-        try:
-            address = UserAddress.objects.get(id=ObjectId(pk), user_id=request.user.id)
-            address.delete()
-            return api_success("Address deleted successfully", data=None)
-        except UserAddress.DoesNotExist:
-            return api_error("Address not found", status_code=status.HTTP_404_NOT_FOUND)
-
     @action(detail=False, methods=["get"], permission_classes=[permissions.AllowAny], authentication_classes=[])
     def testing(self, request):
         query_type = request.query_params.get("type")
@@ -877,6 +818,69 @@ class UserAddressViewSet(viewsets.ViewSet):
                 "total_outfits": len(user.outfit_history),
             },
         )
+
+class UserAddressViewSet(viewsets.ViewSet):
+    permission_classes = [permissions.AllowAny]
+
+    def list(self, request):
+        if not request.user or not hasattr(request.user, 'id') or not request.user.is_authenticated:
+            return api_error("Login required.", status_code=status.HTTP_401_UNAUTHORIZED)
+            
+        addresses = UserAddress.objects.filter(user_id=request.user.id)
+        serializer = UserAddressSerializer(addresses, many=True)
+        return api_success(
+            "Addresses retrieved successfully",
+            {
+                "addresses": serializer.data
+            }
+        )
+
+    def create(self, request):
+        if not request.user or not hasattr(request.user, 'id') or not request.user.is_authenticated:
+            return api_error("Login required.", status_code=status.HTTP_401_UNAUTHORIZED)
+            
+        serializer = UserAddressSerializer(data=request.data, context={'request': request})
+        serializer.is_valid(raise_exception=True)
+        serializer.save()
+        
+        return api_success(
+            "Address created successfully",
+            serializer.data,
+            status_code=status.HTTP_201_CREATED
+        )
+
+    def update(self, request, pk=None):
+        if not request.user or not hasattr(request.user, 'id') or not request.user.is_authenticated:
+            return api_error("Login required.", status_code=status.HTTP_401_UNAUTHORIZED)
+            
+        try:
+            address = UserAddress.objects.get(id=ObjectId(pk), user_id=request.user.id)
+        except UserAddress.DoesNotExist:
+            return api_error("Address not found", status_code=status.HTTP_404_NOT_FOUND)
+            
+        serializer = UserAddressSerializer(address, data=request.data, partial=True)
+        serializer.is_valid(raise_exception=True)
+        serializer.save()
+        
+        return api_success(
+            "Address updated successfully",
+            serializer.data
+        )
+
+    def destroy(self, request, pk=None):
+        if not request.user or not hasattr(request.user, 'id') or not request.user.is_authenticated:
+            return api_error("Login required.", status_code=status.HTTP_401_UNAUTHORIZED)
+
+        try:
+            address = UserAddress.objects.get(id=ObjectId(pk), user_id=request.user.id)
+            address.delete()
+            return api_success("Address deleted successfully", data=None)
+        except UserAddress.DoesNotExist:
+            return api_error("Address not found", status_code=status.HTTP_404_NOT_FOUND)
+
+            return api_success("Address deleted successfully", data=None)
+        except UserAddress.DoesNotExist:
+            return api_error("Address not found", status_code=status.HTTP_404_NOT_FOUND)
 
 class UserInteractionViewSet(viewsets.ViewSet):
 

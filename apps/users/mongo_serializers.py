@@ -38,6 +38,7 @@ class UserSerializer(serializers.Serializer):
     content_profile = serializers.DictField(required=False)
     interaction_history = serializers.ListField(required=False)
     outfit_history = serializers.ListField(required=False)
+    fullName = serializers.CharField(required=False, allow_blank=True)
     created_at = serializers.DateTimeField(required=False, allow_null=True)
     updated_at = serializers.DateTimeField(required=False, allow_null=True)
 
@@ -107,6 +108,7 @@ class UserSerializer(serializers.Serializer):
             "id": str(instance.id),
             "email": getattr(instance, 'email', ''),
             "name": name,
+            "fullName": name,
             "username": username,
             "first_name": first_name,
             "last_name": last_name,
@@ -133,6 +135,12 @@ class UserSerializer(serializers.Serializer):
         return result
 
     def update(self, instance, validated_data):
+        if "fullName" in validated_data and "name" not in validated_data:
+            validated_data["name"] = validated_data.pop("fullName")
+        elif "fullName" in validated_data and "name" in validated_data:
+            # If both are provided, prefer fullName if it's set
+            instance.name = validated_data.pop("fullName")
+            
         for key, value in validated_data.items():
             if key != "is_staff":
                 setattr(instance, key, value)
