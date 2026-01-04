@@ -2161,17 +2161,17 @@ def build_outfit_suggestions(
     def pick_candidate(comp_type: str, used: set) -> Optional[str]:
         """Chọn một sản phẩm ứng viên cho một loại bổ trợ."""
         is_payload_unisex = str(target_gender).strip().lower() == 'unisex'
-        
+        # Strict gender compatibility: only use gender-matched or unisex items
         if is_payload_unisex:
             pools = [
                 ('gender', candidates_gender.get(comp_type, [])),
+                ('unisex', candidates_unisex.get(comp_type, [])),
             ]
         else:
+            # For gendered payloads: try exact gender match first, then unisex
             pools = [
                 ('gender', candidates_gender.get(comp_type, [])),
-                ('user_gender', candidates_user_gender.get(comp_type, [])),
                 ('unisex', candidates_unisex.get(comp_type, [])),
-                ('any', candidates_any.get(comp_type, [])),
             ]
         
         for pool_key, pool in pools:
@@ -2184,40 +2184,60 @@ def build_outfit_suggestions(
                 pid = pool[idx]
                 if pid in used or pid == str(payload_product_id):
                     continue
-                # Xác minh tương thích
+                # Verify product matches the required complement type
                 product_row = get_product_record(pid, products_df)
-                if product_row is not None and is_compatible_with_payload(product_row):
-                    category_offsets[offset_key] = idx + 1
-                    return pid
+                if product_row is not None:
+                    # Check if product's articleType maps to the required comp_type
+                    product_comp_key = map_to_complement_key(product_row)
+                    if product_comp_key == comp_type:
+                        category_offsets[offset_key] = idx + 1
+                        return pid
         return None
 
-    # Xây dựng outfits sử dụng các mối quan hệ bổ trợ
+    # Xây dựng outfits sử dụng các mối quan hệ bổ trợ (complement rules)
     for outfit_idx in range(max_outfits):
         used = {str(payload_product_id)}
         ordered_products = [str(payload_product_id)]
         
-        # Chọn một quy tắc bổ trợ cho outfit này
+        # Try multiple rules until we find a complete outfit
         if complement_rules:
-            # Chọn một quy tắc dựa trên chỉ số outfit (round-robin)
-            selected_rule = complement_rules[outfit_idx % len(complement_rules)]
+            # Minimum items required (payload + at least 3 complementary items = 4 total)
+            min_items = 4 
+            best_partial_products = [str(payload_product_id)]
             
-            # Thử thêm các items từ quy tắc đã chọn
-            for comp_type in selected_rule:
-                if len(ordered_products) >= 5:  # Giới hạn kích thước outfit
+            # Try each rule in order, starting from outfit_idx
+            for rule_offset in range(len(complement_rules)):
+                rule_idx = (outfit_idx + rule_offset) % len(complement_rules)
+                selected_rule = complement_rules[rule_idx]
+                
+                # Reset for this rule attempt
+                temp_used = {str(payload_product_id)}
+                temp_products = [str(payload_product_id)]
+                
+                # Try to fill each position in the rule
+                for comp_type in selected_rule:
+                    if len(temp_products) >= 5:  # Limit outfit size
+                        break
+                    candidate = pick_candidate(comp_type, temp_used)
+                    if candidate:
+                        temp_used.add(candidate)
+                        temp_products.append(candidate)
+                
+                # If this rule gave us enough items, use it
+                if len(temp_products) >= min_items:
+                    used = temp_used
+                    ordered_products = temp_products
+                    best_partial_products = temp_products
                     break
-                candidate = pick_candidate(comp_type, used)
-                if candidate:
-                    used.add(candidate)
-                    ordered_products.append(candidate)
-        else:
-            # Dự phòng về logic cũ nếu không có quy tắc
-            for comp_type in compatible_types[:4]:  # Giới hạn 4 loại tương thích hàng đầu
-                if len(ordered_products) >= 5:  # Giới hạn kích thước outfit
-                    break
-                candidate = pick_candidate(comp_type, used)
-                if candidate:
-                    used.add(candidate)
-                    ordered_products.append(candidate)
+                
+                # Keep track of the best partial outfit found so far
+                if len(temp_products) > len(best_partial_products):
+                    best_partial_products = temp_products
+            
+            # If still not enough items after trying all rules, use the best partial one
+            if len(ordered_products) < min_items:
+                ordered_products = best_partial_products
+                used = set(ordered_products)
 
         # Tính điểm outfit dựa trên tương thích bổ trợ
         base_score = sum(get_product_score(pid) for pid in ordered_products)

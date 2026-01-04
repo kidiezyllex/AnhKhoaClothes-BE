@@ -1418,7 +1418,68 @@ class ProductViewSet(viewsets.ViewSet):
         except Exception as e:
             debug_info["raw_mongodb_error"] = str(e)
 
-        return api_success("Category debug info", debug_info)
+
+    @action(detail=False, methods=["get"], permission_classes=[permissions.AllowAny], authentication_classes=[], url_path="search")
+    def search(self, request):
+        """
+        Search products with support for 'keyword' parameter.
+        Endpoint: /api/v1/products/search?keyword=<text>&status=ACTIVE&page=1&limit=8
+        """
+        try:
+            ensure_mongodb_connection()
+            queryset = Product.objects.all()
+
+            # Keyword search
+            keyword = request.query_params.get("keyword") or request.query_params.get("q") or request.query_params.get("search")
+            if keyword:
+                from urllib.parse import unquote_plus
+                keyword = unquote_plus(str(keyword))
+                escaped_keyword = re.escape(keyword)
+                
+                # Search using regex in name, productDisplayName, description, slug
+                # Using regex with ignore case
+                queryset = queryset.filter(
+                    __raw__={"$or": [
+                        {"name": {"$regex": escaped_keyword, "$options": "i"}},
+                        {"productDisplayName": {"$regex": escaped_keyword, "$options": "i"}},
+                        {"description": {"$regex": escaped_keyword, "$options": "i"}},
+                        {"slug": {"$regex": escaped_keyword, "$options": "i"}},
+                    ]}
+                )
+
+            # Status filter
+            status_param = request.query_params.get("status")
+            if status_param:
+                queryset = queryset.filter(status__iexact=status_param)
+            
+            queryset = queryset.order_by("id")
+
+            # Pagination
+            page, page_size = get_pagination_params(request)
+            
+            products, total_count, total_pages, current_page, page_size = paginate_queryset(
+                queryset, page, page_size
+            )
+            
+            serializer = ProductSerializer(products, many=True)
+            
+            return api_success(
+                "Products searched successfully",
+                {
+                    "products": serializer.data,
+                    "page": current_page,
+                    "pages": total_pages,
+                    "perPage": page_size,
+                    "count": total_count,
+                },
+            )
+            
+        except Exception as e:
+            logger.error(f"Error in search: {str(e)}", exc_info=True)
+            return api_error(
+                f"Error searching products: {str(e)}",
+                status_code=status.HTTP_500_INTERNAL_SERVER_ERROR
+            )
 
 class ContentSectionViewSet(viewsets.ViewSet):
 
