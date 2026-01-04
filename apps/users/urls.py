@@ -4,7 +4,7 @@ from .mongo_views import OutfitHistoryViewSet, UserInteractionViewSet, UserViewS
 from .admin_stats_views import AdminStatsViewSet
 
 router = routers.DefaultRouter(trailing_slash=False)
-router.register(r"accounts/address", UserAddressViewSet, basename="user-address")
+router.register(r"addresses", UserAddressViewSet, basename="user-address")
 router.register(r"accounts", UserViewSet, basename="user")
 router.register(r"users", UserViewSet, basename="user-legacy") # Keep legacy route if needed or remove
 router.register(r"user-interactions", UserInteractionViewSet, basename="user-interaction")

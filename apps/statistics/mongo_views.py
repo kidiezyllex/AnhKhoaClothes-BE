@@ -8,6 +8,60 @@ class StatisticsViewSet(viewsets.ViewSet):
     permission_classes = [permissions.AllowAny]
     authentication_classes = []
 
+    def list(self, request):
+        stats_type = request.query_params.get("type", "GENERAL")
+        
+        if stats_type == "MONTHLY":
+            pipeline = [
+                {"$match": {"is_paid": True}},
+                {
+                    "$project": {
+                        "month": {"$month": "$created_at"},
+                        "year": {"$year": "$created_at"},
+                        "total_price": "$total_price"
+                    }
+                },
+                {
+                    "$group": {
+                        "_id": {"month": "$month", "year": "$year"},
+                        "revenue": {"$sum": "$total_price"},
+                        "orderCount": {"$sum": 1}
+                    }
+                },
+                {"$sort": {"_id.year": -1, "_id.month": -1}}
+            ]
+            
+            try:
+                monthly_stats = list(Order.objects.aggregate(*pipeline))
+                # Format for frontend
+                formatted_stats = [
+                    {
+                        "month": item["_id"]["month"],
+                        "year": item["_id"]["year"],
+                        "revenue": float(item["revenue"]),
+                        "orderCount": item["orderCount"]
+                    }
+                    for item in monthly_stats
+                ]
+            except Exception as e:
+                return api_error(f"Error calculating monthly stats: {str(e)}")
+
+            return api_success("Monthly statistics", {"data": formatted_stats})
+
+        # Default summary
+        total_revenue = sum(float(o.total_price) for o in Order.objects(is_paid=True))
+        total_orders = Order.objects.count()
+        total_products = Product.objects.count()
+
+        return api_success(
+            "General statistics",
+            {
+                "totalRevenue": total_revenue,
+                "totalOrders": total_orders,
+                "totalProducts": total_products
+            }
+        )
+
     @action(detail=False, methods=["get"], url_path="revenue")
     def revenue_report(self, request):
         start_date_str = request.query_params.get("startDate")

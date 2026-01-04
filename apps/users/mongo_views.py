@@ -9,6 +9,7 @@ from apps.utils import api_error, api_success, get_pagination_params, paginate_q
 from apps.orders.mongo_models import Order
 from apps.products.mongo_models import Product
 from apps.products.mongo_serializers import ProductSerializer
+from apps.products.mongo_views import ensure_mongodb_connection
 
 from .mongo_models import OutfitHistory, PasswordResetAudit, User, UserInteraction
 from .mongo_serializers import (
@@ -33,8 +34,8 @@ class IsAdminOrSelf(permissions.BasePermission):
         return request.user.is_staff or str(obj.id) == str(request.user.id)
 
 class UserViewSet(viewsets.ViewSet):
-
     permission_classes = [permissions.AllowAny]
+    authentication_classes = []
 
     def list(self, request):
         users = User.objects.all()
@@ -633,35 +634,26 @@ class UserViewSet(viewsets.ViewSet):
             status_code=status.HTTP_200_OK,
         )
 
-    @action(detail=True, methods=["get", "post"], permission_classes=[permissions.AllowAny], authentication_classes=[])
-    def outfits(self, request, pk=None):
+    @action(detail=True, methods=["get", "post"], url_path="outfits", permission_classes=[permissions.AllowAny], authentication_classes=[])
+    def outfits_list(self, request, pk=None):
         """
         GET: Retrieve all outfits saved by the user.
         POST: Save an outfit to user's outfit history.
-        Expected payload for POST: {
-            "name": "Outfit 1",
-            "products": [
-                {
-                    "product_id": "10005",
-                    "name": "Product Name",
-                    "category": "Tops",
-                    "price": 401.74,
-                    "sale": 8.51,
-                    "images": ["https://..."]
-                }
-            ],
-            "totalPrice": 99.47,
-            "compatibilityScore": 0.6333,
-            "gender": "male"
-        }
         """
+        ensure_mongodb_connection()
         try:
             user = User.objects.get(id=ObjectId(pk))
-        except (User.DoesNotExist, Exception):
+        except (User.DoesNotExist, Exception) as e:
+            if isinstance(e, User.DoesNotExist):
+                return api_error(
+                    "User does not exist.",
+                    data=None,
+                    status_code=status.HTTP_404_NOT_FOUND,
+                )
             return api_error(
-                "User does not exist.",
+                f"Error retrieving user: {str(e)}",
                 data=None,
-                status_code=status.HTTP_404_NOT_FOUND,
+                status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
             )
 
         if request.method == "GET":
@@ -734,35 +726,22 @@ class UserViewSet(viewsets.ViewSet):
             status_code=status.HTTP_201_CREATED,
         )
 
-    @action(detail=True, methods=["delete"], url_path="outfits/(?P<outfit_identifier>[^/.]+)", permission_classes=[permissions.AllowAny], authentication_classes=[])
-    def delete_outfit(self, request, pk=None, outfit_identifier=None):
+    @action(detail=True, methods=["delete"], url_path="outfits/remove", permission_classes=[permissions.AllowAny], authentication_classes=[])
+    def remove_outfit(self, request, pk=None):
         """
         DELETE: Remove a specific outfit from user's outfit history by ID or name.
-        URL: /api/v1/users/{user_id}/outfits/{outfit_id_or_name}
-        
-        Supports deletion by:
-        - Outfit _id (recommended): DELETE /api/v1/users/{user_id}/outfits/{outfit_id}
-        - Outfit name (legacy): DELETE /api/v1/users/{user_id}/outfits/{outfit_name}
+        Expected query param: outfit_identifier
         """
+        ensure_mongodb_connection()
         try:
             user = User.objects.get(id=ObjectId(pk))
-        except (User.DoesNotExist, Exception):
-            return api_error(
-                "User does not exist.",
-                data=None,
-                status_code=status.HTTP_404_NOT_FOUND,
-            )
+        except (User.DoesNotExist, Exception) as e:
+            return api_error(f"User error: {str(e)}", status_code=status.HTTP_404_NOT_FOUND)
+
+        outfit_identifier = request.query_params.get("outfit_identifier") or request.data.get("outfit_identifier")
 
         if not outfit_identifier:
-            return api_error(
-                "Outfit ID or name is required.",
-                data=None,
-                status_code=status.HTTP_400_BAD_REQUEST,
-            )
-
-        # URL decode the identifier
-        from urllib.parse import unquote
-        decoded_identifier = unquote(outfit_identifier)
+            return api_error("outfit_identifier is required.", status_code=status.HTTP_400_BAD_REQUEST)
 
         # Initialize outfit_history if it doesn't exist
         if not user.outfit_history:
@@ -772,37 +751,16 @@ class UserViewSet(viewsets.ViewSet):
         initial_count = len(user.outfit_history)
         deleted_outfit = None
         
-        # Try to find by _id first (recommended approach)
+        # Try to find by _id first
         new_history = []
         for outfit in user.outfit_history:
-            if outfit.get("_id") == decoded_identifier:
+            if outfit.get("_id") == outfit_identifier or str(outfit.get("name")) == outfit_identifier:
                 deleted_outfit = outfit
             else:
                 new_history.append(outfit)
         
-        # If not found by ID, try by name (legacy support)
         if len(new_history) == initial_count:
-            new_history = []
-            for outfit in user.outfit_history:
-                outfit_name = outfit.get("name", "")
-                # Try exact match or case-insensitive match
-                if outfit_name == decoded_identifier or outfit_name.strip().lower() == decoded_identifier.strip().lower():
-                    deleted_outfit = outfit
-                else:
-                    new_history.append(outfit)
-        
-        # Check if any outfit was removed
-        if len(new_history) == initial_count:
-            # Return available outfits for debugging
-            available_outfits = [
-                {"_id": outfit.get("_id", "N/A"), "name": outfit.get("name", "N/A")}
-                for outfit in user.outfit_history
-            ]
-            return api_error(
-                f"Outfit '{decoded_identifier}' not found.",
-                data={"available_outfits": available_outfits},
-                status_code=status.HTTP_404_NOT_FOUND,
-            )
+            return api_error(f"Outfit '{outfit_identifier}' not found.", status_code=status.HTTP_404_NOT_FOUND)
 
         user.outfit_history = new_history
         user.save()
@@ -810,10 +768,7 @@ class UserViewSet(viewsets.ViewSet):
         return api_success(
             "Outfit deleted successfully",
             {
-                "deleted_outfit": {
-                    "_id": deleted_outfit.get("_id") if deleted_outfit else None,
-                    "name": deleted_outfit.get("name") if deleted_outfit else None,
-                },
+                "deleted_outfit": deleted_outfit,
                 "user_id": str(user.id),
                 "total_outfits": len(user.outfit_history),
             },
@@ -874,10 +829,6 @@ class UserAddressViewSet(viewsets.ViewSet):
         try:
             address = UserAddress.objects.get(id=ObjectId(pk), user_id=request.user.id)
             address.delete()
-            return api_success("Address deleted successfully", data=None)
-        except UserAddress.DoesNotExist:
-            return api_error("Address not found", status_code=status.HTTP_404_NOT_FOUND)
-
             return api_success("Address deleted successfully", data=None)
         except UserAddress.DoesNotExist:
             return api_error("Address not found", status_code=status.HTTP_404_NOT_FOUND)
