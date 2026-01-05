@@ -67,30 +67,55 @@ class StatisticsViewSet(viewsets.ViewSet):
         start_date_str = request.query_params.get("startDate")
         end_date_str = request.query_params.get("endDate")
         
-        # Mock logic or simple aggregation
-        # Real implementation would require parsing dates and aggregating Order.total_price
+        pipeline = [
+            {"$match": {"is_paid": True}}
+        ]
         
-        total_revenue = 0
-        order_count = 0
-        
-        # Simplified: Sum all paid orders for now if no date provided, or implement filter
-        queryset = Order.objects(is_paid=True)
         if start_date_str and end_date_str:
-             # Add date filter logic here
-             pass
-             
-        for order in queryset:
-            total_revenue += float(order.total_price)
-            order_count += 1
-            
-        return api_success(
-            "Revenue report",
-            {
-                "totalRevenue": total_revenue,
-                "orderCount": order_count,
-                 # "chartData": ...
+            try:
+                from datetime import datetime, timedelta
+                # Parse inputs (YYYY-MM-DD expected)
+                start_date = datetime.strptime(start_date_str, "%Y-%m-%d")
+                end_date = datetime.strptime(end_date_str, "%Y-%m-%d")
+                
+                # Make end_date inclusive of the full day
+                end_date = end_date + timedelta(days=1) - timedelta(microseconds=1)
+                
+                pipeline[0]["$match"]["created_at"] = {
+                    "$gte": start_date,
+                    "$lte": end_date
+                }
+            except ValueError:
+                 return api_error("Invalid date format. Use YYYY-MM-DD.", status_code=status.HTTP_400_BAD_REQUEST)
+
+        # Aggregation to sum total_price and count orders
+        pipeline.append({
+            "$group": {
+                "_id": None,
+                "totalRevenue": {"$sum": "$total_price"},
+                "orderCount": {"$sum": 1}
             }
-        )
+        })
+        
+        try:
+             result = list(Order.objects.aggregate(*pipeline))
+             if result:
+                 data = result[0]
+                 total_revenue = float(data.get("totalRevenue", 0))
+                 order_count = data.get("orderCount", 0)
+             else:
+                 total_revenue = 0
+                 order_count = 0
+                 
+             return api_success(
+                "Revenue report",
+                {
+                    "totalRevenue": total_revenue,
+                    "orderCount": order_count,
+                }
+            )
+        except Exception as e:
+            return api_error(f"Error generating revenue report: {str(e)}")
     
     @action(detail=False, methods=["get"], url_path="top-products")
     def top_products(self, request):
