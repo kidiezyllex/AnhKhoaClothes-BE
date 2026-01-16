@@ -16,6 +16,7 @@ from apps.returns.urls import router as returns_router
 from apps.notifications.urls import router as notifications_router
 from apps.upload.urls import router as upload_router
 from apps.statistics.urls import router as statistics_router
+from apps.attributes.urls import router as attributes_router
 
 class OptionalDefaultRouter(routers.DefaultRouter):
 
@@ -34,6 +35,7 @@ api_router.extend(returns_router)
 api_router.extend(notifications_router)
 api_router.extend(upload_router)
 api_router.extend(statistics_router)
+api_router.extend(attributes_router)
 
 urlpatterns = [
     path("admin/", admin.site.urls),

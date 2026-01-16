@@ -1,0 +1,224 @@
+DANH SÁCH CHI TIẾT API ENDPOINTS - ANH KHOA CLOTHES PROJECT
+==========================================================
+
+1. HỆ THỐNG ĐƠN HÀNG (ORDERS)
+-----------------------------
+- DANH SÁCH ĐƠN HÀNG
+  + Endpoint: /orders
+  + Method: GET
+  + Params: IOrderFilter { customer, orderStatus, paymentStatus, startDate, endDate, search, page, limit }
+  + Response JSON: IOrdersResponse
+    {
+      "status": "string",
+      "message": "string",
+      "data": {
+        "orders": [IOrder],
+        "page": number,
+        "pages": number,
+        "perPage": number,
+        "count": number,
+        "pagination": { "totalItems", "totalPages", "currentPage", "limit" }
+      }
+    }
+
+- CHI TIẾT ĐƠN HÀNG
+  + Endpoint: /orders/{orderId}
+  + Method: GET
+  + Response JSON: IOrderResponse
+    {
+      "status": "string",
+      "message": "string",
+      "data": {
+        "order": {
+          "id": "string",
+          "user_id": "string",
+          "payment_method": "string",
+          "tax_price": number,
+          "shipping_price": number,
+          "total_price": number,
+          "is_paid": boolean,
+          "paid_at": "string|null",
+          "is_delivered": boolean,
+          "delivered_at": "string|null",
+          "status": "CHO_XAC_NHAN" | "CHO_GIAO_HANG" | "DANG_VAN_CHUYEN" | "DA_GIAO_HANG" | "HOAN_THANH" | "DA_HUY",
+          "items": [
+            {
+              "product_id": number,
+              "name": "string",
+              "qty": number,
+              "size_selected": "string",
+              "color_selected": "string",
+              "images": ["string"],
+              "price_sale": number
+            }
+          ],
+          "shipping_address": { "address", "city", "postal_code", "country", "recipient_phone_number" }
+        }
+      }
+    }
+
+- TẠO ĐƠN HÀNG MỚI
+  + Endpoint: /orders
+  + Method: POST
+  + Payload JSON: IOrderCreate
+    {
+      "customer": "string (ID)",
+      "items": [{ "product": "ID", "variant": { "colorId", "sizeId" }, "quantity", "price" }],
+      "voucher": "string (opt)",
+      "subTotal": number,
+      "discount": number,
+      "total": number,
+      "shippingAddress": { "name", "phoneNumber", "provinceId", "districtId", "wardId", "specificAddress" },
+      "paymentMethod": "CASH" | "BANK_TRANSFER" | "COD" | "MIXED"
+    }
+  + Response JSON: IOrderResponse (tương tự Chi tiết đơn hàng)
+
+- CẬP NHẬT TRẠNG THÁI ĐƠN HÀNG
+  + Endpoint: /orders/{orderId}/status
+  + Method: PATCH
+  + Payload JSON: IOrderStatusUpdate
+    { "status": "CHO_XAC_NHAN" | "CHO_GIAO_HANG" | "DANG_VAN_CHUYEN" | "DA_GIAO_HANG" | "HOAN_THANH" | "DA_HUY" }
+  + Response JSON: IOrderResponse
+
+- TẠO ĐƠN HÀNG POS
+  + Endpoint: /orders/pos
+  + Method: POST
+  + Payload JSON: IPOSOrderCreateRequest
+    {
+      "customer": "string (ID)",
+      "items": [{ "product": "ID", "quantity", "price", "variant": { "colorId", "sizeId" } }],
+      "subTotal": number,
+      "total": number,
+      "shippingAddress": { "name", "phoneNumber", "provinceId", "districtId", "wardId", "specificAddress" },
+      "paymentMethod": "string",
+      "discount": number,
+      "voucher": "string (opt)",
+      "orderStatus": "string"
+    }
+  + Response JSON: IPOSOrderCreateResponse (tương tự IOrderResponse)
+
+
+2. XÁC THỰC & TÀI KHOẢN (AUTH & ACCOUNTS)
+----------------------------------------
+- ĐĂNG NHẬP
+  + Endpoint: /auth/login
+  + Method: POST
+  + Payload JSON: ISignIn { "email", "password" }
+  + Response JSON: IAuthResponse
+    {
+      "status": "string",
+      "message": "string",
+      "data": {
+        "user": IAccount,
+        "token": "string",
+        "refreshToken": "string"
+      }
+    }
+
+- ĐĂNG KÝ
+  + Endpoint: /auth/register
+  + Method: POST
+  + Payload JSON: IRegister { "fullName", "email", "password", "phoneNumber", "role", "gender", "birthday", "citizenId" }
+  + Response JSON: IAuthResponse
+
+- THÔNG TIN CÁ NHÂN (PROFILE)
+  + Endpoint: /auth/me | /accounts/profile
+  + Method: GET
+  + Response JSON: IProfileResponse
+    {
+      "status": "string",
+      "message": "string",
+      "data": {
+        "user": {
+          "id", "email", "fullName", "phoneNumber", "gender", "birthday", "role", "avatar", "status", "addresses": [IAddress]
+        }
+      }
+    }
+
+- CẬP NHẬT TÀI KHOẢN (ADMIN)
+  + Endpoint: /accounts/{accountId}
+  + Method: PUT
+  + Payload JSON: IAccountUpdate { "fullName", "email", "phoneNumber", "gender", "birthday", "avatar", "status" }
+  + Response JSON: IAccountResponse { "status", "message", "data": { "user": IAccount } }
+
+
+3. QUẢN LÝ SẢN PHẨM (PRODUCTS)
+------------------------------
+- DANH SÁCH SẢN PHẨM
+  + Endpoint: /products | /products/search
+  + Method: GET
+  + Params: IProductFilter { page, limit, name, category, color, size, minPrice, maxPrice, gender, articleType, ... }
+  + Response JSON: IProductsResponse
+    {
+      "status": "string",
+      "message": "string",
+      "data": {
+        "products": [IProduct { "id", "name", "price", "masterCategory", "subCategory", "variants": [...], "images": [...] }],
+        "page", "pages", "count", "pagination"
+      }
+    }
+
+- TẠO SẢN PHẨM MỚI
+  + Endpoint: /products
+  + Method: POST
+  + Payload JSON: IProductCreate
+    {
+      "name": "string",
+      "category": "string (ID)",
+      "description": "string",
+      "weight": number,
+      "variants": [{ "colorId", "sizeId", "price", "stock", "images": [] }]
+    }
+  + Response JSON: IProductResponse { "status", "message", "data": { "product": IProduct } }
+
+
+4. THỐNG KÊ (STATISTICS)
+------------------------
+- THỐNG KÊ TỔNG QUAN
+  + Endpoint: /statistics
+  + Method: GET
+  + Params: IStatisticsFilter { type: "DAILY"|"WEEKLY"|"MONTHLY"|"YEARLY", startDate, endDate }
+  + Response JSON: IStatisticsResponse
+    {
+      "status": "string",
+      "message": "string",
+      "data": {
+        "data": [{ "month", "year", "revenue", "orderCount" }]
+      }
+    }
+
+- BÁO CÁO DOANH THU
+  + Endpoint: /statistics/revenue
+  + Method: GET
+  + Params: IRevenueReportFilter { startDate, endDate, type }
+  + Response JSON: IRevenueReportResponse
+    {
+      "status": "string",
+      "message": "string",
+      "data": { "totalRevenue", "orderCount" }
+    }
+
+
+5. VOUCHERS & ĐỔI TRẢ (VOUCHERS & RETURNS)
+-----------------------------------------
+- DANH SÁCH VOUCHERS
+  + Endpoint: /vouchers
+  + Method: GET
+  + Params: IVoucherFilter { code, status, page, limit }
+  + Response JSON: IVouchersResponse { "success", "message", "data": { "vouchers": [IVoucher], "pagination" } }
+
+- YÊU CẦU ĐỔI TRẢ (RETURNS)
+  + Endpoint: /returns
+  + Method: POST
+  + Payload JSON: IReturnCreate
+    {
+      "originalOrder": "string (ID)",
+      "customer": "string (ID)",
+      "items": [{ "product": "ID", "variant": { "colorId", "sizeId" }, "quantity", "price", "reason" }],
+      "totalRefund": number
+    }
+  + Response JSON: IReturnResponse
+
+==========================================================
+Tài liệu đã được cập nhật chi tiết cấu trúc JSON theo Interface.
+Ngày cập nhật: 2026-01-16
