@@ -1,10 +1,11 @@
 [
   {
-    "_id": "690bf0f2d0c3753df0ecbdd6",
-    "name": "Nguyen Thanh Doanh",
-    "email": "nguyenthanhdoanh123@gmail.com",
-    "password": "$2b$12$mT60ChOni/Z9DXYJ5lFJ/.yHLUajPqem7TUxnThJfsCViwW75AKsi",
-    "username": "nguyenthanhdoanh123",
+    "_id": {
+      "$oid": "690bf0f2d0c3753df0ecbdd6"
+    },
+    "name": "Nguyễn Anh Khoa",
+    "email": "nguyenanhkhoa123@gmail.com",
+    "username": "nguyenanhkhoa123",
     "birthday": null,
     "isAdmin": false,
     "isActive": true,
@@ -23,39 +24,115 @@
       {
         "product_id": 10439,
         "interaction_type": "view",
-        "timestamp": "2025-11-13T11:10:42.024000"
+        "timestamp": {
+          "$date": "2025-11-13T11:10:42.024Z"
+        }
       },
       {
         "product_id": 10861,
         "interaction_type": "view",
-        "timestamp": "2025-11-14T11:10:42.024000"
+        "timestamp": {
+          "$date": "2025-11-14T11:10:42.024Z"
+        }
       },
       {
         "product_id": 10859,
         "interaction_type": "like",
-        "timestamp": "2025-11-15T11:10:42.024000"
+        "timestamp": {
+          "$date": "2025-11-15T11:10:42.024Z"
+        }
       },
       {
         "product_id": 10065,
         "interaction_type": "cart",
-        "timestamp": "2025-11-16T11:10:42.024000"
+        "timestamp": {
+          "$date": "2025-11-16T11:10:42.024Z"
+        }
       },
       {
         "product_id": 10866,
         "interaction_type": "purchase",
-        "timestamp": "2025-11-17T11:10:42.024000"
+        "timestamp": {
+          "$date": "2025-11-17T11:10:42.024Z"
+        }
       }
     ],
-    "outfitHistory": [],
+    "outfitHistory": [
+      {
+        "_id": "637d0c04-3c95-4757-a0c8-659d425e061c",
+        "name": "Outfit 1",
+        "products": [],
+        "totalPrice": 100.0,
+        "compatibilityScore": 0.5,
+        "gender": "male",
+        "timestamp": "2026-01-05T02:53:09.460660"
+      },
+      {
+        "_id": "3428088e-2e91-4c7a-8a8a-060c7709fb3d",
+        "name": "Outfit 1",
+        "products": [
+          {
+            "product_id": "10185",
+            "name": "Indigo Nation Men Price catch White Shirts",
+            "category": "Tops",
+            "price": 1438000.0,
+            "sale": 11.6,
+            "images": [
+              "https://res.cloudinary.com/dt6wmon6z/image/upload/v1763398522/10185_ku3joi.jpg"
+            ]
+          },
+          {
+            "product_id": "10257",
+            "name": "John Miller Men Solid Type Black Trousers",
+            "category": "Bottoms",
+            "price": 1339000.0,
+            "sale": 6.8,
+            "images": [
+              "https://res.cloudinary.com/dt6wmon6z/image/upload/v1763400072/10257_clwdro.jpg"
+            ]
+          },
+          {
+            "product_id": "10128",
+            "name": "Rockport Men Drsp Wingtip Black Formal Shoes",
+            "category": "Shoes",
+            "price": 169000.0,
+            "sale": 2.5,
+            "images": [
+              "https://res.cloudinary.com/dt6wmon6z/image/upload/v1763412876/10128_anqibv.jpg"
+            ]
+          },
+          {
+            "product_id": "10098",
+            "name": "Fastrack Men Analogue Plastic White Watch",
+            "category": "Accessories",
+            "price": 1946000.0,
+            "sale": 11.4,
+            "images": [
+              "https://res.cloudinary.com/dt6wmon6z/image/upload/v1763395626/10098_kldy5a.jpg"
+            ]
+          }
+        ],
+        "totalPrice": 4408071.0,
+        "compatibilityScore": 0.3,
+        "gender": "male",
+        "timestamp": "2026-01-05T03:05:47.949240"
+      }
+    ],
     "__v": null,
-    "createdAt": "2026-01-03T18:03:35.394000",
-    "updatedAt": "2026-01-03T18:31:53.518000"
+    "createdAt": {
+      "$date": "2026-01-03T18:03:35.394Z"
+    },
+    "updatedAt": {
+      "$date": "2026-01-05T03:05:47.949Z"
+    },
+    "password": "$2b$12$mT60ChOni/Z9DXYJ5lFJ/.yHLUajPqem7TUxnThJfsCViwW75AKsi"
   },
   {
-    "_id": "690bf40623150d4eec246874",
+    "_id": {
+      "$oid": "690bf40623150d4eec246874"
+    },
     "name": "Nguyen Quang Vinh",
     "email": "quangvinhvinh@gmail.com",
-    "password": "$2b$12$GM/wRkCegzKCLm4j0q7M..DBkY7mHOWOpDv8.ddZsT58nyOowdzoq",
     "username": "quangvinhvinh",
     "birthday": null,
     "isAdmin": false,
@@ -75,344 +152,482 @@
       {
         "product_id": 10180,
         "interaction_type": "like",
-        "timestamp": "2025-11-03T11:52:18.227000"
+        "timestamp": {
+          "$date": "2025-11-03T11:52:18.227Z"
+        }
       },
       {
         "product_id": 10385,
         "interaction_type": "cart",
-        "timestamp": "2025-11-06T09:55:18.227000"
+        "timestamp": {
+          "$date": "2025-11-06T09:55:18.227Z"
+        }
       },
       {
         "product_id": 10138,
         "interaction_type": "cart",
-        "timestamp": "2025-11-13T21:43:18.227000"
+        "timestamp": {
+          "$date": "2025-11-13T21:43:18.227Z"
+        }
       },
       {
         "product_id": 10710,
         "interaction_type": "purchase",
-        "timestamp": "2025-11-14T23:22:18.227000"
+        "timestamp": {
+          "$date": "2025-11-14T23:22:18.227Z"
+        }
       },
       {
         "product_id": 10259,
         "interaction_type": "view",
-        "timestamp": "2025-11-15T03:39:18.227000"
+        "timestamp": {
+          "$date": "2025-11-15T03:39:18.227Z"
+        }
       },
       {
         "product_id": 10224,
         "interaction_type": "view",
-        "timestamp": "2025-11-21T11:02:18.227000"
+        "timestamp": {
+          "$date": "2025-11-21T11:02:18.227Z"
+        }
       },
       {
         "product_id": 10401,
         "interaction_type": "view",
-        "timestamp": "2025-12-04T04:29:13.384000"
+        "timestamp": {
+          "$date": "2025-12-04T04:29:13.384Z"
+        }
       },
       {
         "product_id": 10474,
         "interaction_type": "view",
-        "timestamp": "2025-12-04T08:24:18.354000"
+        "timestamp": {
+          "$date": "2025-12-04T08:24:18.354Z"
+        }
       },
       {
         "product_id": 10427,
         "interaction_type": "view",
-        "timestamp": "2025-12-04T07:59:57.258000"
+        "timestamp": {
+          "$date": "2025-12-04T07:59:57.258Z"
+        }
       },
       {
         "product_id": 10807,
         "interaction_type": "view",
-        "timestamp": "2025-12-04T08:09:02.734000"
+        "timestamp": {
+          "$date": "2025-12-04T08:09:02.734Z"
+        }
       },
       {
         "product_id": 10387,
         "interaction_type": "view",
-        "timestamp": "2025-12-04T08:13:40.212000"
+        "timestamp": {
+          "$date": "2025-12-04T08:13:40.212Z"
+        }
       },
       {
         "product_id": 10316,
         "interaction_type": "view",
-        "timestamp": "2025-12-04T08:14:53.752000"
+        "timestamp": {
+          "$date": "2025-12-04T08:14:53.752Z"
+        }
       },
       {
         "product_id": 10190,
         "interaction_type": "view",
-        "timestamp": "2025-12-04T08:25:06.490000"
+        "timestamp": {
+          "$date": "2025-12-04T08:25:06.490Z"
+        }
       },
       {
         "product_id": 10818,
         "interaction_type": "view",
-        "timestamp": "2025-12-04T08:29:39.385000"
+        "timestamp": {
+          "$date": "2025-12-04T08:29:39.385Z"
+        }
       },
       {
         "product_id": 10445,
         "interaction_type": "view",
-        "timestamp": "2025-12-04T08:38:39.832000"
+        "timestamp": {
+          "$date": "2025-12-04T08:38:39.832Z"
+        }
       },
       {
         "product_id": 10771,
         "interaction_type": "view",
-        "timestamp": "2025-12-04T09:09:48.411000"
+        "timestamp": {
+          "$date": "2025-12-04T09:09:48.411Z"
+        }
       },
       {
         "product_id": 10004,
         "interaction_type": "view",
-        "timestamp": "2026-01-02T08:09:54.309000"
+        "timestamp": {
+          "$date": "2026-01-02T08:09:54.309Z"
+        }
       },
       {
         "product_id": 10005,
         "interaction_type": "view",
-        "timestamp": "2025-12-12T23:54:59.206000"
+        "timestamp": {
+          "$date": "2025-12-12T23:54:59.206Z"
+        }
       },
       {
         "product_id": 10035,
         "interaction_type": "view",
-        "timestamp": "2025-12-04T09:20:12.525000"
+        "timestamp": {
+          "$date": "2025-12-04T09:20:12.525Z"
+        }
       },
       {
         "product_id": 10026,
         "interaction_type": "view",
-        "timestamp": "2025-12-04T09:21:51.191000"
+        "timestamp": {
+          "$date": "2025-12-04T09:21:51.191Z"
+        }
       },
       {
         "product_id": 10029,
         "interaction_type": "view",
-        "timestamp": "2025-12-04T09:22:40.230000"
+        "timestamp": {
+          "$date": "2025-12-04T09:22:40.230Z"
+        }
       },
       {
         "product_id": 10076,
         "interaction_type": "view",
-        "timestamp": "2025-12-04T09:27:49.315000"
+        "timestamp": {
+          "$date": "2025-12-04T09:27:49.315Z"
+        }
       },
       {
         "product_id": 10652,
         "interaction_type": "view",
-        "timestamp": "2025-12-04T14:43:35.949000"
+        "timestamp": {
+          "$date": "2025-12-04T14:43:35.949Z"
+        }
       },
       {
         "product_id": 10641,
         "interaction_type": "view",
-        "timestamp": "2025-12-04T14:45:13.685000"
+        "timestamp": {
+          "$date": "2025-12-04T14:45:13.685Z"
+        }
       },
       {
         "product_id": 10054,
         "interaction_type": "view",
-        "timestamp": "2025-12-12T21:46:04.700000"
+        "timestamp": {
+          "$date": "2025-12-12T21:46:04.700Z"
+        }
       },
       {
         "product_id": 10642,
         "interaction_type": "view",
-        "timestamp": "2025-12-04T14:49:50.563000"
+        "timestamp": {
+          "$date": "2025-12-04T14:49:50.563Z"
+        }
       },
       {
         "product_id": 10643,
         "interaction_type": "purchase",
-        "timestamp": "2025-12-12T21:58:23.838000"
+        "timestamp": {
+          "$date": "2025-12-12T21:58:23.838Z"
+        }
       },
       {
         "product_id": 10003,
         "interaction_type": "cart",
-        "timestamp": "2026-01-02T08:12:11.802000"
+        "timestamp": {
+          "$date": "2026-01-02T08:12:11.802Z"
+        }
       },
       {
         "product_id": 10001,
         "interaction_type": "view",
-        "timestamp": "2025-12-04T19:37:48.266000"
+        "timestamp": {
+          "$date": "2025-12-04T19:37:48.266Z"
+        }
       },
       {
         "product_id": 10007,
         "interaction_type": "view",
-        "timestamp": "2025-12-04T17:50:41.971000"
+        "timestamp": {
+          "$date": "2025-12-04T17:50:41.971Z"
+        }
       },
       {
         "product_id": 10017,
         "interaction_type": "view",
-        "timestamp": "2025-12-09T22:19:50.975000"
+        "timestamp": {
+          "$date": "2025-12-09T22:19:50.975Z"
+        }
       },
       {
         "product_id": 10457,
         "interaction_type": "view",
-        "timestamp": "2025-12-04T17:52:34.814000"
+        "timestamp": {
+          "$date": "2025-12-04T17:52:34.814Z"
+        }
       },
       {
         "product_id": 10866,
         "interaction_type": "view",
-        "timestamp": "2025-12-04T23:07:02.584000"
+        "timestamp": {
+          "$date": "2025-12-04T23:07:02.584Z"
+        }
       },
       {
         "product_id": 10065,
         "interaction_type": "view",
-        "timestamp": "2025-12-04T23:05:37.544000"
+        "timestamp": {
+          "$date": "2025-12-04T23:05:37.544Z"
+        }
       },
       {
         "product_id": 10008,
         "interaction_type": "view",
-        "timestamp": "2026-01-02T08:09:40.745000"
+        "timestamp": {
+          "$date": "2026-01-02T08:09:40.745Z"
+        }
       },
       {
         "product_id": 10009,
         "interaction_type": "view",
-        "timestamp": "2025-12-12T05:35:30.363000"
+        "timestamp": {
+          "$date": "2025-12-12T05:35:30.363Z"
+        }
       },
       {
         "product_id": 10000,
         "interaction_type": "view",
-        "timestamp": "2026-01-02T08:08:43.827000"
+        "timestamp": {
+          "$date": "2026-01-02T08:08:43.827Z"
+        }
       },
       {
         "product_id": 10083,
         "interaction_type": "view",
-        "timestamp": "2025-12-04T19:37:48.669000"
+        "timestamp": {
+          "$date": "2025-12-04T19:37:48.669Z"
+        }
       },
       {
         "product_id": 10053,
         "interaction_type": "view",
-        "timestamp": "2025-12-04T19:07:56.873000"
+        "timestamp": {
+          "$date": "2025-12-04T19:07:56.873Z"
+        }
       },
       {
         "product_id": 10334,
         "interaction_type": "view",
-        "timestamp": "2025-12-04T19:08:43.700000"
+        "timestamp": {
+          "$date": "2025-12-04T19:08:43.700Z"
+        }
       },
       {
         "product_id": 10014,
         "interaction_type": "view",
-        "timestamp": "2025-12-04T20:06:51.605000"
+        "timestamp": {
+          "$date": "2025-12-04T20:06:51.605Z"
+        }
       },
       {
         "product_id": 10366,
         "interaction_type": "view",
-        "timestamp": "2025-12-04T19:38:32.680000"
+        "timestamp": {
+          "$date": "2025-12-04T19:38:32.680Z"
+        }
       },
       {
         "product_id": 10500,
         "interaction_type": "view",
-        "timestamp": "2025-12-04T19:39:25.675000"
+        "timestamp": {
+          "$date": "2025-12-04T19:39:25.675Z"
+        }
       },
       {
         "product_id": 10261,
         "interaction_type": "view",
-        "timestamp": "2025-12-04T19:48:26.060000"
+        "timestamp": {
+          "$date": "2025-12-04T19:48:26.060Z"
+        }
       },
       {
         "product_id": 10859,
         "interaction_type": "view",
-        "timestamp": "2025-12-04T23:10:01.283000"
+        "timestamp": {
+          "$date": "2025-12-04T23:10:01.283Z"
+        }
       },
       {
         "product_id": 10257,
         "interaction_type": "view",
-        "timestamp": "2025-12-04T23:14:06.636000"
+        "timestamp": {
+          "$date": "2025-12-04T23:14:06.636Z"
+        }
       },
       {
         "product_id": 10128,
         "interaction_type": "view",
-        "timestamp": "2025-12-09T21:53:17.423000"
+        "timestamp": {
+          "$date": "2025-12-09T21:53:17.423Z"
+        }
       },
       {
         "product_id": 10716,
         "interaction_type": "view",
-        "timestamp": "2025-12-09T21:54:21.328000"
+        "timestamp": {
+          "$date": "2025-12-09T21:54:21.328Z"
+        }
       },
       {
         "product_id": 10142,
         "interaction_type": "view",
-        "timestamp": "2025-12-09T21:58:50.422000"
+        "timestamp": {
+          "$date": "2025-12-09T21:58:50.422Z"
+        }
       },
       {
         "product_id": 10595,
         "interaction_type": "view",
-        "timestamp": "2025-12-09T22:09:58.193000"
+        "timestamp": {
+          "$date": "2025-12-09T22:09:58.193Z"
+        }
       },
       {
         "product_id": 10568,
         "interaction_type": "view",
-        "timestamp": "2025-12-09T22:37:51.883000"
+        "timestamp": {
+          "$date": "2025-12-09T22:37:51.883Z"
+        }
       },
       {
         "product_id": 10011,
         "interaction_type": "view",
-        "timestamp": "2025-12-10T00:25:24.738000"
+        "timestamp": {
+          "$date": "2025-12-10T00:25:24.738Z"
+        }
       },
       {
         "product_id": 10997,
         "interaction_type": "view",
-        "timestamp": "2025-12-10T00:59:39.205000"
+        "timestamp": {
+          "$date": "2025-12-10T00:59:39.205Z"
+        }
       },
       {
         "product_id": 10844,
         "interaction_type": "view",
-        "timestamp": "2025-12-10T01:03:34.808000"
+        "timestamp": {
+          "$date": "2025-12-10T01:03:34.808Z"
+        }
       },
       {
         "product_id": 10858,
         "interaction_type": "view",
-        "timestamp": "2025-12-10T01:03:38.971000"
+        "timestamp": {
+          "$date": "2025-12-10T01:03:38.971Z"
+        }
       },
       {
         "product_id": 10265,
         "interaction_type": "view",
-        "timestamp": "2025-12-10T15:34:45.921000"
+        "timestamp": {
+          "$date": "2025-12-10T15:34:45.921Z"
+        }
       },
       {
         "product_id": 10171,
         "interaction_type": "cart",
-        "timestamp": "2025-12-10T15:35:36.632000"
+        "timestamp": {
+          "$date": "2025-12-10T15:35:36.632Z"
+        }
       },
       {
         "product_id": 10006,
         "interaction_type": "view",
-        "timestamp": "2026-01-02T08:12:31.019000"
+        "timestamp": {
+          "$date": "2026-01-02T08:12:31.019Z"
+        }
       },
       {
         "product_id": 10490,
         "interaction_type": "view",
-        "timestamp": "2026-01-02T17:40:18.492000"
+        "timestamp": {
+          "$date": "2026-01-02T17:40:18.492Z"
+        }
       },
       {
         "product_id": 10355,
         "interaction_type": "view",
-        "timestamp": "2025-12-12T23:26:16.951000"
+        "timestamp": {
+          "$date": "2025-12-12T23:26:16.951Z"
+        }
       },
       {
         "product_id": 10371,
         "interaction_type": "view",
-        "timestamp": "2025-12-13T00:15:57.391000"
+        "timestamp": {
+          "$date": "2025-12-13T00:15:57.391Z"
+        }
       },
       {
         "product_id": 10033,
         "interaction_type": "view",
-        "timestamp": "2025-12-13T00:34:26.566000"
+        "timestamp": {
+          "$date": "2025-12-13T00:34:26.566Z"
+        }
       },
       {
         "product_id": 10324,
         "interaction_type": "view",
-        "timestamp": "2025-12-13T00:26:46.528000"
+        "timestamp": {
+          "$date": "2025-12-13T00:26:46.528Z"
+        }
       },
       {
         "product_id": 10335,
         "interaction_type": "view",
-        "timestamp": "2025-12-13T00:34:01.466000"
+        "timestamp": {
+          "$date": "2025-12-13T00:34:01.466Z"
+        }
       },
       {
         "product_id": 10129,
         "interaction_type": "view",
-        "timestamp": "2026-01-02T17:58:06.194000"
+        "timestamp": {
+          "$date": "2026-01-02T17:58:06.194Z"
+        }
       },
       {
         "product_id": 10145,
         "interaction_type": "view",
-        "timestamp": "2026-01-02T18:01:03.405000"
+        "timestamp": {
+          "$date": "2026-01-02T18:01:03.405Z"
+        }
       }
     ],
     "outfitHistory": [],
     "__v": null,
-    "createdAt": "2026-01-03T18:03:35.663000",
-    "updatedAt": "2026-01-03T18:31:53.898000"
+    "createdAt": {
+      "$date": "2026-01-03T18:03:35.663Z"
+    },
+    "updatedAt": {
+      "$date": "2026-01-03T18:31:53.898Z"
+    },
+    "password": "$2b$12$GM/wRkCegzKCLm4j0q7M..DBkY7mHOWOpDv8.ddZsT58nyOowdzoq"
   },
   {
-    "_id": "690bf40623150d4eec246b2d",
+    "_id": {
+      "$oid": "690bf40623150d4eec246b2d"
+    },
     "name": "Pham Hoang Lan",
     "email": "lanpham.hoang@gmail.com",
-    "password": "$2b$12$xKukQaYYQ2zxjbrn70Tdo..DgGfvsToJ1104Xgg/CeYad619OGPxm",
     "username": "lanpham_hoang",
     "birthday": null,
     "isAdmin": false,
@@ -432,139 +647,195 @@
       {
         "product_id": 10603,
         "interaction_type": "purchase",
-        "timestamp": "2025-11-03T22:44:49.630000"
+        "timestamp": {
+          "$date": "2025-11-03T22:44:49.630Z"
+        }
       },
       {
         "product_id": 10701,
         "interaction_type": "cart",
-        "timestamp": "2025-11-04T03:42:49.630000"
+        "timestamp": {
+          "$date": "2025-11-04T03:42:49.630Z"
+        }
       },
       {
         "product_id": 10638,
         "interaction_type": "view",
-        "timestamp": "2025-11-06T01:21:49.630000"
+        "timestamp": {
+          "$date": "2025-11-06T01:21:49.630Z"
+        }
       },
       {
         "product_id": 10762,
         "interaction_type": "view",
-        "timestamp": "2025-11-08T06:52:49.630000"
+        "timestamp": {
+          "$date": "2025-11-08T06:52:49.630Z"
+        }
       },
       {
         "product_id": 10092,
         "interaction_type": "purchase",
-        "timestamp": "2025-11-27T00:57:18.751000"
+        "timestamp": {
+          "$date": "2025-11-27T00:57:18.751Z"
+        }
       },
       {
         "product_id": 10171,
         "interaction_type": "view",
-        "timestamp": "2025-11-29T08:46:49.630000"
+        "timestamp": {
+          "$date": "2025-11-29T08:46:49.630Z"
+        }
       },
       {
         "product_id": 10003,
         "interaction_type": "view",
-        "timestamp": "2026-01-02T08:18:31.049000"
+        "timestamp": {
+          "$date": "2026-01-02T08:18:31.049Z"
+        }
       },
       {
         "product_id": 10023,
         "interaction_type": "view",
-        "timestamp": "2026-01-02T08:22:28.092000"
+        "timestamp": {
+          "$date": "2026-01-02T08:22:28.092Z"
+        }
       },
       {
         "product_id": 10001,
         "interaction_type": "view",
-        "timestamp": "2025-12-04T18:07:29.693000"
+        "timestamp": {
+          "$date": "2025-12-04T18:07:29.693Z"
+        }
       },
       {
         "product_id": 10774,
         "interaction_type": "view",
-        "timestamp": "2025-12-04T18:08:37.135000"
+        "timestamp": {
+          "$date": "2025-12-04T18:08:37.135Z"
+        }
       },
       {
         "product_id": 10008,
         "interaction_type": "view",
-        "timestamp": "2025-12-04T18:08:50.946000"
+        "timestamp": {
+          "$date": "2025-12-04T18:08:50.946Z"
+        }
       },
       {
         "product_id": 10056,
         "interaction_type": "view",
-        "timestamp": "2025-12-04T18:09:06.747000"
+        "timestamp": {
+          "$date": "2025-12-04T18:09:06.747Z"
+        }
       },
       {
         "product_id": 10866,
         "interaction_type": "view",
-        "timestamp": "2025-12-04T18:48:42.963000"
+        "timestamp": {
+          "$date": "2025-12-04T18:48:42.963Z"
+        }
       },
       {
         "product_id": 10000,
         "interaction_type": "view",
-        "timestamp": "2026-01-02T08:18:14.997000"
+        "timestamp": {
+          "$date": "2026-01-02T08:18:14.997Z"
+        }
       },
       {
         "product_id": 10005,
         "interaction_type": "view",
-        "timestamp": "2026-01-02T08:18:01.650000"
+        "timestamp": {
+          "$date": "2026-01-02T08:18:01.650Z"
+        }
       },
       {
         "product_id": 10672,
         "interaction_type": "view",
-        "timestamp": "2025-12-04T18:56:53.630000"
+        "timestamp": {
+          "$date": "2025-12-04T18:56:53.630Z"
+        }
       },
       {
         "product_id": 10016,
         "interaction_type": "view",
-        "timestamp": "2025-12-04T19:01:12.638000"
+        "timestamp": {
+          "$date": "2025-12-04T19:01:12.638Z"
+        }
       },
       {
         "product_id": 10015,
         "interaction_type": "view",
-        "timestamp": "2025-12-04T19:01:24.774000"
+        "timestamp": {
+          "$date": "2025-12-04T19:01:24.774Z"
+        }
       },
       {
         "product_id": 10775,
         "interaction_type": "view",
-        "timestamp": "2025-12-04T19:01:51.608000"
+        "timestamp": {
+          "$date": "2025-12-04T19:01:51.608Z"
+        }
       },
       {
         "product_id": 10079,
         "interaction_type": "view",
-        "timestamp": "2025-12-04T19:02:07.108000"
+        "timestamp": {
+          "$date": "2025-12-04T19:02:07.108Z"
+        }
       },
       {
         "product_id": 10777,
         "interaction_type": "view",
-        "timestamp": "2025-12-04T19:02:34.638000"
+        "timestamp": {
+          "$date": "2025-12-04T19:02:34.638Z"
+        }
       },
       {
         "product_id": 10129,
         "interaction_type": "view",
-        "timestamp": "2025-12-04T19:02:53.769000"
+        "timestamp": {
+          "$date": "2025-12-04T19:02:53.769Z"
+        }
       },
       {
         "product_id": 10007,
         "interaction_type": "view",
-        "timestamp": "2026-01-02T08:19:42.632000"
+        "timestamp": {
+          "$date": "2026-01-02T08:19:42.632Z"
+        }
       },
       {
         "product_id": 10019,
         "interaction_type": "view",
-        "timestamp": "2026-01-02T08:19:54.716000"
+        "timestamp": {
+          "$date": "2026-01-02T08:19:54.716Z"
+        }
       },
       {
         "product_id": 10018,
         "interaction_type": "view",
-        "timestamp": "2026-01-02T08:20:15.568000"
+        "timestamp": {
+          "$date": "2026-01-02T08:20:15.568Z"
+        }
       }
     ],
     "outfitHistory": [],
     "__v": null,
-    "createdAt": "2026-01-03T18:03:35.939000",
-    "updatedAt": "2026-01-03T18:31:54.284000"
+    "createdAt": {
+      "$date": "2026-01-03T18:03:35.939Z"
+    },
+    "updatedAt": {
+      "$date": "2026-01-03T18:31:54.284Z"
+    },
+    "password": "$2b$12$xKukQaYYQ2zxjbrn70Tdo..DgGfvsToJ1104Xgg/CeYad619OGPxm"
   },
   {
-    "_id": "690bf40723150d4eec246dd2",
+    "_id": {
+      "$oid": "690bf40723150d4eec246dd2"
+    },
     "name": "Nguyen Tu Ly",
     "email": "nguyentuananh123@gmail.com",
-    "password": "$2b$12$y8OH/QWcPWlIg0MZwAMcpu5RFMrk/4gg7tQqnuvNS/PcU2kC.Uxyy",
     "username": "nguyentuananh123",
     "birthday": null,
     "isAdmin": false,
@@ -584,44 +855,62 @@
       {
         "product_id": 10824,
         "interaction_type": "view",
-        "timestamp": "2025-11-16T08:52:49.185000"
+        "timestamp": {
+          "$date": "2025-11-16T08:52:49.185Z"
+        }
       },
       {
         "product_id": 10741,
         "interaction_type": "like",
-        "timestamp": "2025-11-21T09:41:49.185000"
+        "timestamp": {
+          "$date": "2025-11-21T09:41:49.185Z"
+        }
       },
       {
         "product_id": 10190,
         "interaction_type": "like",
-        "timestamp": "2025-11-22T22:02:49.185000"
+        "timestamp": {
+          "$date": "2025-11-22T22:02:49.185Z"
+        }
       },
       {
         "product_id": 10570,
         "interaction_type": "like",
-        "timestamp": "2025-11-25T17:39:49.185000"
+        "timestamp": {
+          "$date": "2025-11-25T17:39:49.185Z"
+        }
       },
       {
         "product_id": 10216,
         "interaction_type": "purchase",
-        "timestamp": "2025-11-26T03:17:19.501000"
+        "timestamp": {
+          "$date": "2025-11-26T03:17:19.501Z"
+        }
       },
       {
         "product_id": 10453,
         "interaction_type": "purchase",
-        "timestamp": "2025-11-29T00:47:49.185000"
+        "timestamp": {
+          "$date": "2025-11-29T00:47:49.185Z"
+        }
       }
     ],
     "outfitHistory": [],
     "__v": null,
-    "createdAt": "2026-01-03T18:03:36.195000",
-    "updatedAt": "2026-01-03T18:31:54.693000"
+    "createdAt": {
+      "$date": "2026-01-03T18:03:36.195Z"
+    },
+    "updatedAt": {
+      "$date": "2026-01-03T18:31:54.693Z"
+    },
+    "password": "$2b$12$y8OH/QWcPWlIg0MZwAMcpu5RFMrk/4gg7tQqnuvNS/PcU2kC.Uxyy"
   },
   {
-    "_id": "690bf93fda9d3542e0185275",
+    "_id": {
+      "$oid": "690bf93fda9d3542e0185275"
+    },
     "name": "Do Truong Giang",
     "email": "giangdo.truong@hotmail.com",
-    "password": "$2b$12$vM.ae3PxondTDgOyrc4yKupz2hCRDM0yhXqcBCovN9suB.110s4UO",
     "username": "giangdo_truong",
     "birthday": null,
     "isAdmin": false,
@@ -641,44 +930,62 @@
       {
         "product_id": 10633,
         "interaction_type": "cart",
-        "timestamp": "2025-10-30T13:35:16.745000"
+        "timestamp": {
+          "$date": "2025-10-30T13:35:16.745Z"
+        }
       },
       {
         "product_id": 10324,
         "interaction_type": "like",
-        "timestamp": "2025-11-06T17:27:16.745000"
+        "timestamp": {
+          "$date": "2025-11-06T17:27:16.745Z"
+        }
       },
       {
         "product_id": 10204,
         "interaction_type": "like",
-        "timestamp": "2025-11-15T20:27:16.745000"
+        "timestamp": {
+          "$date": "2025-11-15T20:27:16.745Z"
+        }
       },
       {
         "product_id": 10223,
         "interaction_type": "cart",
-        "timestamp": "2025-11-17T23:26:16.745000"
+        "timestamp": {
+          "$date": "2025-11-17T23:26:16.745Z"
+        }
       },
       {
         "product_id": 10816,
         "interaction_type": "cart",
-        "timestamp": "2025-11-27T08:20:16.745000"
+        "timestamp": {
+          "$date": "2025-11-27T08:20:16.745Z"
+        }
       },
       {
         "product_id": 10290,
         "interaction_type": "view",
-        "timestamp": "2025-11-28T09:55:16.745000"
+        "timestamp": {
+          "$date": "2025-11-28T09:55:16.745Z"
+        }
       }
     ],
     "outfitHistory": [],
     "__v": null,
-    "createdAt": "2026-01-03T18:03:36.977000",
-    "updatedAt": "2026-01-03T18:31:55.134000"
+    "createdAt": {
+      "$date": "2026-01-03T18:03:36.977Z"
+    },
+    "updatedAt": {
+      "$date": "2026-01-03T18:31:55.134Z"
+    },
+    "password": "$2b$12$vM.ae3PxondTDgOyrc4yKupz2hCRDM0yhXqcBCovN9suB.110s4UO"
   },
   {
-    "_id": "690bf940da9d3542e0185462",
+    "_id": {
+      "$oid": "690bf940da9d3542e0185462"
+    },
     "name": "Vu Thi Ngọc",
     "email": "ngocvu96@gmail.com",
-    "password": "$2b$12$8uPHns9gMtPjPtyUo9Itk.xBkfWwZI07NgDxlcxJ6LhMP.aj0dVcS",
     "username": "ngocvu96",
     "birthday": null,
     "isAdmin": false,
@@ -698,44 +1005,62 @@
       {
         "product_id": 10275,
         "interaction_type": "purchase",
-        "timestamp": "2025-10-31T10:13:17.194000"
+        "timestamp": {
+          "$date": "2025-10-31T10:13:17.194Z"
+        }
       },
       {
         "product_id": 10504,
         "interaction_type": "view",
-        "timestamp": "2025-11-01T06:58:17.194000"
+        "timestamp": {
+          "$date": "2025-11-01T06:58:17.194Z"
+        }
       },
       {
         "product_id": 10394,
         "interaction_type": "view",
-        "timestamp": "2025-11-14T10:32:17.194000"
+        "timestamp": {
+          "$date": "2025-11-14T10:32:17.194Z"
+        }
       },
       {
         "product_id": 10882,
         "interaction_type": "like",
-        "timestamp": "2025-11-15T11:24:17.194000"
+        "timestamp": {
+          "$date": "2025-11-15T11:24:17.194Z"
+        }
       },
       {
         "product_id": 10429,
         "interaction_type": "cart",
-        "timestamp": "2025-11-19T04:39:17.194000"
+        "timestamp": {
+          "$date": "2025-11-19T04:39:17.194Z"
+        }
       },
       {
         "product_id": 10783,
         "interaction_type": "cart",
-        "timestamp": "2025-11-25T23:09:17.194000"
+        "timestamp": {
+          "$date": "2025-11-25T23:09:17.194Z"
+        }
       }
     ],
     "outfitHistory": [],
     "__v": null,
-    "createdAt": "2026-01-03T18:03:37.196000",
-    "updatedAt": "2026-01-03T18:31:55.537000"
+    "createdAt": {
+      "$date": "2026-01-03T18:03:37.196Z"
+    },
+    "updatedAt": {
+      "$date": "2026-01-03T18:31:55.537Z"
+    },
+    "password": "$2b$12$8uPHns9gMtPjPtyUo9Itk.xBkfWwZI07NgDxlcxJ6LhMP.aj0dVcS"
   },
   {
-    "_id": "690bf940da9d3542e01852a9",
+    "_id": {
+      "$oid": "690bf940da9d3542e01852a9"
+    },
     "name": "Hoang Anh Tuan",
     "email": "tuanha92@gmail.com",
-    "password": "$2b$12$u77NJgZqefJDWDVrkMoajOy9a/CEL4LC1OrLQvVh/1bMDR95I9IA6",
     "username": "tuanha92",
     "birthday": null,
     "isAdmin": false,
@@ -755,44 +1080,62 @@
       {
         "product_id": 10706,
         "interaction_type": "purchase",
-        "timestamp": "2025-11-04T14:16:18.090000"
+        "timestamp": {
+          "$date": "2025-11-04T14:16:18.090Z"
+        }
       },
       {
         "product_id": 10226,
         "interaction_type": "cart",
-        "timestamp": "2025-11-11T13:25:18.090000"
+        "timestamp": {
+          "$date": "2025-11-11T13:25:18.090Z"
+        }
       },
       {
         "product_id": 10517,
         "interaction_type": "purchase",
-        "timestamp": "2025-11-12T15:34:18.090000"
+        "timestamp": {
+          "$date": "2025-11-12T15:34:18.090Z"
+        }
       },
       {
         "product_id": 10783,
         "interaction_type": "purchase",
-        "timestamp": "2025-11-24T20:34:18.090000"
+        "timestamp": {
+          "$date": "2025-11-24T20:34:18.090Z"
+        }
       },
       {
         "product_id": 10701,
         "interaction_type": "view",
-        "timestamp": "2025-11-27T07:04:18.090000"
+        "timestamp": {
+          "$date": "2025-11-27T07:04:18.090Z"
+        }
       },
       {
         "product_id": 10098,
         "interaction_type": "purchase",
-        "timestamp": "2025-11-28T09:31:18.090000"
+        "timestamp": {
+          "$date": "2025-11-28T09:31:18.090Z"
+        }
       }
     ],
     "outfitHistory": [],
     "__v": null,
-    "createdAt": "2026-01-03T18:03:37.452000",
-    "updatedAt": "2026-01-03T18:31:55.990000"
+    "createdAt": {
+      "$date": "2026-01-03T18:03:37.452Z"
+    },
+    "updatedAt": {
+      "$date": "2026-01-03T18:31:55.990Z"
+    },
+    "password": "$2b$12$u77NJgZqefJDWDVrkMoajOy9a/CEL4LC1OrLQvVh/1bMDR95I9IA6"
   },
   {
-    "_id": "690c0638f6b6910c9c5547e6",
+    "_id": {
+      "$oid": "690c0638f6b6910c9c5547e6"
+    },
     "name": "Bui Thu Ha",
     "email": "habui.thu@gmail.com",
-    "password": "$2b$12$9dDWVxDsIj4VIPhFtVWSfuEwKJcS1ty36IyMD4HyKeIldTmtlzr.2",
     "username": "habui_thu",
     "birthday": null,
     "isAdmin": false,
@@ -812,44 +1155,62 @@
       {
         "product_id": 10162,
         "interaction_type": "cart",
-        "timestamp": "2025-11-01T10:20:49.564000"
+        "timestamp": {
+          "$date": "2025-11-01T10:20:49.564Z"
+        }
       },
       {
         "product_id": 10060,
         "interaction_type": "like",
-        "timestamp": "2025-11-03T18:27:19.694000"
+        "timestamp": {
+          "$date": "2025-11-03T18:27:19.694Z"
+        }
       },
       {
         "product_id": 10079,
         "interaction_type": "purchase",
-        "timestamp": "2025-11-13T17:17:49.564000"
+        "timestamp": {
+          "$date": "2025-11-13T17:17:49.564Z"
+        }
       },
       {
         "product_id": 10147,
         "interaction_type": "cart",
-        "timestamp": "2025-11-15T23:04:49.564000"
+        "timestamp": {
+          "$date": "2025-11-15T23:04:49.564Z"
+        }
       },
       {
         "product_id": 10424,
         "interaction_type": "purchase",
-        "timestamp": "2025-11-18T10:24:19.694000"
+        "timestamp": {
+          "$date": "2025-11-18T10:24:19.694Z"
+        }
       },
       {
         "product_id": 10805,
         "interaction_type": "view",
-        "timestamp": "2025-11-25T06:08:19.694000"
+        "timestamp": {
+          "$date": "2025-11-25T06:08:19.694Z"
+        }
       }
     ],
     "outfitHistory": [],
     "__v": null,
-    "createdAt": "2026-01-03T18:03:37.699000",
-    "updatedAt": "2026-01-03T18:31:56.367000"
+    "createdAt": {
+      "$date": "2026-01-03T18:03:37.699Z"
+    },
+    "updatedAt": {
+      "$date": "2026-01-03T18:31:56.367Z"
+    },
+    "password": "$2b$12$9dDWVxDsIj4VIPhFtVWSfuEwKJcS1ty36IyMD4HyKeIldTmtlzr.2"
   },
   {
-    "_id": "690c0653f6b6910c9c5550c0",
+    "_id": {
+      "$oid": "690c0653f6b6910c9c5550c0"
+    },
     "name": "Ly Kim Oanh",
     "email": "oanhly.kim@gmail.com",
-    "password": "$2b$12$EmK2IlLYNnoiMBLBtzB36OOzN3di7ecbmGb9XYGkmbvYzG4bBwdcq",
     "username": "oanhly_kim",
     "birthday": null,
     "isAdmin": false,
@@ -869,101 +1230,62 @@
       {
         "product_id": 10138,
         "interaction_type": "purchase",
-        "timestamp": "2025-11-06T18:10:17.011000"
+        "timestamp": {
+          "$date": "2025-11-06T18:10:17.011Z"
+        }
       },
       {
         "product_id": 10618,
         "interaction_type": "view",
-        "timestamp": "2025-11-14T19:26:17.011000"
+        "timestamp": {
+          "$date": "2025-11-14T19:26:17.011Z"
+        }
       },
       {
         "product_id": 10482,
         "interaction_type": "purchase",
-        "timestamp": "2025-11-15T05:08:17.011000"
+        "timestamp": {
+          "$date": "2025-11-15T05:08:17.011Z"
+        }
       },
       {
         "product_id": 10019,
         "interaction_type": "cart",
-        "timestamp": "2025-11-17T06:02:17.011000"
+        "timestamp": {
+          "$date": "2025-11-17T06:02:17.011Z"
+        }
       },
       {
         "product_id": 10391,
         "interaction_type": "like",
-        "timestamp": "2025-11-23T12:18:17.011000"
+        "timestamp": {
+          "$date": "2025-11-23T12:18:17.011Z"
+        }
       },
       {
         "product_id": 10835,
         "interaction_type": "cart",
-        "timestamp": "2025-11-24T23:31:17.011000"
+        "timestamp": {
+          "$date": "2025-11-24T23:31:17.011Z"
+        }
       }
     ],
     "outfitHistory": [],
     "__v": null,
-    "createdAt": "2026-01-03T18:03:37.936000",
-    "updatedAt": "2026-01-03T18:31:56.739000"
+    "createdAt": {
+      "$date": "2026-01-03T18:03:37.936Z"
+    },
+    "updatedAt": {
+      "$date": "2026-01-03T18:31:56.739Z"
+    },
+    "password": "$2b$12$EmK2IlLYNnoiMBLBtzB36OOzN3di7ecbmGb9XYGkmbvYzG4bBwdcq"
   },
   {
-    "_id": "690c070df6b6910c9c559799",
-    "name": "Nguyen Duc Huy",
-    "email": "huynguyen.duc@gmail.com",
-    "password": "$2b$12$nIy4yLxh0ZVAM.lXThLVp.MJ18zX6krphSo8zKKXN32SPCu.IMZ16",
-    "username": "huynguyen_duc",
-    "birthday": null,
-    "isAdmin": false,
-    "isActive": true,
-    "height": null,
-    "weight": null,
-    "gender": "male",
-    "age": 22,
-    "resetPasswordToken": null,
-    "resetPasswordExpire": null,
-    "unhashedResetPasswordToken": null,
-    "favorites": [],
-    "preferences": {},
-    "userEmbedding": [],
-    "contentProfile": {},
-    "interactionHistory": [
-      {
-        "product_id": 10886,
-        "interaction_type": "cart",
-        "timestamp": "2025-11-05T18:49:17.723000"
-      },
-      {
-        "product_id": 10683,
-        "interaction_type": "purchase",
-        "timestamp": "2025-11-18T15:49:17.723000"
-      },
-      {
-        "product_id": 10322,
-        "interaction_type": "view",
-        "timestamp": "2025-11-21T02:14:17.723000"
-      },
-      {
-        "product_id": 10071,
-        "interaction_type": "purchase",
-        "timestamp": "2025-11-22T05:41:17.723000"
-      },
-      {
-        "product_id": 10879,
-        "interaction_type": "purchase",
-        "timestamp": "2025-11-26T03:17:17.723000"
-      },
-      {
-        "product_id": 10028,
-        "interaction_type": "like",
-        "timestamp": "2025-11-27T08:19:17.723000"
-      }
-    ],
-    "outfitHistory": [],
-    "__v": null,
-    "createdAt": "2026-01-03T18:03:38.176000",
-    "updatedAt": "2026-01-03T18:31:57.119000"
-  },
-  {
-    "_id": "690c0770f6b6910c9c55b2aa",
+    "_id": {
+      "$oid": "690c0770f6b6910c9c55b2aa"
+    },
     "name": "Tran Bao Chau",
     "email": "chau.tranbao@gmail.com",
-    "password": "$2b$12$kTgiUxlyiZ9gz8HU3IS5n.OuMn5vi.Ni.6IXXNPNW5SUijZTChRQ.",
     "username": "chau_tranbao",
     "birthday": null,
     "isAdmin": false,
@@ -983,44 +1305,62 @@
       {
         "product_id": 10172,
         "interaction_type": "cart",
-        "timestamp": "2025-11-07T19:14:17.579000"
+        "timestamp": {
+          "$date": "2025-11-07T19:14:17.579Z"
+        }
       },
       {
         "product_id": 10731,
         "interaction_type": "cart",
-        "timestamp": "2025-11-12T23:13:17.578000"
+        "timestamp": {
+          "$date": "2025-11-12T23:13:17.578Z"
+        }
       },
       {
         "product_id": 10339,
         "interaction_type": "purchase",
-        "timestamp": "2025-11-16T12:05:17.579000"
+        "timestamp": {
+          "$date": "2025-11-16T12:05:17.579Z"
+        }
       },
       {
         "product_id": 10093,
         "interaction_type": "cart",
-        "timestamp": "2025-11-18T13:53:17.578000"
+        "timestamp": {
+          "$date": "2025-11-18T13:53:17.578Z"
+        }
       },
       {
         "product_id": 10842,
         "interaction_type": "view",
-        "timestamp": "2025-11-20T15:54:17.578000"
+        "timestamp": {
+          "$date": "2025-11-20T15:54:17.578Z"
+        }
       },
       {
         "product_id": 10331,
         "interaction_type": "cart",
-        "timestamp": "2025-11-26T05:23:17.578000"
+        "timestamp": {
+          "$date": "2025-11-26T05:23:17.578Z"
+        }
       }
     ],
     "outfitHistory": [],
     "__v": null,
-    "createdAt": "2026-01-03T18:03:38.674000",
-    "updatedAt": "2026-01-03T18:31:57.502000"
+    "createdAt": {
+      "$date": "2026-01-03T18:03:38.674Z"
+    },
+    "updatedAt": {
+      "$date": "2026-01-03T18:31:57.502Z"
+    },
+    "password": "$2b$12$kTgiUxlyiZ9gz8HU3IS5n.OuMn5vi.Ni.6IXXNPNW5SUijZTChRQ."
   },
   {
-    "_id": "690c079df6b6910c9c55c53f",
+    "_id": {
+      "$oid": "690c079df6b6910c9c55c53f"
+    },
     "name": "Dang Van Nam",
     "email": "namdang.vn88@gmail.com",
-    "password": "$2b$12$itz/FGZUWJjz3P4PFGKw3ulpV59TWX4mr09UMlYquVHIphZT140RG",
     "username": "namdang_vn88",
     "birthday": null,
     "isAdmin": false,
@@ -1040,44 +1380,62 @@
       {
         "product_id": 10423,
         "interaction_type": "purchase",
-        "timestamp": "2025-11-13T12:32:17.824000"
+        "timestamp": {
+          "$date": "2025-11-13T12:32:17.824Z"
+        }
       },
       {
         "product_id": 10018,
         "interaction_type": "view",
-        "timestamp": "2025-11-17T04:33:17.823000"
+        "timestamp": {
+          "$date": "2025-11-17T04:33:17.823Z"
+        }
       },
       {
         "product_id": 10176,
         "interaction_type": "view",
-        "timestamp": "2025-11-25T16:06:17.823000"
+        "timestamp": {
+          "$date": "2025-11-25T16:06:17.823Z"
+        }
       },
       {
         "product_id": 10278,
         "interaction_type": "purchase",
-        "timestamp": "2025-11-26T08:00:17.823000"
+        "timestamp": {
+          "$date": "2025-11-26T08:00:17.823Z"
+        }
       },
       {
         "product_id": 10593,
         "interaction_type": "cart",
-        "timestamp": "2025-11-27T19:50:17.823000"
+        "timestamp": {
+          "$date": "2025-11-27T19:50:17.823Z"
+        }
       },
       {
         "product_id": 10004,
         "interaction_type": "like",
-        "timestamp": "2025-11-28T13:48:17.823000"
+        "timestamp": {
+          "$date": "2025-11-28T13:48:17.823Z"
+        }
       }
     ],
     "outfitHistory": [],
     "__v": null,
-    "createdAt": "2026-01-03T18:03:38.920000",
-    "updatedAt": "2026-01-03T18:31:57.875000"
+    "createdAt": {
+      "$date": "2026-01-03T18:03:38.920Z"
+    },
+    "updatedAt": {
+      "$date": "2026-01-03T18:31:57.875Z"
+    },
+    "password": "$2b$12$itz/FGZUWJjz3P4PFGKw3ulpV59TWX4mr09UMlYquVHIphZT140RG"
   },
   {
-    "_id": "690c07dbf6b6910c9c55de5a",
+    "_id": {
+      "$oid": "690c07dbf6b6910c9c55de5a"
+    },
     "name": "Nguyen Thanh Tung",
     "email": "tungnt.2002@gmail.com",
-    "password": "$2b$12$jDxpsUMsltFKd6xFrI4NzOPdh/YrOi.Gl0y0G/xewFq0XWAogAC7m",
     "username": "tungnt_2002",
     "birthday": null,
     "isAdmin": false,
@@ -1097,44 +1455,62 @@
       {
         "product_id": 10670,
         "interaction_type": "view",
-        "timestamp": "2025-10-30T22:33:17.380000"
+        "timestamp": {
+          "$date": "2025-10-30T22:33:17.380Z"
+        }
       },
       {
         "product_id": 10770,
         "interaction_type": "like",
-        "timestamp": "2025-11-13T06:11:17.380000"
+        "timestamp": {
+          "$date": "2025-11-13T06:11:17.380Z"
+        }
       },
       {
         "product_id": 10575,
         "interaction_type": "cart",
-        "timestamp": "2025-11-17T07:56:17.380000"
+        "timestamp": {
+          "$date": "2025-11-17T07:56:17.380Z"
+        }
       },
       {
         "product_id": 10579,
         "interaction_type": "cart",
-        "timestamp": "2025-11-18T08:19:17.380000"
+        "timestamp": {
+          "$date": "2025-11-18T08:19:17.380Z"
+        }
       },
       {
         "product_id": 10778,
         "interaction_type": "view",
-        "timestamp": "2025-11-23T17:17:17.380000"
+        "timestamp": {
+          "$date": "2025-11-23T17:17:17.380Z"
+        }
       },
       {
         "product_id": 10313,
         "interaction_type": "purchase",
-        "timestamp": "2025-11-26T17:44:17.380000"
+        "timestamp": {
+          "$date": "2025-11-26T17:44:17.380Z"
+        }
       }
     ],
     "outfitHistory": [],
     "__v": null,
-    "createdAt": "2026-01-03T18:03:39.145000",
-    "updatedAt": "2026-01-03T18:31:58.246000"
+    "createdAt": {
+      "$date": "2026-01-03T18:03:39.145Z"
+    },
+    "updatedAt": {
+      "$date": "2026-01-03T18:31:58.246Z"
+    },
+    "password": "$2b$12$jDxpsUMsltFKd6xFrI4NzOPdh/YrOi.Gl0y0G/xewFq0XWAogAC7m"
   },
   {
-    "_id": "690c0844f6b6910c9c56030e",
+    "_id": {
+      "$oid": "690c0844f6b6910c9c56030e"
+    },
     "name": "Tran Thi Kim Ngan",
     "email": "nganttk95@gmail.com",
-    "password": "$2b$12$nv2oiO08O28CtigTmI8vte3PLxtbtRy1mGU5Xkh4IcltHbaJN3WIi",
     "username": "nganttk95",
     "birthday": null,
     "isAdmin": false,
@@ -1154,54 +1530,76 @@
       {
         "product_id": 10776,
         "interaction_type": "like",
-        "timestamp": "2025-11-02T14:59:18.607000"
+        "timestamp": {
+          "$date": "2025-11-02T14:59:18.607Z"
+        }
       },
       {
         "product_id": 10361,
         "interaction_type": "like",
-        "timestamp": "2025-11-10T01:31:18.607000"
+        "timestamp": {
+          "$date": "2025-11-10T01:31:18.607Z"
+        }
       },
       {
         "product_id": 10219,
         "interaction_type": "cart",
-        "timestamp": "2025-11-10T11:11:18.607000"
+        "timestamp": {
+          "$date": "2025-11-10T11:11:18.607Z"
+        }
       },
       {
         "product_id": 10095,
         "interaction_type": "purchase",
-        "timestamp": "2025-11-10T19:26:18.607000"
+        "timestamp": {
+          "$date": "2025-11-10T19:26:18.607Z"
+        }
       },
       {
         "product_id": 10723,
         "interaction_type": "cart",
-        "timestamp": "2025-11-21T03:14:50.107000"
+        "timestamp": {
+          "$date": "2025-11-21T03:14:50.107Z"
+        }
       },
       {
         "product_id": 10604,
         "interaction_type": "like",
-        "timestamp": "2025-11-16T05:20:28.107000"
+        "timestamp": {
+          "$date": "2025-11-16T05:20:28.107Z"
+        }
       },
       {
         "product_id": 10580,
         "interaction_type": "like",
-        "timestamp": "2025-11-10T22:23:51.107000"
+        "timestamp": {
+          "$date": "2025-11-10T22:23:51.107Z"
+        }
       },
       {
         "product_id": 10479,
         "interaction_type": "view",
-        "timestamp": "2025-11-08T08:24:16.107000"
+        "timestamp": {
+          "$date": "2025-11-08T08:24:16.107Z"
+        }
       }
     ],
     "outfitHistory": [],
     "__v": null,
-    "createdAt": "2026-01-03T18:03:39.395000",
-    "updatedAt": "2026-01-03T18:31:58.626000"
+    "createdAt": {
+      "$date": "2026-01-03T18:03:39.395Z"
+    },
+    "updatedAt": {
+      "$date": "2026-01-03T18:31:58.626Z"
+    },
+    "password": "$2b$12$nv2oiO08O28CtigTmI8vte3PLxtbtRy1mGU5Xkh4IcltHbaJN3WIi"
   },
   {
-    "_id": "690c0907f6b6910c9c563b92",
+    "_id": {
+      "$oid": "690c0907f6b6910c9c563b92"
+    },
     "name": "Le Hoang Phuc",
     "email": "phuc.lehoang99@yahoo.com",
-    "password": "$2b$12$cn3p61EfmkzHPg6e8/1y9Oj1DDC9f8lFIdUjgATA9Ey3fsswv2eWq",
     "username": "phuc_lehoang99",
     "birthday": null,
     "isAdmin": false,
@@ -1221,29 +1619,41 @@
       {
         "product_id": 10476,
         "interaction_type": "cart",
-        "timestamp": "2025-11-01T03:01:19.439000"
+        "timestamp": {
+          "$date": "2025-11-01T03:01:19.439Z"
+        }
       },
       {
         "product_id": 10574,
         "interaction_type": "view",
-        "timestamp": "2025-11-05T08:02:19.439000"
+        "timestamp": {
+          "$date": "2025-11-05T08:02:19.439Z"
+        }
       },
       {
         "product_id": 10597,
         "interaction_type": "cart",
-        "timestamp": "2025-11-24T10:43:19.439000"
+        "timestamp": {
+          "$date": "2025-11-24T10:43:19.439Z"
+        }
       }
     ],
     "outfitHistory": [],
     "__v": null,
-    "createdAt": "2026-01-03T18:03:39.640000",
-    "updatedAt": "2026-01-03T18:31:59.061000"
+    "createdAt": {
+      "$date": "2026-01-03T18:03:39.640Z"
+    },
+    "updatedAt": {
+      "$date": "2026-01-03T18:31:59.061Z"
+    },
+    "password": "$2b$12$cn3p61EfmkzHPg6e8/1y9Oj1DDC9f8lFIdUjgATA9Ey3fsswv2eWq"
   },
   {
-    "_id": "690c09d3f6b6910c9c566d7d",
+    "_id": {
+      "$oid": "690c09d3f6b6910c9c566d7d"
+    },
     "name": "Pham Ngoc Diep",
     "email": "dieppn2004@gmail.com",
-    "password": "$2b$12$2zZtGZNlJKzcTtGrstOvMucAyWrNv4chYKBM/6g2FpQx/SF95Y5xK",
     "username": "dieppn2004",
     "birthday": null,
     "isAdmin": false,
@@ -1263,44 +1673,62 @@
       {
         "product_id": 10062,
         "interaction_type": "view",
-        "timestamp": "2025-10-31T08:54:17.964000"
+        "timestamp": {
+          "$date": "2025-10-31T08:54:17.964Z"
+        }
       },
       {
         "product_id": 10564,
         "interaction_type": "like",
-        "timestamp": "2025-11-03T09:08:17.964000"
+        "timestamp": {
+          "$date": "2025-11-03T09:08:17.964Z"
+        }
       },
       {
         "product_id": 10480,
         "interaction_type": "view",
-        "timestamp": "2025-11-12T01:11:17.964000"
+        "timestamp": {
+          "$date": "2025-11-12T01:11:17.964Z"
+        }
       },
       {
         "product_id": 10019,
         "interaction_type": "view",
-        "timestamp": "2025-11-14T21:58:17.964000"
+        "timestamp": {
+          "$date": "2025-11-14T21:58:17.964Z"
+        }
       },
       {
         "product_id": 10023,
         "interaction_type": "view",
-        "timestamp": "2025-11-18T11:49:17.964000"
+        "timestamp": {
+          "$date": "2025-11-18T11:49:17.964Z"
+        }
       },
       {
         "product_id": 10411,
         "interaction_type": "cart",
-        "timestamp": "2025-11-24T02:19:17.964000"
+        "timestamp": {
+          "$date": "2025-11-24T02:19:17.964Z"
+        }
       }
     ],
     "outfitHistory": [],
     "__v": null,
-    "createdAt": "2026-01-03T18:03:39.868000",
-    "updatedAt": "2026-01-03T18:31:59.470000"
+    "createdAt": {
+      "$date": "2026-01-03T18:03:39.868Z"
+    },
+    "updatedAt": {
+      "$date": "2026-01-03T18:31:59.470Z"
+    },
+    "password": "$2b$12$2zZtGZNlJKzcTtGrstOvMucAyWrNv4chYKBM/6g2FpQx/SF95Y5xK"
   },
   {
-    "_id": "690c09fcf6b6910c9c5677a8",
+    "_id": {
+      "$oid": "690c09fcf6b6910c9c5677a8"
+    },
     "name": "Do Minh Khoi",
     "email": "khoi.do97@gmail.com",
-    "password": "$2b$12$yWm39Uo/SI80diHCRSjWrudBnrSEH4ocB8OzoD9nic.fHkp8n2voO",
     "username": "khoi_do97",
     "birthday": null,
     "isAdmin": false,
@@ -1320,44 +1748,62 @@
       {
         "product_id": 10144,
         "interaction_type": "view",
-        "timestamp": "2025-10-30T07:29:18.359000"
+        "timestamp": {
+          "$date": "2025-10-30T07:29:18.359Z"
+        }
       },
       {
         "product_id": 10013,
         "interaction_type": "purchase",
-        "timestamp": "2025-11-01T13:42:18.359000"
+        "timestamp": {
+          "$date": "2025-11-01T13:42:18.359Z"
+        }
       },
       {
         "product_id": 10463,
         "interaction_type": "purchase",
-        "timestamp": "2025-11-10T17:16:18.359000"
+        "timestamp": {
+          "$date": "2025-11-10T17:16:18.359Z"
+        }
       },
       {
         "product_id": 10706,
         "interaction_type": "like",
-        "timestamp": "2025-11-18T21:42:18.359000"
+        "timestamp": {
+          "$date": "2025-11-18T21:42:18.359Z"
+        }
       },
       {
         "product_id": 10224,
         "interaction_type": "like",
-        "timestamp": "2025-11-21T07:10:18.359000"
+        "timestamp": {
+          "$date": "2025-11-21T07:10:18.359Z"
+        }
       },
       {
         "product_id": 10080,
         "interaction_type": "cart",
-        "timestamp": "2025-11-23T18:29:18.359000"
+        "timestamp": {
+          "$date": "2025-11-23T18:29:18.359Z"
+        }
       }
     ],
     "outfitHistory": [],
     "__v": null,
-    "createdAt": "2026-01-03T18:03:40.127000",
-    "updatedAt": "2026-01-03T18:31:59.879000"
+    "createdAt": {
+      "$date": "2026-01-03T18:03:40.127Z"
+    },
+    "updatedAt": {
+      "$date": "2026-01-03T18:31:59.879Z"
+    },
+    "password": "$2b$12$yWm39Uo/SI80diHCRSjWrudBnrSEH4ocB8OzoD9nic.fHkp8n2voO"
   },
   {
-    "_id": "690c0a04f6b6910c9c567954",
+    "_id": {
+      "$oid": "690c0a04f6b6910c9c567954"
+    },
     "name": "Vuong Thi Lan Anh",
     "email": "anhvtl2001@gmail.com",
-    "password": "$2b$12$nL6iWiJ/lNGVyZ/YYhIgP.FIEiJ5.OhEOI2ZeYfyTRzdPHLwfFptq",
     "username": "anhvtl2001",
     "birthday": null,
     "isAdmin": false,
@@ -1377,29 +1823,41 @@
       {
         "product_id": 10712,
         "interaction_type": "like",
-        "timestamp": "2025-11-04T01:57:19.185000"
+        "timestamp": {
+          "$date": "2025-11-04T01:57:19.185Z"
+        }
       },
       {
         "product_id": 10258,
         "interaction_type": "like",
-        "timestamp": "2025-11-04T01:58:19.185000"
+        "timestamp": {
+          "$date": "2025-11-04T01:58:19.185Z"
+        }
       },
       {
         "product_id": 10990,
         "interaction_type": "view",
-        "timestamp": "2025-11-23T23:37:19.185000"
+        "timestamp": {
+          "$date": "2025-11-23T23:37:19.185Z"
+        }
       }
     ],
     "outfitHistory": [],
     "__v": null,
-    "createdAt": "2026-01-03T18:03:40.370000",
-    "updatedAt": "2026-01-03T18:32:00.294000"
+    "createdAt": {
+      "$date": "2026-01-03T18:03:40.370Z"
+    },
+    "updatedAt": {
+      "$date": "2026-01-03T18:32:00.294Z"
+    },
+    "password": "$2b$12$nL6iWiJ/lNGVyZ/YYhIgP.FIEiJ5.OhEOI2ZeYfyTRzdPHLwfFptq"
   },
   {
-    "_id": "691cd8365fee2d4ca1ba6a35",
+    "_id": {
+      "$oid": "691cd8365fee2d4ca1ba6a35"
+    },
     "name": "Bui Thi My Dung",
     "email": "dungbui.my@gmail.com",
-    "password": "$2b$12$mKQncmzCoQCV6.cVI9rieem5sOl0pXNaqL9MKx46.8hmdzcmZlu92",
     "username": "dungbui_my",
     "birthday": null,
     "isAdmin": false,
@@ -1419,64 +1877,90 @@
       {
         "product_id": 10131,
         "interaction_type": "purchase",
-        "timestamp": "2025-11-02T01:30:16.883000"
+        "timestamp": {
+          "$date": "2025-11-02T01:30:16.883Z"
+        }
       },
       {
         "product_id": 10674,
         "interaction_type": "purchase",
-        "timestamp": "2025-11-03T12:44:16.883000"
+        "timestamp": {
+          "$date": "2025-11-03T12:44:16.883Z"
+        }
       },
       {
         "product_id": 10056,
         "interaction_type": "cart",
-        "timestamp": "2025-11-05T20:16:16.883000"
+        "timestamp": {
+          "$date": "2025-11-05T20:16:16.883Z"
+        }
       },
       {
         "product_id": 10996,
         "interaction_type": "cart",
-        "timestamp": "2025-11-09T14:09:16.883000"
+        "timestamp": {
+          "$date": "2025-11-09T14:09:16.883Z"
+        }
       },
       {
         "product_id": 10023,
         "interaction_type": "like",
-        "timestamp": "2025-11-11T04:25:16.883000"
+        "timestamp": {
+          "$date": "2025-11-11T04:25:16.883Z"
+        }
       },
       {
         "product_id": 10092,
         "interaction_type": "view",
-        "timestamp": "2025-11-15T18:50:16.883000"
+        "timestamp": {
+          "$date": "2025-11-15T18:50:16.883Z"
+        }
       },
       {
         "product_id": 10319,
         "interaction_type": "like",
-        "timestamp": "2025-11-19T04:38:16.883000"
+        "timestamp": {
+          "$date": "2025-11-19T04:38:16.883Z"
+        }
       },
       {
         "product_id": 10844,
         "interaction_type": "purchase",
-        "timestamp": "2025-11-19T16:39:16.883000"
+        "timestamp": {
+          "$date": "2025-11-19T16:39:16.883Z"
+        }
       },
       {
         "product_id": 10452,
         "interaction_type": "view",
-        "timestamp": "2025-11-21T13:04:16.883000"
+        "timestamp": {
+          "$date": "2025-11-21T13:04:16.883Z"
+        }
       },
       {
         "product_id": 10804,
         "interaction_type": "cart",
-        "timestamp": "2025-11-29T08:34:16.883000"
+        "timestamp": {
+          "$date": "2025-11-29T08:34:16.883Z"
+        }
       }
     ],
     "outfitHistory": [],
     "__v": null,
-    "createdAt": "2026-01-03T18:03:40.668000",
-    "updatedAt": "2026-01-03T18:32:00.727000"
+    "createdAt": {
+      "$date": "2026-01-03T18:03:40.668Z"
+    },
+    "updatedAt": {
+      "$date": "2026-01-03T18:32:00.727Z"
+    },
+    "password": "$2b$12$mKQncmzCoQCV6.cVI9rieem5sOl0pXNaqL9MKx46.8hmdzcmZlu92"
   },
   {
-    "_id": "691cd8365fee2d4ca1ba6a36",
+    "_id": {
+      "$oid": "691cd8365fee2d4ca1ba6a36"
+    },
     "name": "Dang Quang Huy",
     "email": "huy.dangquang@gmail.com",
-    "password": "$2b$12$ikSR2hMqbpvUm1h.jz8OoOmBAj7JzJ8AHi6FIpBun7ImOW/no9qjS",
     "username": "huy_dangquang",
     "birthday": null,
     "isAdmin": false,
@@ -1496,64 +1980,90 @@
       {
         "product_id": 10340,
         "interaction_type": "cart",
-        "timestamp": "2025-10-31T05:39:50.115000"
+        "timestamp": {
+          "$date": "2025-10-31T05:39:50.115Z"
+        }
       },
       {
         "product_id": 10189,
         "interaction_type": "purchase",
-        "timestamp": "2025-10-31T05:48:18.292000"
+        "timestamp": {
+          "$date": "2025-10-31T05:48:18.292Z"
+        }
       },
       {
         "product_id": 10437,
         "interaction_type": "cart",
-        "timestamp": "2025-11-05T11:32:18.292000"
+        "timestamp": {
+          "$date": "2025-11-05T11:32:18.292Z"
+        }
       },
       {
         "product_id": 10427,
         "interaction_type": "like",
-        "timestamp": "2025-11-06T14:54:18.292000"
+        "timestamp": {
+          "$date": "2025-11-06T14:54:18.292Z"
+        }
       },
       {
         "product_id": 10050,
         "interaction_type": "like",
-        "timestamp": "2025-11-17T02:43:50.115000"
+        "timestamp": {
+          "$date": "2025-11-17T02:43:50.115Z"
+        }
       },
       {
         "product_id": 10369,
         "interaction_type": "cart",
-        "timestamp": "2025-11-22T00:17:18.292000"
+        "timestamp": {
+          "$date": "2025-11-22T00:17:18.292Z"
+        }
       },
       {
         "product_id": 10823,
         "interaction_type": "cart",
-        "timestamp": "2025-11-22T10:14:50.115000"
+        "timestamp": {
+          "$date": "2025-11-22T10:14:50.115Z"
+        }
       },
       {
         "product_id": 10732,
         "interaction_type": "like",
-        "timestamp": "2025-11-26T02:04:18.292000"
+        "timestamp": {
+          "$date": "2025-11-26T02:04:18.292Z"
+        }
       },
       {
         "product_id": 10673,
         "interaction_type": "purchase",
-        "timestamp": "2025-11-26T12:00:18.292000"
+        "timestamp": {
+          "$date": "2025-11-26T12:00:18.292Z"
+        }
       },
       {
         "product_id": 10828,
         "interaction_type": "cart",
-        "timestamp": "2025-11-27T04:12:18.292000"
+        "timestamp": {
+          "$date": "2025-11-27T04:12:18.292Z"
+        }
       }
     ],
     "outfitHistory": [],
     "__v": null,
-    "createdAt": "2026-01-03T18:03:40.884000",
-    "updatedAt": "2026-01-03T18:32:01.244000"
+    "createdAt": {
+      "$date": "2026-01-03T18:03:40.884Z"
+    },
+    "updatedAt": {
+      "$date": "2026-01-03T18:32:01.244Z"
+    },
+    "password": "$2b$12$ikSR2hMqbpvUm1h.jz8OoOmBAj7JzJ8AHi6FIpBun7ImOW/no9qjS"
   },
   {
-    "_id": "691cd8375fee2d4ca1ba6a37",
+    "_id": {
+      "$oid": "691cd8375fee2d4ca1ba6a37"
+    },
     "name": "Ly Thi Tuyet Nhung",
     "email": "nhungltt98@gmail.com",
-    "password": "$2b$12$VpsOUBHJ8alaYuI4NgyKp.dpjCe0hnkE2IjcAr/ch03KNNn/DsJYy",
     "username": "nhungltt98",
     "birthday": null,
     "isAdmin": false,
@@ -1573,29 +2083,41 @@
       {
         "product_id": 10347,
         "interaction_type": "cart",
-        "timestamp": "2025-11-08T01:33:51.326000"
+        "timestamp": {
+          "$date": "2025-11-08T01:33:51.326Z"
+        }
       },
       {
         "product_id": 10442,
         "interaction_type": "cart",
-        "timestamp": "2025-11-19T10:00:51.327000"
+        "timestamp": {
+          "$date": "2025-11-19T10:00:51.327Z"
+        }
       },
       {
         "product_id": 10329,
         "interaction_type": "purchase",
-        "timestamp": "2025-11-29T11:39:18.545000"
+        "timestamp": {
+          "$date": "2025-11-29T11:39:18.545Z"
+        }
       }
     ],
     "outfitHistory": [],
     "__v": null,
-    "createdAt": "2026-01-03T18:03:41.118000",
-    "updatedAt": "2026-01-03T18:32:01.630000"
+    "createdAt": {
+      "$date": "2026-01-03T18:03:41.118Z"
+    },
+    "updatedAt": {
+      "$date": "2026-01-03T18:32:01.630Z"
+    },
+    "password": "$2b$12$VpsOUBHJ8alaYuI4NgyKp.dpjCe0hnkE2IjcAr/ch03KNNn/DsJYy"
   },
   {
-    "_id": "691cd8375fee2d4ca1ba6a38",
+    "_id": {
+      "$oid": "691cd8375fee2d4ca1ba6a38"
+    },
     "name": "Phan Van Duc",
     "email": "ducpv96@gmail.com",
-    "password": "$2b$12$g071rd2OfFWxTDjCXocUxet.aWnrPpT2k7ItlTEZnA9fqvBad9kjq",
     "username": "ducpv96",
     "birthday": null,
     "isAdmin": false,
@@ -1615,29 +2137,41 @@
       {
         "product_id": 10427,
         "interaction_type": "cart",
-        "timestamp": "2025-11-01T19:59:19.310000"
+        "timestamp": {
+          "$date": "2025-11-01T19:59:19.310Z"
+        }
       },
       {
         "product_id": 10046,
         "interaction_type": "purchase",
-        "timestamp": "2025-11-07T11:23:19.310000"
+        "timestamp": {
+          "$date": "2025-11-07T11:23:19.310Z"
+        }
       },
       {
         "product_id": 10388,
         "interaction_type": "cart",
-        "timestamp": "2025-11-11T06:50:51.203000"
+        "timestamp": {
+          "$date": "2025-11-11T06:50:51.203Z"
+        }
       }
     ],
     "outfitHistory": [],
     "__v": null,
-    "createdAt": "2026-01-03T18:03:41.355000",
-    "updatedAt": "2026-01-03T18:32:01.999000"
+    "createdAt": {
+      "$date": "2026-01-03T18:03:41.355Z"
+    },
+    "updatedAt": {
+      "$date": "2026-01-03T18:32:01.999Z"
+    },
+    "password": "$2b$12$g071rd2OfFWxTDjCXocUxet.aWnrPpT2k7ItlTEZnA9fqvBad9kjq"
   },
   {
-    "_id": "691cd8385fee2d4ca1ba6a39",
+    "_id": {
+      "$oid": "691cd8385fee2d4ca1ba6a39"
+    },
     "name": "Mai Phuong Thuy",
     "email": "thuy.mp99@gmail.com",
-    "password": "$2b$12$nFs4Sady8JcJuniaOVZpQOdVUqRcmjoa6RPS3dPnuEFK.rl9qKXuS",
     "username": "thuy_mp99",
     "birthday": null,
     "isAdmin": false,
@@ -1657,34 +2191,48 @@
       {
         "product_id": 10263,
         "interaction_type": "like",
-        "timestamp": "2025-11-05T02:33:50.866000"
+        "timestamp": {
+          "$date": "2025-11-05T02:33:50.866Z"
+        }
       },
       {
         "product_id": 10400,
         "interaction_type": "view",
-        "timestamp": "2025-11-18T06:39:18.815000"
+        "timestamp": {
+          "$date": "2025-11-18T06:39:18.815Z"
+        }
       },
       {
         "product_id": 10512,
         "interaction_type": "cart",
-        "timestamp": "2025-11-18T16:41:50.866000"
+        "timestamp": {
+          "$date": "2025-11-18T16:41:50.866Z"
+        }
       },
       {
         "product_id": 10326,
         "interaction_type": "like",
-        "timestamp": "2025-11-28T05:20:18.815000"
+        "timestamp": {
+          "$date": "2025-11-28T05:20:18.815Z"
+        }
       }
     ],
     "outfitHistory": [],
     "__v": null,
-    "createdAt": "2026-01-03T18:03:41.928000",
-    "updatedAt": "2026-01-03T18:32:02.374000"
+    "createdAt": {
+      "$date": "2026-01-03T18:03:41.928Z"
+    },
+    "updatedAt": {
+      "$date": "2026-01-03T18:32:02.374Z"
+    },
+    "password": "$2b$12$nFs4Sady8JcJuniaOVZpQOdVUqRcmjoa6RPS3dPnuEFK.rl9qKXuS"
   },
   {
-    "_id": "691cd8385fee2d4ca1ba6a3a",
+    "_id": {
+      "$oid": "691cd8385fee2d4ca1ba6a3a"
+    },
     "name": "Nguyen Manh Hung",
     "email": "hungnm87@gmail.com",
-    "password": "$2b$12$5xvvV9UEXTZe4r6p04xBUeBjgoN3R3ohiXhhVSSYy24jaIJRR67bS",
     "username": "hungnm87",
     "birthday": null,
     "isAdmin": false,
@@ -1704,59 +2252,83 @@
       {
         "product_id": 10405,
         "interaction_type": "purchase",
-        "timestamp": "2025-10-29T20:17:18.028000"
+        "timestamp": {
+          "$date": "2025-10-29T20:17:18.028Z"
+        }
       },
       {
         "product_id": 10721,
         "interaction_type": "view",
-        "timestamp": "2025-10-30T03:29:18.028000"
+        "timestamp": {
+          "$date": "2025-10-30T03:29:18.028Z"
+        }
       },
       {
         "product_id": 10485,
         "interaction_type": "cart",
-        "timestamp": "2025-10-30T11:52:18.028000"
+        "timestamp": {
+          "$date": "2025-10-30T11:52:18.028Z"
+        }
       },
       {
         "product_id": 10791,
         "interaction_type": "like",
-        "timestamp": "2025-11-05T19:12:18.028000"
+        "timestamp": {
+          "$date": "2025-11-05T19:12:18.028Z"
+        }
       },
       {
         "product_id": 10599,
         "interaction_type": "like",
-        "timestamp": "2025-11-07T19:15:18.028000"
+        "timestamp": {
+          "$date": "2025-11-07T19:15:18.028Z"
+        }
       },
       {
         "product_id": 10481,
         "interaction_type": "like",
-        "timestamp": "2025-11-10T13:43:18.028000"
+        "timestamp": {
+          "$date": "2025-11-10T13:43:18.028Z"
+        }
       },
       {
         "product_id": 10859,
         "interaction_type": "view",
-        "timestamp": "2025-11-16T22:20:18.028000"
+        "timestamp": {
+          "$date": "2025-11-16T22:20:18.028Z"
+        }
       },
       {
         "product_id": 10623,
         "interaction_type": "view",
-        "timestamp": "2025-11-25T05:28:18.028000"
+        "timestamp": {
+          "$date": "2025-11-25T05:28:18.028Z"
+        }
       },
       {
         "product_id": 10992,
         "interaction_type": "view",
-        "timestamp": "2025-11-26T21:06:18.028000"
+        "timestamp": {
+          "$date": "2025-11-26T21:06:18.028Z"
+        }
       }
     ],
     "outfitHistory": [],
     "__v": null,
-    "createdAt": "2026-01-03T18:03:42.163000",
-    "updatedAt": "2026-01-03T18:32:02.758000"
+    "createdAt": {
+      "$date": "2026-01-03T18:03:42.163Z"
+    },
+    "updatedAt": {
+      "$date": "2026-01-03T18:32:02.758Z"
+    },
+    "password": "$2b$12$5xvvV9UEXTZe4r6p04xBUeBjgoN3R3ohiXhhVSSYy24jaIJRR67bS"
   },
   {
-    "_id": "691cd8395fee2d4ca1ba6a3b",
+    "_id": {
+      "$oid": "691cd8395fee2d4ca1ba6a3b"
+    },
     "name": "Truong Cong Dinh",
     "email": "dinh.tc95@gmail.com",
-    "password": "$2b$12$Ks924VyYTduLLT.LBvuDNOUpT1R.B35arU1JRbYs4A9NMEupTcBRi",
     "username": "dinh_tc95",
     "birthday": null,
     "isAdmin": false,
@@ -1776,64 +2348,90 @@
       {
         "product_id": 10366,
         "interaction_type": "cart",
-        "timestamp": "2025-11-03T03:37:17.898000"
+        "timestamp": {
+          "$date": "2025-11-03T03:37:17.898Z"
+        }
       },
       {
         "product_id": 10772,
         "interaction_type": "cart",
-        "timestamp": "2025-11-04T06:53:17.898000"
+        "timestamp": {
+          "$date": "2025-11-04T06:53:17.898Z"
+        }
       },
       {
         "product_id": 10413,
         "interaction_type": "view",
-        "timestamp": "2025-11-05T10:08:17.898000"
+        "timestamp": {
+          "$date": "2025-11-05T10:08:17.898Z"
+        }
       },
       {
         "product_id": 10024,
         "interaction_type": "view",
-        "timestamp": "2025-11-07T14:18:17.898000"
+        "timestamp": {
+          "$date": "2025-11-07T14:18:17.898Z"
+        }
       },
       {
         "product_id": 10107,
         "interaction_type": "purchase",
-        "timestamp": "2025-11-11T20:49:17.898000"
+        "timestamp": {
+          "$date": "2025-11-11T20:49:17.898Z"
+        }
       },
       {
         "product_id": 10032,
         "interaction_type": "view",
-        "timestamp": "2025-11-13T13:41:17.898000"
+        "timestamp": {
+          "$date": "2025-11-13T13:41:17.898Z"
+        }
       },
       {
         "product_id": 10307,
         "interaction_type": "cart",
-        "timestamp": "2025-11-17T20:02:17.898000"
+        "timestamp": {
+          "$date": "2025-11-17T20:02:17.898Z"
+        }
       },
       {
         "product_id": 10457,
         "interaction_type": "cart",
-        "timestamp": "2025-11-25T11:58:17.898000"
+        "timestamp": {
+          "$date": "2025-11-25T11:58:17.898Z"
+        }
       },
       {
         "product_id": 10129,
         "interaction_type": "purchase",
-        "timestamp": "2025-11-28T16:49:17.898000"
+        "timestamp": {
+          "$date": "2025-11-28T16:49:17.898Z"
+        }
       },
       {
         "product_id": 10150,
         "interaction_type": "cart",
-        "timestamp": "2025-11-29T05:54:17.898000"
+        "timestamp": {
+          "$date": "2025-11-29T05:54:17.898Z"
+        }
       }
     ],
     "outfitHistory": [],
     "__v": null,
-    "createdAt": "2026-01-03T18:03:42.429000",
-    "updatedAt": "2026-01-03T18:32:03.128000"
+    "createdAt": {
+      "$date": "2026-01-03T18:03:42.429Z"
+    },
+    "updatedAt": {
+      "$date": "2026-01-03T18:32:03.128Z"
+    },
+    "password": "$2b$12$Ks924VyYTduLLT.LBvuDNOUpT1R.B35arU1JRbYs4A9NMEupTcBRi"
   },
   {
-    "_id": "691cd8395fee2d4ca1ba6a3c",
+    "_id": {
+      "$oid": "691cd8395fee2d4ca1ba6a3c"
+    },
     "name": "Nguyen Thi Quynh Anh",
     "email": "anhntq2002@gmail.com",
-    "password": "$2b$12$s4BvJgn2noR5Pmwr.vvMju/TuRALQZj5c9TT02B0GOPJfJVJHF5bm",
     "username": "anhntq2002",
     "birthday": null,
     "isAdmin": false,
@@ -1853,44 +2451,62 @@
       {
         "product_id": 10182,
         "interaction_type": "purchase",
-        "timestamp": "2025-11-03T11:55:51.079000"
+        "timestamp": {
+          "$date": "2025-11-03T11:55:51.079Z"
+        }
       },
       {
         "product_id": 10393,
         "interaction_type": "like",
-        "timestamp": "2025-11-08T20:13:51.079000"
+        "timestamp": {
+          "$date": "2025-11-08T20:13:51.079Z"
+        }
       },
       {
         "product_id": 10451,
         "interaction_type": "view",
-        "timestamp": "2025-11-13T07:06:51.079000"
+        "timestamp": {
+          "$date": "2025-11-13T07:06:51.079Z"
+        }
       },
       {
         "product_id": 10083,
         "interaction_type": "cart",
-        "timestamp": "2025-11-13T11:30:19.562000"
+        "timestamp": {
+          "$date": "2025-11-13T11:30:19.562Z"
+        }
       },
       {
         "product_id": 10580,
         "interaction_type": "view",
-        "timestamp": "2025-11-20T11:54:02.107000"
+        "timestamp": {
+          "$date": "2025-11-20T11:54:02.107Z"
+        }
       },
       {
         "product_id": 10170,
         "interaction_type": "like",
-        "timestamp": "2025-11-05T19:09:22.107000"
+        "timestamp": {
+          "$date": "2025-11-05T19:09:22.107Z"
+        }
       }
     ],
     "outfitHistory": [],
     "__v": null,
-    "createdAt": "2026-01-03T18:03:42.671000",
-    "updatedAt": "2026-01-03T18:32:03.497000"
+    "createdAt": {
+      "$date": "2026-01-03T18:03:42.671Z"
+    },
+    "updatedAt": {
+      "$date": "2026-01-03T18:32:03.497Z"
+    },
+    "password": "$2b$12$s4BvJgn2noR5Pmwr.vvMju/TuRALQZj5c9TT02B0GOPJfJVJHF5bm"
   },
   {
-    "_id": "691cd83a5fee2d4ca1ba6a3d",
+    "_id": {
+      "$oid": "691cd83a5fee2d4ca1ba6a3d"
+    },
     "name": "Vu Minh Tuan",
     "email": "tuanvm98@gmail.com",
-    "password": "$2b$12$rRWv6AuntBUtBWRW.f2FvuRlZ0Ih4vapgrewXlC5UlTldF4ymmt0C",
     "username": "tuanvm98",
     "birthday": null,
     "isAdmin": false,
@@ -1910,64 +2526,90 @@
       {
         "product_id": 10815,
         "interaction_type": "view",
-        "timestamp": "2025-11-01T13:28:17.257000"
+        "timestamp": {
+          "$date": "2025-11-01T13:28:17.257Z"
+        }
       },
       {
         "product_id": 10068,
         "interaction_type": "purchase",
-        "timestamp": "2025-11-04T01:56:17.257000"
+        "timestamp": {
+          "$date": "2025-11-04T01:56:17.257Z"
+        }
       },
       {
         "product_id": 10661,
         "interaction_type": "like",
-        "timestamp": "2025-11-10T17:55:17.257000"
+        "timestamp": {
+          "$date": "2025-11-10T17:55:17.257Z"
+        }
       },
       {
         "product_id": 10270,
         "interaction_type": "cart",
-        "timestamp": "2025-11-14T07:05:17.257000"
+        "timestamp": {
+          "$date": "2025-11-14T07:05:17.257Z"
+        }
       },
       {
         "product_id": 10182,
         "interaction_type": "cart",
-        "timestamp": "2025-11-14T23:46:17.257000"
+        "timestamp": {
+          "$date": "2025-11-14T23:46:17.257Z"
+        }
       },
       {
         "product_id": 10707,
         "interaction_type": "cart",
-        "timestamp": "2025-11-17T01:31:17.257000"
+        "timestamp": {
+          "$date": "2025-11-17T01:31:17.257Z"
+        }
       },
       {
         "product_id": 10575,
         "interaction_type": "like",
-        "timestamp": "2025-11-19T05:19:17.257000"
+        "timestamp": {
+          "$date": "2025-11-19T05:19:17.257Z"
+        }
       },
       {
         "product_id": 10884,
         "interaction_type": "view",
-        "timestamp": "2025-11-21T19:42:17.257000"
+        "timestamp": {
+          "$date": "2025-11-21T19:42:17.257Z"
+        }
       },
       {
         "product_id": 10740,
         "interaction_type": "cart",
-        "timestamp": "2025-11-24T00:44:17.257000"
+        "timestamp": {
+          "$date": "2025-11-24T00:44:17.257Z"
+        }
       },
       {
         "product_id": 10474,
         "interaction_type": "like",
-        "timestamp": "2025-11-26T17:27:17.257000"
+        "timestamp": {
+          "$date": "2025-11-26T17:27:17.257Z"
+        }
       }
     ],
     "outfitHistory": [],
     "__v": null,
-    "createdAt": "2026-01-03T18:03:42.918000",
-    "updatedAt": "2026-01-03T18:32:03.869000"
+    "createdAt": {
+      "$date": "2026-01-03T18:03:42.918Z"
+    },
+    "updatedAt": {
+      "$date": "2026-01-03T18:32:03.869Z"
+    },
+    "password": "$2b$12$rRWv6AuntBUtBWRW.f2FvuRlZ0Ih4vapgrewXlC5UlTldF4ymmt0C"
   },
   {
-    "_id": "691cd83a5fee2d4ca1ba6a3e",
+    "_id": {
+      "$oid": "691cd83a5fee2d4ca1ba6a3e"
+    },
     "name": "Cao Thi Bich Ngoc",
     "email": "ngoccb2001@gmail.com",
-    "password": "$2b$12$KRAhDti0iBxWZFfvDkZdJOQFGeUOt/XJJcb0V.AsWbZICf8qjABeu",
     "username": "ngoccb2001",
     "birthday": null,
     "isAdmin": false,
@@ -1987,54 +2629,76 @@
       {
         "product_id": 10182,
         "interaction_type": "like",
-        "timestamp": "2025-11-04T09:43:50.409000"
+        "timestamp": {
+          "$date": "2025-11-04T09:43:50.409Z"
+        }
       },
       {
         "product_id": 10580,
         "interaction_type": "view",
-        "timestamp": "2025-11-11T12:28:19.057000"
+        "timestamp": {
+          "$date": "2025-11-11T12:28:19.057Z"
+        }
       },
       {
         "product_id": 10669,
         "interaction_type": "cart",
-        "timestamp": "2025-11-17T17:40:50.409000"
+        "timestamp": {
+          "$date": "2025-11-17T17:40:50.409Z"
+        }
       },
       {
         "product_id": 10288,
         "interaction_type": "view",
-        "timestamp": "2025-11-20T21:10:19.057000"
+        "timestamp": {
+          "$date": "2025-11-20T21:10:19.057Z"
+        }
       },
       {
         "product_id": 10401,
         "interaction_type": "purchase",
-        "timestamp": "2025-11-21T03:23:50.409000"
+        "timestamp": {
+          "$date": "2025-11-21T03:23:50.409Z"
+        }
       },
       {
         "product_id": 10880,
         "interaction_type": "like",
-        "timestamp": "2025-11-23T19:21:50.409000"
+        "timestamp": {
+          "$date": "2025-11-23T19:21:50.409Z"
+        }
       },
       {
         "product_id": 10788,
         "interaction_type": "cart",
-        "timestamp": "2025-11-24T23:49:50.409000"
+        "timestamp": {
+          "$date": "2025-11-24T23:49:50.409Z"
+        }
       },
       {
         "product_id": 10302,
         "interaction_type": "like",
-        "timestamp": "2025-11-28T11:29:50.409000"
+        "timestamp": {
+          "$date": "2025-11-28T11:29:50.409Z"
+        }
       }
     ],
     "outfitHistory": [],
     "__v": null,
-    "createdAt": "2026-01-03T18:03:43.157000",
-    "updatedAt": "2026-01-03T18:32:04.233000"
+    "createdAt": {
+      "$date": "2026-01-03T18:03:43.157Z"
+    },
+    "updatedAt": {
+      "$date": "2026-01-03T18:32:04.233Z"
+    },
+    "password": "$2b$12$KRAhDti0iBxWZFfvDkZdJOQFGeUOt/XJJcb0V.AsWbZICf8qjABeu"
   },
   {
-    "_id": "691cd83b5fee2d4ca1ba6a3f",
+    "_id": {
+      "$oid": "691cd83b5fee2d4ca1ba6a3f"
+    },
     "name": "Dam Van Hiep",
     "email": "hiepdv94@gmail.com",
-    "password": "$2b$12$Bj02HZssLYVpeXX7sZLt8uKvqULo7/fVcUXouXA.B1ybhQvlBtD8O",
     "username": "hiepdv94",
     "birthday": null,
     "isAdmin": false,
@@ -2054,64 +2718,90 @@
       {
         "product_id": 10533,
         "interaction_type": "view",
-        "timestamp": "2025-11-14T16:31:19.755000"
+        "timestamp": {
+          "$date": "2025-11-14T16:31:19.755Z"
+        }
       },
       {
         "product_id": 10831,
         "interaction_type": "view",
-        "timestamp": "2025-11-15T18:33:51.140000"
+        "timestamp": {
+          "$date": "2025-11-15T18:33:51.140Z"
+        }
       },
       {
         "product_id": 10872,
         "interaction_type": "like",
-        "timestamp": "2025-11-25T02:13:51.140000"
+        "timestamp": {
+          "$date": "2025-11-25T02:13:51.140Z"
+        }
       },
       {
         "product_id": 10748,
         "interaction_type": "cart",
-        "timestamp": "2025-11-27T05:08:19.755000"
+        "timestamp": {
+          "$date": "2025-11-27T05:08:19.755Z"
+        }
       },
       {
         "product_id": 10371,
         "interaction_type": "view",
-        "timestamp": "2025-10-31T17:31:40.107000"
+        "timestamp": {
+          "$date": "2025-10-31T17:31:40.107Z"
+        }
       },
       {
         "product_id": 10579,
         "interaction_type": "like",
-        "timestamp": "2025-11-08T23:45:36.107000"
+        "timestamp": {
+          "$date": "2025-11-08T23:45:36.107Z"
+        }
       },
       {
         "product_id": 10190,
         "interaction_type": "cart",
-        "timestamp": "2025-11-13T06:22:08.107000"
+        "timestamp": {
+          "$date": "2025-11-13T06:22:08.107Z"
+        }
       },
       {
         "product_id": 10054,
         "interaction_type": "purchase",
-        "timestamp": "2025-10-29T21:33:34.107000"
+        "timestamp": {
+          "$date": "2025-10-29T21:33:34.107Z"
+        }
       },
       {
         "product_id": 10006,
         "interaction_type": "like",
-        "timestamp": "2025-11-07T05:04:51.107000"
+        "timestamp": {
+          "$date": "2025-11-07T05:04:51.107Z"
+        }
       },
       {
         "product_id": 10996,
         "interaction_type": "like",
-        "timestamp": "2025-11-12T12:03:25.107000"
+        "timestamp": {
+          "$date": "2025-11-12T12:03:25.107Z"
+        }
       }
     ],
     "outfitHistory": [],
     "__v": null,
-    "createdAt": "2026-01-03T18:03:43.388000",
-    "updatedAt": "2026-01-03T18:32:04.620000"
+    "createdAt": {
+      "$date": "2026-01-03T18:03:43.388Z"
+    },
+    "updatedAt": {
+      "$date": "2026-01-03T18:32:04.620Z"
+    },
+    "password": "$2b$12$Bj02HZssLYVpeXX7sZLt8uKvqULo7/fVcUXouXA.B1ybhQvlBtD8O"
   },
   {
-    "_id": "691cd83b5fee2d4ca1ba6a40",
+    "_id": {
+      "$oid": "691cd83b5fee2d4ca1ba6a40"
+    },
     "name": "Le Van Sy",
     "email": "sylv2005@gmail.com",
-    "password": "$2b$12$KbkwMdBEFqeWuVDLJlcfDOVCVv.93nwd3rUWbD4hNB2OJ/9zT84gi",
     "username": "sylv2005",
     "birthday": null,
     "isAdmin": false,
@@ -2131,29 +2821,41 @@
       {
         "product_id": 10148,
         "interaction_type": "like",
-        "timestamp": "2025-11-06T17:05:19.633000"
+        "timestamp": {
+          "$date": "2025-11-06T17:05:19.633Z"
+        }
       },
       {
         "product_id": 10243,
         "interaction_type": "like",
-        "timestamp": "2025-11-11T11:53:51.265000"
+        "timestamp": {
+          "$date": "2025-11-11T11:53:51.265Z"
+        }
       },
       {
         "product_id": 10484,
         "interaction_type": "purchase",
-        "timestamp": "2025-11-12T18:57:19.633000"
+        "timestamp": {
+          "$date": "2025-11-12T18:57:19.633Z"
+        }
       }
     ],
     "outfitHistory": [],
     "__v": null,
-    "createdAt": "2026-01-03T18:03:43.620000",
-    "updatedAt": "2026-01-03T18:32:04.991000"
+    "createdAt": {
+      "$date": "2026-01-03T18:03:43.620Z"
+    },
+    "updatedAt": {
+      "$date": "2026-01-03T18:32:04.991Z"
+    },
+    "password": "$2b$12$KbkwMdBEFqeWuVDLJlcfDOVCVv.93nwd3rUWbD4hNB2OJ/9zT84gi"
   },
   {
-    "_id": "691cd83c5fee2d4ca1ba6a41",
+    "_id": {
+      "$oid": "691cd83c5fee2d4ca1ba6a41"
+    },
     "name": "Dao Thi Huyen",
     "email": "huyendao.thi@gmail.com",
-    "password": "$2b$12$geuMpokxNSsPBHglh7svLe8xJqX5Aku8dGR/hGr7zmusXl6JMxqPy",
     "username": "huyendao_thi",
     "birthday": null,
     "isAdmin": false,
@@ -2173,64 +2875,90 @@
       {
         "product_id": 10879,
         "interaction_type": "purchase",
-        "timestamp": "2025-10-31T10:49:50.025000"
+        "timestamp": {
+          "$date": "2025-10-31T10:49:50.025Z"
+        }
       },
       {
         "product_id": 10658,
         "interaction_type": "purchase",
-        "timestamp": "2025-11-02T16:19:50.025000"
+        "timestamp": {
+          "$date": "2025-11-02T16:19:50.025Z"
+        }
       },
       {
         "product_id": 10567,
         "interaction_type": "like",
-        "timestamp": "2025-11-04T08:57:50.025000"
+        "timestamp": {
+          "$date": "2025-11-04T08:57:50.025Z"
+        }
       },
       {
         "product_id": 10280,
         "interaction_type": "like",
-        "timestamp": "2025-11-07T23:14:50.025000"
+        "timestamp": {
+          "$date": "2025-11-07T23:14:50.025Z"
+        }
       },
       {
         "product_id": 10216,
         "interaction_type": "like",
-        "timestamp": "2025-11-08T09:41:18.996000"
+        "timestamp": {
+          "$date": "2025-11-08T09:41:18.996Z"
+        }
       },
       {
         "product_id": 10395,
         "interaction_type": "like",
-        "timestamp": "2025-11-14T21:24:50.025000"
+        "timestamp": {
+          "$date": "2025-11-14T21:24:50.025Z"
+        }
       },
       {
         "product_id": 10154,
         "interaction_type": "cart",
-        "timestamp": "2025-11-15T05:24:50.025000"
+        "timestamp": {
+          "$date": "2025-11-15T05:24:50.025Z"
+        }
       },
       {
         "product_id": 10510,
         "interaction_type": "view",
-        "timestamp": "2025-11-15T07:24:50.025000"
+        "timestamp": {
+          "$date": "2025-11-15T07:24:50.025Z"
+        }
       },
       {
         "product_id": 10807,
         "interaction_type": "view",
-        "timestamp": "2025-11-15T20:43:50.025000"
+        "timestamp": {
+          "$date": "2025-11-15T20:43:50.025Z"
+        }
       },
       {
         "product_id": 10098,
         "interaction_type": "view",
-        "timestamp": "2025-11-19T13:21:50.025000"
+        "timestamp": {
+          "$date": "2025-11-19T13:21:50.025Z"
+        }
       }
     ],
     "outfitHistory": [],
     "__v": null,
-    "createdAt": "2026-01-03T18:03:43.846000",
-    "updatedAt": "2026-01-03T18:32:05.405000"
+    "createdAt": {
+      "$date": "2026-01-03T18:03:43.846Z"
+    },
+    "updatedAt": {
+      "$date": "2026-01-03T18:32:05.405Z"
+    },
+    "password": "$2b$12$geuMpokxNSsPBHglh7svLe8xJqX5Aku8dGR/hGr7zmusXl6JMxqPy"
   },
   {
-    "_id": "691cd83c5fee2d4ca1ba6a42",
+    "_id": {
+      "$oid": "691cd83c5fee2d4ca1ba6a42"
+    },
     "name": "Tong Thi Mai Huong",
     "email": "huongttm97@gmail.com",
-    "password": "$2b$12$qxVvUc6EouNxgtIpaRRT7eWbIdtu6npjZu5ot1yojcRiseUUb32Xu",
     "username": "huongttm97",
     "birthday": null,
     "isAdmin": false,
@@ -2250,54 +2978,76 @@
       {
         "product_id": 10186,
         "interaction_type": "like",
-        "timestamp": "2025-10-30T07:19:50.943000"
+        "timestamp": {
+          "$date": "2025-10-30T07:19:50.943Z"
+        }
       },
       {
         "product_id": 10320,
         "interaction_type": "view",
-        "timestamp": "2025-11-01T16:51:19.122000"
+        "timestamp": {
+          "$date": "2025-11-01T16:51:19.122Z"
+        }
       },
       {
         "product_id": 10294,
         "interaction_type": "cart",
-        "timestamp": "2025-11-07T09:58:50.943000"
+        "timestamp": {
+          "$date": "2025-11-07T09:58:50.943Z"
+        }
       },
       {
         "product_id": 10713,
         "interaction_type": "view",
-        "timestamp": "2025-11-27T17:53:19.122000"
+        "timestamp": {
+          "$date": "2025-11-27T17:53:19.122Z"
+        }
       },
       {
         "product_id": 10261,
         "interaction_type": "like",
-        "timestamp": "2025-11-22T17:29:59.107000"
+        "timestamp": {
+          "$date": "2025-11-22T17:29:59.107Z"
+        }
       },
       {
         "product_id": 10478,
         "interaction_type": "view",
-        "timestamp": "2025-11-09T20:19:21.107000"
+        "timestamp": {
+          "$date": "2025-11-09T20:19:21.107Z"
+        }
       },
       {
         "product_id": 10263,
         "interaction_type": "cart",
-        "timestamp": "2025-10-31T22:52:19.107000"
+        "timestamp": {
+          "$date": "2025-10-31T22:52:19.107Z"
+        }
       },
       {
         "product_id": 10616,
         "interaction_type": "cart",
-        "timestamp": "2025-11-07T23:22:46.107000"
+        "timestamp": {
+          "$date": "2025-11-07T23:22:46.107Z"
+        }
       }
     ],
     "outfitHistory": [],
     "__v": null,
-    "createdAt": "2026-01-03T18:03:44.078000",
-    "updatedAt": "2026-01-03T18:32:05.806000"
+    "createdAt": {
+      "$date": "2026-01-03T18:03:44.078Z"
+    },
+    "updatedAt": {
+      "$date": "2026-01-03T18:32:05.806Z"
+    },
+    "password": "$2b$12$qxVvUc6EouNxgtIpaRRT7eWbIdtu6npjZu5ot1yojcRiseUUb32Xu"
   },
   {
-    "_id": "691cd83d5fee2d4ca1ba6a43",
+    "_id": {
+      "$oid": "691cd83d5fee2d4ca1ba6a43"
+    },
     "name": "Kieu Van Nam",
     "email": "namkv2000@gmail.com",
-    "password": "$2b$12$pffFnNzVe0Qs9SSdF5wtiuctxDvXItGRmceENVKtzsNcAa28/9LVe",
     "username": "namkv2000",
     "birthday": null,
     "isAdmin": false,
@@ -2317,64 +3067,90 @@
       {
         "product_id": 10308,
         "interaction_type": "view",
-        "timestamp": "2025-10-30T20:10:18.423000"
+        "timestamp": {
+          "$date": "2025-10-30T20:10:18.423Z"
+        }
       },
       {
         "product_id": 10138,
         "interaction_type": "like",
-        "timestamp": "2025-11-01T22:06:50.471000"
+        "timestamp": {
+          "$date": "2025-11-01T22:06:50.471Z"
+        }
       },
       {
         "product_id": 10345,
         "interaction_type": "like",
-        "timestamp": "2025-11-02T07:03:50.471000"
+        "timestamp": {
+          "$date": "2025-11-02T07:03:50.471Z"
+        }
       },
       {
         "product_id": 10489,
         "interaction_type": "view",
-        "timestamp": "2025-11-08T04:12:50.471000"
+        "timestamp": {
+          "$date": "2025-11-08T04:12:50.471Z"
+        }
       },
       {
         "product_id": 10587,
         "interaction_type": "purchase",
-        "timestamp": "2025-11-12T04:40:50.471000"
+        "timestamp": {
+          "$date": "2025-11-12T04:40:50.471Z"
+        }
       },
       {
         "product_id": 10366,
         "interaction_type": "view",
-        "timestamp": "2025-11-18T14:11:50.471000"
+        "timestamp": {
+          "$date": "2025-11-18T14:11:50.471Z"
+        }
       },
       {
         "product_id": 10606,
         "interaction_type": "cart",
-        "timestamp": "2025-11-21T21:58:18.423000"
+        "timestamp": {
+          "$date": "2025-11-21T21:58:18.423Z"
+        }
       },
       {
         "product_id": 10104,
         "interaction_type": "purchase",
-        "timestamp": "2025-11-23T22:10:50.471000"
+        "timestamp": {
+          "$date": "2025-11-23T22:10:50.471Z"
+        }
       },
       {
         "product_id": 10506,
         "interaction_type": "purchase",
-        "timestamp": "2025-11-24T15:44:50.471000"
+        "timestamp": {
+          "$date": "2025-11-24T15:44:50.471Z"
+        }
       },
       {
         "product_id": 10783,
         "interaction_type": "purchase",
-        "timestamp": "2025-11-27T13:40:50.471000"
+        "timestamp": {
+          "$date": "2025-11-27T13:40:50.471Z"
+        }
       }
     ],
     "outfitHistory": [],
     "__v": null,
-    "createdAt": "2026-01-03T18:03:44.322000",
-    "updatedAt": "2026-01-03T18:32:06.185000"
+    "createdAt": {
+      "$date": "2026-01-03T18:03:44.322Z"
+    },
+    "updatedAt": {
+      "$date": "2026-01-03T18:32:06.185Z"
+    },
+    "password": "$2b$12$pffFnNzVe0Qs9SSdF5wtiuctxDvXItGRmceENVKtzsNcAa28/9LVe"
   },
   {
-    "_id": "691cd83d5fee2d4ca1ba6a44",
+    "_id": {
+      "$oid": "691cd83d5fee2d4ca1ba6a44"
+    },
     "name": "Luong Thi Thanh",
     "email": "thanhlt99@gmail.com",
-    "password": "$2b$12$zV5lRe.8t6QTAxAFNartneI8d4/TPyDCtBBEj8yvYdaun2btPVTei",
     "username": "thanhlt99",
     "birthday": null,
     "isAdmin": false,
@@ -2394,64 +3170,90 @@
       {
         "product_id": 10438,
         "interaction_type": "cart",
-        "timestamp": "2025-10-30T20:41:50.566000"
+        "timestamp": {
+          "$date": "2025-10-30T20:41:50.566Z"
+        }
       },
       {
         "product_id": 10442,
         "interaction_type": "view",
-        "timestamp": "2025-10-31T10:00:50.566000"
+        "timestamp": {
+          "$date": "2025-10-31T10:00:50.566Z"
+        }
       },
       {
         "product_id": 10261,
         "interaction_type": "cart",
-        "timestamp": "2025-11-01T10:11:50.566000"
+        "timestamp": {
+          "$date": "2025-11-01T10:11:50.566Z"
+        }
       },
       {
         "product_id": 10818,
         "interaction_type": "cart",
-        "timestamp": "2025-11-03T11:40:18.684000"
+        "timestamp": {
+          "$date": "2025-11-03T11:40:18.684Z"
+        }
       },
       {
         "product_id": 10790,
         "interaction_type": "cart",
-        "timestamp": "2025-11-05T21:32:50.566000"
+        "timestamp": {
+          "$date": "2025-11-05T21:32:50.566Z"
+        }
       },
       {
         "product_id": 10492,
         "interaction_type": "cart",
-        "timestamp": "2025-11-08T07:50:50.566000"
+        "timestamp": {
+          "$date": "2025-11-08T07:50:50.566Z"
+        }
       },
       {
         "product_id": 10190,
         "interaction_type": "like",
-        "timestamp": "2025-11-09T00:45:50.566000"
+        "timestamp": {
+          "$date": "2025-11-09T00:45:50.566Z"
+        }
       },
       {
         "product_id": 10869,
         "interaction_type": "cart",
-        "timestamp": "2025-11-11T10:50:50.566000"
+        "timestamp": {
+          "$date": "2025-11-11T10:50:50.566Z"
+        }
       },
       {
         "product_id": 10886,
         "interaction_type": "view",
-        "timestamp": "2025-11-12T22:13:18.684000"
+        "timestamp": {
+          "$date": "2025-11-12T22:13:18.684Z"
+        }
       },
       {
         "product_id": 10460,
         "interaction_type": "like",
-        "timestamp": "2025-11-21T19:25:50.566000"
+        "timestamp": {
+          "$date": "2025-11-21T19:25:50.566Z"
+        }
       }
     ],
     "outfitHistory": [],
     "__v": null,
-    "createdAt": "2026-01-03T18:03:44.588000",
-    "updatedAt": "2026-01-03T18:32:06.675000"
+    "createdAt": {
+      "$date": "2026-01-03T18:03:44.588Z"
+    },
+    "updatedAt": {
+      "$date": "2026-01-03T18:32:06.675Z"
+    },
+    "password": "$2b$12$zV5lRe.8t6QTAxAFNartneI8d4/TPyDCtBBEj8yvYdaun2btPVTei"
   },
   {
-    "_id": "691cd83e5fee2d4ca1ba6a45",
+    "_id": {
+      "$oid": "691cd83e5fee2d4ca1ba6a45"
+    },
     "name": "Ngo Van Tuan",
     "email": "tuanngovan88@gmail.com",
-    "password": "$2b$12$G4d9LLjvVVd5lwegfia//uG2q3EFPGbDPbGN0T4e6iqVhYVvx8qGu",
     "username": "tuanngovan88",
     "birthday": null,
     "isAdmin": false,
@@ -2471,64 +3273,90 @@
       {
         "product_id": 10075,
         "interaction_type": "like",
-        "timestamp": "2025-10-31T06:37:49.436000"
+        "timestamp": {
+          "$date": "2025-10-31T06:37:49.436Z"
+        }
       },
       {
         "product_id": 10726,
         "interaction_type": "like",
-        "timestamp": "2025-10-31T17:43:18.936000"
+        "timestamp": {
+          "$date": "2025-10-31T17:43:18.936Z"
+        }
       },
       {
         "product_id": 10814,
         "interaction_type": "view",
-        "timestamp": "2025-11-08T03:55:49.436000"
+        "timestamp": {
+          "$date": "2025-11-08T03:55:49.436Z"
+        }
       },
       {
         "product_id": 10150,
         "interaction_type": "cart",
-        "timestamp": "2025-11-09T04:07:49.436000"
+        "timestamp": {
+          "$date": "2025-11-09T04:07:49.436Z"
+        }
       },
       {
         "product_id": 10754,
         "interaction_type": "like",
-        "timestamp": "2025-11-11T18:56:18.936000"
+        "timestamp": {
+          "$date": "2025-11-11T18:56:18.936Z"
+        }
       },
       {
         "product_id": 10131,
         "interaction_type": "like",
-        "timestamp": "2025-11-15T00:00:49.436000"
+        "timestamp": {
+          "$date": "2025-11-15T00:00:49.436Z"
+        }
       },
       {
         "product_id": 10303,
         "interaction_type": "like",
-        "timestamp": "2025-11-15T12:46:49.436000"
+        "timestamp": {
+          "$date": "2025-11-15T12:46:49.436Z"
+        }
       },
       {
         "product_id": 10258,
         "interaction_type": "purchase",
-        "timestamp": "2025-11-15T12:51:49.436000"
+        "timestamp": {
+          "$date": "2025-11-15T12:51:49.436Z"
+        }
       },
       {
         "product_id": 10564,
         "interaction_type": "view",
-        "timestamp": "2025-11-22T00:39:18.936000"
+        "timestamp": {
+          "$date": "2025-11-22T00:39:18.936Z"
+        }
       },
       {
         "product_id": 10766,
         "interaction_type": "like",
-        "timestamp": "2025-11-28T08:13:49.436000"
+        "timestamp": {
+          "$date": "2025-11-28T08:13:49.436Z"
+        }
       }
     ],
     "outfitHistory": [],
     "__v": null,
-    "createdAt": "2026-01-03T18:03:44.812000",
-    "updatedAt": "2026-01-03T18:32:07.078000"
+    "createdAt": {
+      "$date": "2026-01-03T18:03:44.812Z"
+    },
+    "updatedAt": {
+      "$date": "2026-01-03T18:32:07.078Z"
+    },
+    "password": "$2b$12$G4d9LLjvVVd5lwegfia//uG2q3EFPGbDPbGN0T4e6iqVhYVvx8qGu"
   },
   {
-    "_id": "691cd83e5fee2d4ca1ba6a46",
+    "_id": {
+      "$oid": "691cd83e5fee2d4ca1ba6a46"
+    },
     "name": "Duong Thi Hanh",
     "email": "hanhduong.thi@gmail.com",
-    "password": "$2b$12$hB6OjSJHdTtz6CRNH4W0oeI82N97jW01i/4UEOrYP2PHIvwsFvl.u",
     "username": "hanhduong_thi",
     "birthday": null,
     "isAdmin": false,
@@ -2548,64 +3376,90 @@
       {
         "product_id": 10793,
         "interaction_type": "view",
-        "timestamp": "2025-10-29T19:44:17.071000"
+        "timestamp": {
+          "$date": "2025-10-29T19:44:17.071Z"
+        }
       },
       {
         "product_id": 10200,
         "interaction_type": "purchase",
-        "timestamp": "2025-11-02T18:25:17.071000"
+        "timestamp": {
+          "$date": "2025-11-02T18:25:17.071Z"
+        }
       },
       {
         "product_id": 10083,
         "interaction_type": "like",
-        "timestamp": "2025-11-05T20:23:17.071000"
+        "timestamp": {
+          "$date": "2025-11-05T20:23:17.071Z"
+        }
       },
       {
         "product_id": 10583,
         "interaction_type": "cart",
-        "timestamp": "2025-11-07T22:49:17.071000"
+        "timestamp": {
+          "$date": "2025-11-07T22:49:17.071Z"
+        }
       },
       {
         "product_id": 10746,
         "interaction_type": "cart",
-        "timestamp": "2025-11-09T21:53:17.071000"
+        "timestamp": {
+          "$date": "2025-11-09T21:53:17.071Z"
+        }
       },
       {
         "product_id": 10678,
         "interaction_type": "purchase",
-        "timestamp": "2025-11-14T15:21:17.071000"
+        "timestamp": {
+          "$date": "2025-11-14T15:21:17.071Z"
+        }
       },
       {
         "product_id": 10596,
         "interaction_type": "purchase",
-        "timestamp": "2025-11-15T21:51:17.071000"
+        "timestamp": {
+          "$date": "2025-11-15T21:51:17.071Z"
+        }
       },
       {
         "product_id": 10593,
         "interaction_type": "like",
-        "timestamp": "2025-11-18T22:50:17.071000"
+        "timestamp": {
+          "$date": "2025-11-18T22:50:17.071Z"
+        }
       },
       {
         "product_id": 10329,
         "interaction_type": "like",
-        "timestamp": "2025-11-22T18:03:17.071000"
+        "timestamp": {
+          "$date": "2025-11-22T18:03:17.071Z"
+        }
       },
       {
         "product_id": 10383,
         "interaction_type": "like",
-        "timestamp": "2025-11-28T22:04:17.071000"
+        "timestamp": {
+          "$date": "2025-11-28T22:04:17.071Z"
+        }
       }
     ],
     "outfitHistory": [],
     "__v": null,
-    "createdAt": "2026-01-03T18:03:45.027000",
-    "updatedAt": "2026-01-03T18:32:07.459000"
+    "createdAt": {
+      "$date": "2026-01-03T18:03:45.027Z"
+    },
+    "updatedAt": {
+      "$date": "2026-01-03T18:32:07.459Z"
+    },
+    "password": "$2b$12$hB6OjSJHdTtz6CRNH4W0oeI82N97jW01i/4UEOrYP2PHIvwsFvl.u"
   },
   {
-    "_id": "691cd83f5fee2d4ca1ba6a47",
+    "_id": {
+      "$oid": "691cd83f5fee2d4ca1ba6a47"
+    },
     "name": "Ta Quang Minh",
     "email": "minhtq2003@gmail.com",
-    "password": "$2b$12$xGit.cYa32/.rW8K1Kbg5.ZZeMeOSrpwao8TfoGJKCs4aDKjdoY4O",
     "username": "minhtq2003",
     "birthday": null,
     "isAdmin": false,
@@ -2625,64 +3479,90 @@
       {
         "product_id": 10102,
         "interaction_type": "cart",
-        "timestamp": "2025-10-31T04:58:17.643000"
+        "timestamp": {
+          "$date": "2025-10-31T04:58:17.643Z"
+        }
       },
       {
         "product_id": 10656,
         "interaction_type": "view",
-        "timestamp": "2025-11-09T09:34:17.643000"
+        "timestamp": {
+          "$date": "2025-11-09T09:34:17.643Z"
+        }
       },
       {
         "product_id": 10750,
         "interaction_type": "purchase",
-        "timestamp": "2025-11-09T13:00:17.642000"
+        "timestamp": {
+          "$date": "2025-11-09T13:00:17.642Z"
+        }
       },
       {
         "product_id": 10031,
         "interaction_type": "purchase",
-        "timestamp": "2025-11-15T23:08:17.643000"
+        "timestamp": {
+          "$date": "2025-11-15T23:08:17.643Z"
+        }
       },
       {
         "product_id": 10441,
         "interaction_type": "view",
-        "timestamp": "2025-11-16T01:35:17.642000"
+        "timestamp": {
+          "$date": "2025-11-16T01:35:17.642Z"
+        }
       },
       {
         "product_id": 10844,
         "interaction_type": "like",
-        "timestamp": "2025-11-16T23:26:17.642000"
+        "timestamp": {
+          "$date": "2025-11-16T23:26:17.642Z"
+        }
       },
       {
         "product_id": 10491,
         "interaction_type": "like",
-        "timestamp": "2025-11-17T06:29:17.643000"
+        "timestamp": {
+          "$date": "2025-11-17T06:29:17.643Z"
+        }
       },
       {
         "product_id": 10837,
         "interaction_type": "cart",
-        "timestamp": "2025-11-18T04:47:17.643000"
+        "timestamp": {
+          "$date": "2025-11-18T04:47:17.643Z"
+        }
       },
       {
         "product_id": 10607,
         "interaction_type": "cart",
-        "timestamp": "2025-11-19T08:06:17.643000"
+        "timestamp": {
+          "$date": "2025-11-19T08:06:17.643Z"
+        }
       },
       {
         "product_id": 10263,
         "interaction_type": "cart",
-        "timestamp": "2025-11-19T13:37:17.642000"
+        "timestamp": {
+          "$date": "2025-11-19T13:37:17.642Z"
+        }
       }
     ],
     "outfitHistory": [],
     "__v": null,
-    "createdAt": "2026-01-03T18:03:45.281000",
-    "updatedAt": "2026-01-03T18:32:07.830000"
+    "createdAt": {
+      "$date": "2026-01-03T18:03:45.281Z"
+    },
+    "updatedAt": {
+      "$date": "2026-01-03T18:32:07.830Z"
+    },
+    "password": "$2b$12$xGit.cYa32/.rW8K1Kbg5.ZZeMeOSrpwao8TfoGJKCs4aDKjdoY4O"
   },
   {
-    "_id": "691cd83f5fee2d4ca1ba6a48",
+    "_id": {
+      "$oid": "691cd83f5fee2d4ca1ba6a48"
+    },
     "name": "Ha Thi Yen Nhi",
     "email": "nhihat.yen@gmail.com",
-    "password": "$2b$12$TjDckONH95bigc1WjucoFe1r/Sg.JcqmdyNX7ri8iA1w/k1r.Bl2C",
     "username": "nhihat_yen",
     "birthday": null,
     "isAdmin": false,
@@ -2702,64 +3582,90 @@
       {
         "product_id": 10217,
         "interaction_type": "like",
-        "timestamp": "2025-10-31T13:19:17.447000"
+        "timestamp": {
+          "$date": "2025-10-31T13:19:17.447Z"
+        }
       },
       {
         "product_id": 10054,
         "interaction_type": "like",
-        "timestamp": "2025-11-03T11:27:17.447000"
+        "timestamp": {
+          "$date": "2025-11-03T11:27:17.447Z"
+        }
       },
       {
         "product_id": 10777,
         "interaction_type": "cart",
-        "timestamp": "2025-11-06T14:11:17.447000"
+        "timestamp": {
+          "$date": "2025-11-06T14:11:17.447Z"
+        }
       },
       {
         "product_id": 10611,
         "interaction_type": "view",
-        "timestamp": "2025-11-10T05:13:17.447000"
+        "timestamp": {
+          "$date": "2025-11-10T05:13:17.447Z"
+        }
       },
       {
         "product_id": 10787,
         "interaction_type": "purchase",
-        "timestamp": "2025-11-14T04:56:17.447000"
+        "timestamp": {
+          "$date": "2025-11-14T04:56:17.447Z"
+        }
       },
       {
         "product_id": 10763,
         "interaction_type": "view",
-        "timestamp": "2025-11-15T14:14:17.447000"
+        "timestamp": {
+          "$date": "2025-11-15T14:14:17.447Z"
+        }
       },
       {
         "product_id": 10242,
         "interaction_type": "like",
-        "timestamp": "2025-11-17T03:53:17.447000"
+        "timestamp": {
+          "$date": "2025-11-17T03:53:17.447Z"
+        }
       },
       {
         "product_id": 10811,
         "interaction_type": "cart",
-        "timestamp": "2025-11-20T00:16:17.447000"
+        "timestamp": {
+          "$date": "2025-11-20T00:16:17.447Z"
+        }
       },
       {
         "product_id": 10145,
         "interaction_type": "view",
-        "timestamp": "2025-11-27T17:45:17.447000"
+        "timestamp": {
+          "$date": "2025-11-27T17:45:17.447Z"
+        }
       },
       {
         "product_id": 10199,
         "interaction_type": "cart",
-        "timestamp": "2025-11-28T21:57:17.447000"
+        "timestamp": {
+          "$date": "2025-11-28T21:57:17.447Z"
+        }
       }
     ],
     "outfitHistory": [],
     "__v": null,
-    "createdAt": "2026-01-03T18:03:45.502000",
-    "updatedAt": "2026-01-03T18:32:08.197000"
+    "createdAt": {
+      "$date": "2026-01-03T18:03:45.502Z"
+    },
+    "updatedAt": {
+      "$date": "2026-01-03T18:32:08.197Z"
+    },
+    "password": "$2b$12$TjDckONH95bigc1WjucoFe1r/Sg.JcqmdyNX7ri8iA1w/k1r.Bl2C"
   },
   {
-    "_id": "691cd8405fee2d4ca1ba6a49",
+    "_id": {
+      "$oid": "691cd8405fee2d4ca1ba6a49"
+    },
     "name": "Nguyen Hoang Anh",
     "email": "anh.nguyenhoang2001@gmail.com",
-    "password": "$2b$12$xLauCJDhhVTIM5HSjbEhKunNyimyk7boSoGF0NcKEgAkAUntTO/Ny",
     "username": "anh_nguyenhoang2001",
     "birthday": null,
     "isAdmin": false,
@@ -2779,64 +3685,90 @@
       {
         "product_id": 10495,
         "interaction_type": "purchase",
-        "timestamp": "2025-11-13T19:10:18.485000"
+        "timestamp": {
+          "$date": "2025-11-13T19:10:18.485Z"
+        }
       },
       {
         "product_id": 10066,
         "interaction_type": "view",
-        "timestamp": "2025-11-14T18:43:18.485000"
+        "timestamp": {
+          "$date": "2025-11-14T18:43:18.485Z"
+        }
       },
       {
         "product_id": 10444,
         "interaction_type": "purchase",
-        "timestamp": "2025-11-16T03:12:18.485000"
+        "timestamp": {
+          "$date": "2025-11-16T03:12:18.485Z"
+        }
       },
       {
         "product_id": 10738,
         "interaction_type": "view",
-        "timestamp": "2025-11-25T15:02:18.485000"
+        "timestamp": {
+          "$date": "2025-11-25T15:02:18.485Z"
+        }
       },
       {
         "product_id": 10395,
         "interaction_type": "like",
-        "timestamp": "2025-11-23T01:26:30.107000"
+        "timestamp": {
+          "$date": "2025-11-23T01:26:30.107Z"
+        }
       },
       {
         "product_id": 10774,
         "interaction_type": "view",
-        "timestamp": "2025-11-03T16:23:42.107000"
+        "timestamp": {
+          "$date": "2025-11-03T16:23:42.107Z"
+        }
       },
       {
         "product_id": 10461,
         "interaction_type": "like",
-        "timestamp": "2025-11-16T19:58:13.107000"
+        "timestamp": {
+          "$date": "2025-11-16T19:58:13.107Z"
+        }
       },
       {
         "product_id": 10171,
         "interaction_type": "cart",
-        "timestamp": "2025-11-28T19:41:56.107000"
+        "timestamp": {
+          "$date": "2025-11-28T19:41:56.107Z"
+        }
       },
       {
         "product_id": 10408,
         "interaction_type": "view",
-        "timestamp": "2025-11-03T07:34:47.107000"
+        "timestamp": {
+          "$date": "2025-11-03T07:34:47.107Z"
+        }
       },
       {
         "product_id": 10225,
         "interaction_type": "purchase",
-        "timestamp": "2025-11-07T12:59:54.107000"
+        "timestamp": {
+          "$date": "2025-11-07T12:59:54.107Z"
+        }
       }
     ],
     "outfitHistory": [],
     "__v": null,
-    "createdAt": "2026-01-03T18:03:45.743000",
-    "updatedAt": "2026-01-03T18:32:08.564000"
+    "createdAt": {
+      "$date": "2026-01-03T18:03:45.743Z"
+    },
+    "updatedAt": {
+      "$date": "2026-01-03T18:32:08.564Z"
+    },
+    "password": "$2b$12$xLauCJDhhVTIM5HSjbEhKunNyimyk7boSoGF0NcKEgAkAUntTO/Ny"
   },
   {
-    "_id": "691cd8405fee2d4ca1ba6a4a",
+    "_id": {
+      "$oid": "691cd8405fee2d4ca1ba6a4a"
+    },
     "name": "Tran Thi Linh Chi",
     "email": "chitran.linh99@gmail.com",
-    "password": "$2b$12$V/55C6e8CQz14/WjWLIk0u6/lEQ3u5.GX6zeN8SjyXvtCADxm2nJ6",
     "username": "chitran_linh99",
     "birthday": null,
     "isAdmin": false,
@@ -2856,29 +3788,41 @@
       {
         "product_id": 10731,
         "interaction_type": "view",
-        "timestamp": "2025-10-31T11:16:51.016000"
+        "timestamp": {
+          "$date": "2025-10-31T11:16:51.016Z"
+        }
       },
       {
         "product_id": 10774,
         "interaction_type": "purchase",
-        "timestamp": "2025-11-03T11:10:18.876000"
+        "timestamp": {
+          "$date": "2025-11-03T11:10:18.876Z"
+        }
       },
       {
         "product_id": 10427,
         "interaction_type": "cart",
-        "timestamp": "2025-11-10T10:45:51.016000"
+        "timestamp": {
+          "$date": "2025-11-10T10:45:51.016Z"
+        }
       }
     ],
     "outfitHistory": [],
     "__v": null,
-    "createdAt": "2026-01-03T18:03:46.582000",
-    "updatedAt": "2026-01-03T18:32:08.945000"
+    "createdAt": {
+      "$date": "2026-01-03T18:03:46.582Z"
+    },
+    "updatedAt": {
+      "$date": "2026-01-03T18:32:08.945Z"
+    },
+    "password": "$2b$12$V/55C6e8CQz14/WjWLIk0u6/lEQ3u5.GX6zeN8SjyXvtCADxm2nJ6"
   },
   {
-    "_id": "691cd8415fee2d4ca1ba6a4b",
+    "_id": {
+      "$oid": "691cd8415fee2d4ca1ba6a4b"
+    },
     "name": "Hoang Thi Thu",
     "email": "thuhoang91@gmail.com",
-    "password": "$2b$12$Jgh.BvFGN3v0JpT7lA7uSOkBsCBejjYE9fNJ6yRBbm6F7E.NsSKJ6",
     "username": "thuhoang91",
     "birthday": null,
     "isAdmin": false,
@@ -2898,54 +3842,76 @@
       {
         "product_id": 10493,
         "interaction_type": "cart",
-        "timestamp": "2025-10-31T11:42:49.758000"
+        "timestamp": {
+          "$date": "2025-10-31T11:42:49.758Z"
+        }
       },
       {
         "product_id": 10565,
         "interaction_type": "cart",
-        "timestamp": "2025-11-04T05:19:49.758000"
+        "timestamp": {
+          "$date": "2025-11-04T05:19:49.758Z"
+        }
       },
       {
         "product_id": 10478,
         "interaction_type": "view",
-        "timestamp": "2025-11-07T06:58:19.877000"
+        "timestamp": {
+          "$date": "2025-11-07T06:58:19.877Z"
+        }
       },
       {
         "product_id": 10719,
         "interaction_type": "view",
-        "timestamp": "2025-11-12T10:53:49.758000"
+        "timestamp": {
+          "$date": "2025-11-12T10:53:49.758Z"
+        }
       },
       {
         "product_id": 10072,
         "interaction_type": "cart",
-        "timestamp": "2025-11-14T17:15:49.758000"
+        "timestamp": {
+          "$date": "2025-11-14T17:15:49.758Z"
+        }
       },
       {
         "product_id": 10227,
         "interaction_type": "cart",
-        "timestamp": "2025-11-17T17:00:49.758000"
+        "timestamp": {
+          "$date": "2025-11-17T17:00:49.758Z"
+        }
       },
       {
         "product_id": 10573,
         "interaction_type": "view",
-        "timestamp": "2025-11-20T12:49:49.758000"
+        "timestamp": {
+          "$date": "2025-11-20T12:49:49.758Z"
+        }
       },
       {
         "product_id": 10225,
         "interaction_type": "like",
-        "timestamp": "2025-11-20T22:49:49.758000"
+        "timestamp": {
+          "$date": "2025-11-20T22:49:49.758Z"
+        }
       }
     ],
     "outfitHistory": [],
     "__v": null,
-    "createdAt": "2026-01-03T18:03:46.802000",
-    "updatedAt": "2026-01-03T18:32:09.318000"
+    "createdAt": {
+      "$date": "2026-01-03T18:03:46.802Z"
+    },
+    "updatedAt": {
+      "$date": "2026-01-03T18:32:09.318Z"
+    },
+    "password": "$2b$12$Jgh.BvFGN3v0JpT7lA7uSOkBsCBejjYE9fNJ6yRBbm6F7E.NsSKJ6"
   },
   {
-    "_id": "691cd8425fee2d4ca1ba6a4c",
+    "_id": {
+      "$oid": "691cd8425fee2d4ca1ba6a4c"
+    },
     "name": "Doan Thi Hong Gam",
     "email": "gamdoan96@gmail.com",
-    "password": "$2b$12$J3MAOEwi7rXbM3bmEqLz2OyEmWhhmhaRyve50n9fK3E1AEmaoWAo.",
     "username": "gamdoan96",
     "birthday": null,
     "isAdmin": false,
@@ -2965,64 +3931,90 @@
       {
         "product_id": 10202,
         "interaction_type": "like",
-        "timestamp": "2025-11-02T12:15:19.376000"
+        "timestamp": {
+          "$date": "2025-11-02T12:15:19.376Z"
+        }
       },
       {
         "product_id": 10020,
         "interaction_type": "cart",
-        "timestamp": "2025-11-05T16:31:49.373000"
+        "timestamp": {
+          "$date": "2025-11-05T16:31:49.373Z"
+        }
       },
       {
         "product_id": 10249,
         "interaction_type": "cart",
-        "timestamp": "2025-11-06T14:09:49.373000"
+        "timestamp": {
+          "$date": "2025-11-06T14:09:49.373Z"
+        }
       },
       {
         "product_id": 10684,
         "interaction_type": "cart",
-        "timestamp": "2025-11-08T09:59:49.373000"
+        "timestamp": {
+          "$date": "2025-11-08T09:59:49.373Z"
+        }
       },
       {
         "product_id": 10862,
         "interaction_type": "view",
-        "timestamp": "2025-11-12T12:11:49.373000"
+        "timestamp": {
+          "$date": "2025-11-12T12:11:49.373Z"
+        }
       },
       {
         "product_id": 10601,
         "interaction_type": "cart",
-        "timestamp": "2025-11-14T03:53:49.373000"
+        "timestamp": {
+          "$date": "2025-11-14T03:53:49.373Z"
+        }
       },
       {
         "product_id": 10024,
         "interaction_type": "like",
-        "timestamp": "2025-11-16T01:16:19.376000"
+        "timestamp": {
+          "$date": "2025-11-16T01:16:19.376Z"
+        }
       },
       {
         "product_id": 10511,
         "interaction_type": "like",
-        "timestamp": "2025-11-21T22:23:49.373000"
+        "timestamp": {
+          "$date": "2025-11-21T22:23:49.373Z"
+        }
       },
       {
         "product_id": 10858,
         "interaction_type": "view",
-        "timestamp": "2025-11-24T14:40:19.376000"
+        "timestamp": {
+          "$date": "2025-11-24T14:40:19.376Z"
+        }
       },
       {
         "product_id": 10226,
         "interaction_type": "purchase",
-        "timestamp": "2025-11-29T06:58:49.373000"
+        "timestamp": {
+          "$date": "2025-11-29T06:58:49.373Z"
+        }
       }
     ],
     "outfitHistory": [],
     "__v": null,
-    "createdAt": "2026-01-03T18:03:47.020000",
-    "updatedAt": "2026-01-03T18:32:09.695000"
+    "createdAt": {
+      "$date": "2026-01-03T18:03:47.020Z"
+    },
+    "updatedAt": {
+      "$date": "2026-01-03T18:32:09.695Z"
+    },
+    "password": "$2b$12$J3MAOEwi7rXbM3bmEqLz2OyEmWhhmhaRyve50n9fK3E1AEmaoWAo."
   },
   {
-    "_id": "691cd8425fee2d4ca1ba6a4d",
+    "_id": {
+      "$oid": "691cd8425fee2d4ca1ba6a4d"
+    },
     "name": "Bui Duc Manh",
     "email": "manhbd2000@gmail.com",
-    "password": "$2b$12$iYp6TLINqzeK8XL86MoQA.KiT5oAGXZjeQ2v5WucF8xgSedhaB7Za",
     "username": "manhbd2000",
     "birthday": null,
     "isAdmin": false,
@@ -3042,64 +4034,90 @@
       {
         "product_id": 10292,
         "interaction_type": "cart",
-        "timestamp": "2025-10-30T13:21:17.133000"
+        "timestamp": {
+          "$date": "2025-10-30T13:21:17.133Z"
+        }
       },
       {
         "product_id": 10028,
         "interaction_type": "cart",
-        "timestamp": "2025-11-02T09:46:17.133000"
+        "timestamp": {
+          "$date": "2025-11-02T09:46:17.133Z"
+        }
       },
       {
         "product_id": 10378,
         "interaction_type": "purchase",
-        "timestamp": "2025-11-02T15:18:17.133000"
+        "timestamp": {
+          "$date": "2025-11-02T15:18:17.133Z"
+        }
       },
       {
         "product_id": 10151,
         "interaction_type": "cart",
-        "timestamp": "2025-11-02T23:58:17.133000"
+        "timestamp": {
+          "$date": "2025-11-02T23:58:17.133Z"
+        }
       },
       {
         "product_id": 10727,
         "interaction_type": "purchase",
-        "timestamp": "2025-11-06T16:40:17.133000"
+        "timestamp": {
+          "$date": "2025-11-06T16:40:17.133Z"
+        }
       },
       {
         "product_id": 10578,
         "interaction_type": "cart",
-        "timestamp": "2025-11-07T19:19:17.133000"
+        "timestamp": {
+          "$date": "2025-11-07T19:19:17.133Z"
+        }
       },
       {
         "product_id": 10843,
         "interaction_type": "like",
-        "timestamp": "2025-11-12T04:58:17.133000"
+        "timestamp": {
+          "$date": "2025-11-12T04:58:17.133Z"
+        }
       },
       {
         "product_id": 10631,
         "interaction_type": "like",
-        "timestamp": "2025-11-15T04:26:17.133000"
+        "timestamp": {
+          "$date": "2025-11-15T04:26:17.133Z"
+        }
       },
       {
         "product_id": 10764,
         "interaction_type": "like",
-        "timestamp": "2025-11-24T21:01:17.133000"
+        "timestamp": {
+          "$date": "2025-11-24T21:01:17.133Z"
+        }
       },
       {
         "product_id": 10631,
         "interaction_type": "purchase",
-        "timestamp": "2025-11-28T10:49:17.133000"
+        "timestamp": {
+          "$date": "2025-11-28T10:49:17.133Z"
+        }
       }
     ],
     "outfitHistory": [],
     "__v": null,
-    "createdAt": "2026-01-03T18:03:47.249000",
-    "updatedAt": "2026-01-03T18:32:10.071000"
+    "createdAt": {
+      "$date": "2026-01-03T18:03:47.249Z"
+    },
+    "updatedAt": {
+      "$date": "2026-01-03T18:32:10.071Z"
+    },
+    "password": "$2b$12$iYp6TLINqzeK8XL86MoQA.KiT5oAGXZjeQ2v5WucF8xgSedhaB7Za"
   },
   {
-    "_id": "691cd8435fee2d4ca1ba6a4e",
+    "_id": {
+      "$oid": "691cd8435fee2d4ca1ba6a4e"
+    },
     "name": "Vu Thi Phuong Thao",
     "email": "thaovtp98@gmail.com",
-    "password": "$2b$12$TOkLCRP52.Pk21LKlXPsqO2/OKZC9cUD1UliH.2Mrhn.n/Lb/s3/6",
     "username": "thaovtp98",
     "birthday": null,
     "isAdmin": false,
@@ -3119,54 +4137,76 @@
       {
         "product_id": 10869,
         "interaction_type": "like",
-        "timestamp": "2025-10-29T22:16:50.738000"
+        "timestamp": {
+          "$date": "2025-10-29T22:16:50.738Z"
+        }
       },
       {
         "product_id": 10052,
         "interaction_type": "like",
-        "timestamp": "2025-11-12T22:10:50.738000"
+        "timestamp": {
+          "$date": "2025-11-12T22:10:50.738Z"
+        }
       },
       {
         "product_id": 10111,
         "interaction_type": "cart",
-        "timestamp": "2025-11-15T16:48:50.738000"
+        "timestamp": {
+          "$date": "2025-11-15T16:48:50.738Z"
+        }
       },
       {
         "product_id": 10187,
         "interaction_type": "view",
-        "timestamp": "2025-11-16T23:42:50.738000"
+        "timestamp": {
+          "$date": "2025-11-16T23:42:50.738Z"
+        }
       },
       {
         "product_id": 10369,
         "interaction_type": "purchase",
-        "timestamp": "2025-11-21T02:16:50.738000"
+        "timestamp": {
+          "$date": "2025-11-21T02:16:50.738Z"
+        }
       },
       {
         "product_id": 10365,
         "interaction_type": "purchase",
-        "timestamp": "2025-11-25T10:43:50.738000"
+        "timestamp": {
+          "$date": "2025-11-25T10:43:50.738Z"
+        }
       },
       {
         "product_id": 10873,
         "interaction_type": "like",
-        "timestamp": "2025-11-27T19:36:19.816000"
+        "timestamp": {
+          "$date": "2025-11-27T19:36:19.816Z"
+        }
       },
       {
         "product_id": 10490,
         "interaction_type": "like",
-        "timestamp": "2025-11-27T21:10:50.738000"
+        "timestamp": {
+          "$date": "2025-11-27T21:10:50.738Z"
+        }
       }
     ],
     "outfitHistory": [],
     "__v": null,
-    "createdAt": "2026-01-03T18:03:47.476000",
-    "updatedAt": "2026-01-03T18:32:10.461000"
+    "createdAt": {
+      "$date": "2026-01-03T18:03:47.476Z"
+    },
+    "updatedAt": {
+      "$date": "2026-01-03T18:32:10.461Z"
+    },
+    "password": "$2b$12$TOkLCRP52.Pk21LKlXPsqO2/OKZC9cUD1UliH.2Mrhn.n/Lb/s3/6"
   },
   {
-    "_id": "691cd8435fee2d4ca1ba6a4f",
+    "_id": {
+      "$oid": "691cd8435fee2d4ca1ba6a4f"
+    },
     "name": "Hoang Van Kien",
     "email": "kienhoang.van95@gmail.com",
-    "password": "$2b$12$2kA6BmrpR9/byulw2kjX8OVWhCsXwpy/jPEqOjF17.wGR1Ml3dHsS",
     "username": "kienhoang_van95",
     "birthday": null,
     "isAdmin": false,
@@ -3186,64 +4226,90 @@
       {
         "product_id": 10377,
         "interaction_type": "like",
-        "timestamp": "2025-10-31T19:52:16.946000"
+        "timestamp": {
+          "$date": "2025-10-31T19:52:16.946Z"
+        }
       },
       {
         "product_id": 10397,
         "interaction_type": "view",
-        "timestamp": "2025-11-03T01:39:16.946000"
+        "timestamp": {
+          "$date": "2025-11-03T01:39:16.946Z"
+        }
       },
       {
         "product_id": 10455,
         "interaction_type": "like",
-        "timestamp": "2025-11-03T15:09:16.946000"
+        "timestamp": {
+          "$date": "2025-11-03T15:09:16.946Z"
+        }
       },
       {
         "product_id": 10366,
         "interaction_type": "like",
-        "timestamp": "2025-11-08T14:59:16.946000"
+        "timestamp": {
+          "$date": "2025-11-08T14:59:16.946Z"
+        }
       },
       {
         "product_id": 10390,
         "interaction_type": "purchase",
-        "timestamp": "2025-11-13T10:30:16.946000"
+        "timestamp": {
+          "$date": "2025-11-13T10:30:16.946Z"
+        }
       },
       {
         "product_id": 10855,
         "interaction_type": "cart",
-        "timestamp": "2025-11-15T19:40:16.946000"
+        "timestamp": {
+          "$date": "2025-11-15T19:40:16.946Z"
+        }
       },
       {
         "product_id": 10267,
         "interaction_type": "cart",
-        "timestamp": "2025-11-16T17:29:16.946000"
+        "timestamp": {
+          "$date": "2025-11-16T17:29:16.946Z"
+        }
       },
       {
         "product_id": 10252,
         "interaction_type": "purchase",
-        "timestamp": "2025-11-25T20:22:16.946000"
+        "timestamp": {
+          "$date": "2025-11-25T20:22:16.946Z"
+        }
       },
       {
         "product_id": 10818,
         "interaction_type": "like",
-        "timestamp": "2025-11-25T22:25:16.946000"
+        "timestamp": {
+          "$date": "2025-11-25T22:25:16.946Z"
+        }
       },
       {
         "product_id": 10360,
         "interaction_type": "like",
-        "timestamp": "2025-11-27T04:10:16.946000"
+        "timestamp": {
+          "$date": "2025-11-27T04:10:16.946Z"
+        }
       }
     ],
     "outfitHistory": [],
     "__v": null,
-    "createdAt": "2026-01-03T18:03:47.699000",
-    "updatedAt": "2026-01-03T18:32:10.843000"
+    "createdAt": {
+      "$date": "2026-01-03T18:03:47.699Z"
+    },
+    "updatedAt": {
+      "$date": "2026-01-03T18:32:10.843Z"
+    },
+    "password": "$2b$12$2kA6BmrpR9/byulw2kjX8OVWhCsXwpy/jPEqOjF17.wGR1Ml3dHsS"
   },
   {
-    "_id": "691cd8445fee2d4ca1ba6a50",
+    "_id": {
+      "$oid": "691cd8445fee2d4ca1ba6a50"
+    },
     "name": "Le Thi Ngoc Anh",
     "email": "anhltn2002@gmail.com",
-    "password": "$2b$12$SrJ2rt0MDZ1tZAPQ/Kq7h.2NCxxnO7E2QYINNU9C4qp063xIKxkdK",
     "username": "anhltn2002",
     "birthday": null,
     "isAdmin": false,
@@ -3263,64 +4329,90 @@
       {
         "product_id": 10136,
         "interaction_type": "like",
-        "timestamp": "2025-11-03T16:54:17.510000"
+        "timestamp": {
+          "$date": "2025-11-03T16:54:17.510Z"
+        }
       },
       {
         "product_id": 10987,
         "interaction_type": "purchase",
-        "timestamp": "2025-11-07T15:03:17.510000"
+        "timestamp": {
+          "$date": "2025-11-07T15:03:17.510Z"
+        }
       },
       {
         "product_id": 10481,
         "interaction_type": "view",
-        "timestamp": "2025-11-07T16:59:17.510000"
+        "timestamp": {
+          "$date": "2025-11-07T16:59:17.510Z"
+        }
       },
       {
         "product_id": 10859,
         "interaction_type": "like",
-        "timestamp": "2025-11-13T00:37:17.510000"
+        "timestamp": {
+          "$date": "2025-11-13T00:37:17.510Z"
+        }
       },
       {
         "product_id": 10270,
         "interaction_type": "like",
-        "timestamp": "2025-11-13T02:46:17.510000"
+        "timestamp": {
+          "$date": "2025-11-13T02:46:17.510Z"
+        }
       },
       {
         "product_id": 10580,
         "interaction_type": "view",
-        "timestamp": "2025-11-13T16:28:17.510000"
+        "timestamp": {
+          "$date": "2025-11-13T16:28:17.510Z"
+        }
       },
       {
         "product_id": 10612,
         "interaction_type": "view",
-        "timestamp": "2025-11-14T10:36:17.510000"
+        "timestamp": {
+          "$date": "2025-11-14T10:36:17.510Z"
+        }
       },
       {
         "product_id": 10149,
         "interaction_type": "like",
-        "timestamp": "2025-11-15T16:45:17.510000"
+        "timestamp": {
+          "$date": "2025-11-15T16:45:17.510Z"
+        }
       },
       {
         "product_id": 10774,
         "interaction_type": "cart",
-        "timestamp": "2025-11-20T08:34:17.510000"
+        "timestamp": {
+          "$date": "2025-11-20T08:34:17.510Z"
+        }
       },
       {
         "product_id": 10882,
         "interaction_type": "purchase",
-        "timestamp": "2025-11-23T00:51:17.510000"
+        "timestamp": {
+          "$date": "2025-11-23T00:51:17.510Z"
+        }
       }
     ],
     "outfitHistory": [],
     "__v": null,
-    "createdAt": "2026-01-03T18:03:47.944000",
-    "updatedAt": "2026-01-03T18:32:11.312000"
+    "createdAt": {
+      "$date": "2026-01-03T18:03:47.944Z"
+    },
+    "updatedAt": {
+      "$date": "2026-01-03T18:32:11.312Z"
+    },
+    "password": "$2b$12$SrJ2rt0MDZ1tZAPQ/Kq7h.2NCxxnO7E2QYINNU9C4qp063xIKxkdK"
   },
   {
-    "_id": "691cd8445fee2d4ca1ba6a51",
+    "_id": {
+      "$oid": "691cd8445fee2d4ca1ba6a51"
+    },
     "name": "Tran Ngoc Mai",
     "email": "maitn2003@gmail.com",
-    "password": "$2b$12$MjbGcnvgh9Z0GC8zYISNtuwYQ1YbxkqkAbtZ.fm.RPgIRng7VNefO",
     "username": "maitn2003",
     "birthday": null,
     "isAdmin": false,
@@ -3340,44 +4432,62 @@
       {
         "product_id": 10694,
         "interaction_type": "purchase",
-        "timestamp": "2025-11-02T07:58:18.165000"
+        "timestamp": {
+          "$date": "2025-11-02T07:58:18.165Z"
+        }
       },
       {
         "product_id": 10848,
         "interaction_type": "like",
-        "timestamp": "2025-11-06T23:26:18.165000"
+        "timestamp": {
+          "$date": "2025-11-06T23:26:18.165Z"
+        }
       },
       {
         "product_id": 10070,
         "interaction_type": "purchase",
-        "timestamp": "2025-11-09T04:51:18.165000"
+        "timestamp": {
+          "$date": "2025-11-09T04:51:18.165Z"
+        }
       },
       {
         "product_id": 10054,
         "interaction_type": "cart",
-        "timestamp": "2025-11-15T18:46:18.165000"
+        "timestamp": {
+          "$date": "2025-11-15T18:46:18.165Z"
+        }
       },
       {
         "product_id": 10113,
         "interaction_type": "purchase",
-        "timestamp": "2025-11-16T14:34:18.165000"
+        "timestamp": {
+          "$date": "2025-11-16T14:34:18.165Z"
+        }
       },
       {
         "product_id": 10777,
         "interaction_type": "cart",
-        "timestamp": "2025-11-26T18:38:18.165000"
+        "timestamp": {
+          "$date": "2025-11-26T18:38:18.165Z"
+        }
       }
     ],
     "outfitHistory": [],
     "__v": null,
-    "createdAt": "2026-01-03T18:03:48.165000",
-    "updatedAt": "2026-01-03T18:32:11.691000"
+    "createdAt": {
+      "$date": "2026-01-03T18:03:48.165Z"
+    },
+    "updatedAt": {
+      "$date": "2026-01-03T18:32:11.691Z"
+    },
+    "password": "$2b$12$MjbGcnvgh9Z0GC8zYISNtuwYQ1YbxkqkAbtZ.fm.RPgIRng7VNefO"
   },
   {
-    "_id": "691cd8455fee2d4ca1ba6a52",
+    "_id": {
+      "$oid": "691cd8455fee2d4ca1ba6a52"
+    },
     "name": "Nguyen Anh Tuan",
     "email": "tuan.nguyenanh2000@gmail.com",
-    "password": "$2b$12$VyucyG7TpNrpWk6OVUM48uTp4mWK.OG/DltGA9STz0RBufHenIUSK",
     "username": "tuan_nguyenanh2000",
     "birthday": null,
     "isAdmin": false,
@@ -3397,64 +4507,90 @@
       {
         "product_id": 10682,
         "interaction_type": "purchase",
-        "timestamp": "2025-10-30T17:39:49.107000"
+        "timestamp": {
+          "$date": "2025-10-30T17:39:49.107Z"
+        }
       },
       {
         "product_id": 10236,
         "interaction_type": "view",
-        "timestamp": "2025-11-04T02:58:49.107000"
+        "timestamp": {
+          "$date": "2025-11-04T02:58:49.107Z"
+        }
       },
       {
         "product_id": 10364,
         "interaction_type": "cart",
-        "timestamp": "2025-11-04T06:25:49.107000"
+        "timestamp": {
+          "$date": "2025-11-04T06:25:49.107Z"
+        }
       },
       {
         "product_id": 10582,
         "interaction_type": "view",
-        "timestamp": "2025-11-07T00:54:49.107000"
+        "timestamp": {
+          "$date": "2025-11-07T00:54:49.107Z"
+        }
       },
       {
         "product_id": 10623,
         "interaction_type": "view",
-        "timestamp": "2025-11-08T08:24:49.107000"
+        "timestamp": {
+          "$date": "2025-11-08T08:24:49.107Z"
+        }
       },
       {
         "product_id": 10152,
         "interaction_type": "like",
-        "timestamp": "2025-11-11T22:02:19.247000"
+        "timestamp": {
+          "$date": "2025-11-11T22:02:19.247Z"
+        }
       },
       {
         "product_id": 10858,
         "interaction_type": "view",
-        "timestamp": "2025-11-18T02:26:49.107000"
+        "timestamp": {
+          "$date": "2025-11-18T02:26:49.107Z"
+        }
       },
       {
         "product_id": 10809,
         "interaction_type": "view",
-        "timestamp": "2025-11-26T15:29:19.247000"
+        "timestamp": {
+          "$date": "2025-11-26T15:29:19.247Z"
+        }
       },
       {
         "product_id": 10457,
         "interaction_type": "like",
-        "timestamp": "2025-11-27T22:10:19.247000"
+        "timestamp": {
+          "$date": "2025-11-27T22:10:19.247Z"
+        }
       },
       {
         "product_id": 10807,
         "interaction_type": "cart",
-        "timestamp": "2025-11-29T16:47:49.107000"
+        "timestamp": {
+          "$date": "2025-11-29T16:47:49.107Z"
+        }
       }
     ],
     "outfitHistory": [],
     "__v": null,
-    "createdAt": "2026-01-03T18:03:48.532000",
-    "updatedAt": "2026-01-03T18:32:12.066000"
+    "createdAt": {
+      "$date": "2026-01-03T18:03:48.532Z"
+    },
+    "updatedAt": {
+      "$date": "2026-01-03T18:32:12.066Z"
+    },
+    "password": "$2b$12$VyucyG7TpNrpWk6OVUM48uTp4mWK.OG/DltGA9STz0RBufHenIUSK"
   },
   {
-    "_id": "691cd8455fee2d4ca1ba6a53",
+    "_id": {
+      "$oid": "691cd8455fee2d4ca1ba6a53"
+    },
     "name": "Hoang Van Long",
     "email": "longhv94@gmail.com",
-    "password": "$2b$12$sWacaBRljkh.9gvmMoeH1.BMPm5.gjv0ISY0nwe7ZKSuiTVRPUMNK",
     "username": "longhv94",
     "birthday": null,
     "isAdmin": false,
@@ -3474,49 +4610,69 @@
       {
         "product_id": 10257,
         "interaction_type": "like",
-        "timestamp": "2025-11-03T09:06:16.821000"
+        "timestamp": {
+          "$date": "2025-11-03T09:06:16.821Z"
+        }
       },
       {
         "product_id": 10716,
         "interaction_type": "cart",
-        "timestamp": "2025-11-04T03:05:16.821000"
+        "timestamp": {
+          "$date": "2025-11-04T03:05:16.821Z"
+        }
       },
       {
         "product_id": 10245,
         "interaction_type": "like",
-        "timestamp": "2025-11-06T19:31:16.821000"
+        "timestamp": {
+          "$date": "2025-11-06T19:31:16.821Z"
+        }
       },
       {
         "product_id": 10764,
         "interaction_type": "view",
-        "timestamp": "2025-11-07T06:12:16.821000"
+        "timestamp": {
+          "$date": "2025-11-07T06:12:16.821Z"
+        }
       },
       {
         "product_id": 10082,
         "interaction_type": "like",
-        "timestamp": "2025-11-13T19:49:16.821000"
+        "timestamp": {
+          "$date": "2025-11-13T19:49:16.821Z"
+        }
       },
       {
         "product_id": 10366,
         "interaction_type": "like",
-        "timestamp": "2025-11-14T10:25:16.821000"
+        "timestamp": {
+          "$date": "2025-11-14T10:25:16.821Z"
+        }
       },
       {
         "product_id": 10332,
         "interaction_type": "view",
-        "timestamp": "2025-11-28T23:28:16.821000"
+        "timestamp": {
+          "$date": "2025-11-28T23:28:16.821Z"
+        }
       }
     ],
     "outfitHistory": [],
     "__v": null,
-    "createdAt": "2026-01-03T18:03:48.763000",
-    "updatedAt": "2026-01-03T18:32:12.470000"
+    "createdAt": {
+      "$date": "2026-01-03T18:03:48.763Z"
+    },
+    "updatedAt": {
+      "$date": "2026-01-03T18:32:12.470Z"
+    },
+    "password": "$2b$12$sWacaBRljkh.9gvmMoeH1.BMPm5.gjv0ISY0nwe7ZKSuiTVRPUMNK"
   },
   {
-    "_id": "691cfd13e945424758832bff",
+    "_id": {
+      "$oid": "691cfd13e945424758832bff"
+    },
     "name": "Admin allwear",
     "email": "adminnoware@gmail.com",
-    "password": "$2b$12$ROtKBlJ3O3xKydE7SubGTulrifkP0NWfB9nkPP9E3amati6GSIzLm",
     "username": "adminnoware",
     "birthday": null,
     "isAdmin": false,
@@ -3536,44 +4692,62 @@
       {
         "product_id": 10457,
         "interaction_type": "view",
-        "timestamp": "2025-11-08T23:45:19.938000"
+        "timestamp": {
+          "$date": "2025-11-08T23:45:19.938Z"
+        }
       },
       {
         "product_id": 10510,
         "interaction_type": "purchase",
-        "timestamp": "2025-11-17T04:33:19.938000"
+        "timestamp": {
+          "$date": "2025-11-17T04:33:19.938Z"
+        }
       },
       {
         "product_id": 10174,
         "interaction_type": "cart",
-        "timestamp": "2025-11-21T14:28:19.938000"
+        "timestamp": {
+          "$date": "2025-11-21T14:28:19.938Z"
+        }
       },
       {
         "product_id": 10005,
         "interaction_type": "like",
-        "timestamp": "2025-11-29T14:35:19.938000"
+        "timestamp": {
+          "$date": "2025-11-29T14:35:19.938Z"
+        }
       },
       {
         "product_id": 10054,
         "interaction_type": "view",
-        "timestamp": "2025-12-04T15:24:11.519000"
+        "timestamp": {
+          "$date": "2025-12-04T15:24:11.519Z"
+        }
       },
       {
         "product_id": 10265,
         "interaction_type": "view",
-        "timestamp": "2025-12-10T15:42:57.261000"
+        "timestamp": {
+          "$date": "2025-12-10T15:42:57.261Z"
+        }
       }
     ],
     "outfitHistory": [],
     "__v": null,
-    "createdAt": "2026-01-03T18:03:48.981000",
-    "updatedAt": "2026-01-03T18:32:12.876000"
+    "createdAt": {
+      "$date": "2026-01-03T18:03:48.981Z"
+    },
+    "updatedAt": {
+      "$date": "2026-01-03T18:32:12.876Z"
+    },
+    "password": "$2b$12$ROtKBlJ3O3xKydE7SubGTulrifkP0NWfB9nkPP9E3amati6GSIzLm"
   },
   {
-    "_id": "69577caaae62cb7d592768e2",
+    "_id": {
+      "$oid": "69577caaae62cb7d592768e2"
+    },
     "name": "nguyenvanB",
     "email": "nguyenvanB@gmail.com",
-    "password": "$2b$12$FnsWA3X.HdtDGsBn6yE0tOrx.0GXgwSiOmBYReWUKv6lS8MwWu382",
     "username": "nguyenvanB",
     "birthday": null,
     "isAdmin": false,
@@ -3593,32 +4767,47 @@
       {
         "product_id": 10005,
         "interaction_type": "view",
-        "timestamp": "2026-01-02T08:16:44.254000"
+        "timestamp": {
+          "$date": "2026-01-02T08:16:44.254Z"
+        }
       },
       {
         "product_id": 10468,
         "interaction_type": "view",
-        "timestamp": "2026-01-02T08:08:22.665000"
+        "timestamp": {
+          "$date": "2026-01-02T08:08:22.665Z"
+        }
       },
       {
         "product_id": 10004,
         "interaction_type": "purchase",
-        "timestamp": "2026-01-02T08:16:40.225000"
+        "timestamp": {
+          "$date": "2026-01-02T08:16:40.225Z"
+        }
       },
       {
         "product_id": 10096,
         "interaction_type": "view",
-        "timestamp": "2026-01-02T08:13:51.591000"
+        "timestamp": {
+          "$date": "2026-01-02T08:13:51.591Z"
+        }
       },
       {
         "product_id": 10000,
         "interaction_type": "view",
-        "timestamp": "2026-01-02T08:14:52.873000"
+        "timestamp": {
+          "$date": "2026-01-02T08:14:52.873Z"
+        }
       }
     ],
     "outfitHistory": [],
     "__v": null,
-    "createdAt": "2026-01-03T18:03:49.212000",
-    "updatedAt": "2026-01-03T18:32:13.303000"
+    "createdAt": {
+      "$date": "2026-01-03T18:03:49.212Z"
+    },
+    "updatedAt": {
+      "$date": "2026-01-03T18:32:13.303Z"
+    },
+    "password": "$2b$12$FnsWA3X.HdtDGsBn6yE0tOrx.0GXgwSiOmBYReWUKv6lS8MwWu382"
   }
 ]

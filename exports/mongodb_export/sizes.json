@@ -1,0 +1,86 @@
+[
+  {
+    "_id": {
+      "$oid": "695984c956f1ab3463b8b581"
+    },
+    "name": "Extra Small",
+    "code": "XS",
+    "status": "ACTIVE",
+    "created_at": {
+      "$date": "2026-01-03T21:06:17.953Z"
+    },
+    "updated_at": {
+      "$date": "2026-01-03T21:06:17.953Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "695984ca56f1ab3463b8b582"
+    },
+    "name": "Small",
+    "code": "S",
+    "status": "ACTIVE",
+    "created_at": {
+      "$date": "2026-01-03T21:06:18.064Z"
+    },
+    "updated_at": {
+      "$date": "2026-01-03T21:06:18.064Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "695984ca56f1ab3463b8b583"
+    },
+    "name": "Medium",
+    "code": "M",
+    "status": "ACTIVE",
+    "created_at": {
+      "$date": "2026-01-03T21:06:18.176Z"
+    },
+    "updated_at": {
+      "$date": "2026-01-03T21:06:18.176Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "695984ca56f1ab3463b8b584"
+    },
+    "name": "Large",
+    "code": "L",
+    "status": "ACTIVE",
+    "created_at": {
+      "$date": "2026-01-03T21:06:18.292Z"
+    },
+    "updated_at": {
+      "$date": "2026-01-03T21:06:18.292Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "695984ca56f1ab3463b8b585"
+    },
+    "name": "Extra Large",
+    "code": "XL",
+    "status": "ACTIVE",
+    "created_at": {
+      "$date": "2026-01-03T21:06:18.403Z"
+    },
+    "updated_at": {
+      "$date": "2026-01-03T21:06:18.403Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "695984ca56f1ab3463b8b586"
+    },
+    "name": "XXL",
+    "code": "XXL",
+    "status": "ACTIVE",
+    "created_at": {
+      "$date": "2026-01-03T21:06:18.534Z"
+    },
+    "updated_at": {
+      "$date": "2026-01-03T21:06:18.534Z"
+    }
+  }
+]

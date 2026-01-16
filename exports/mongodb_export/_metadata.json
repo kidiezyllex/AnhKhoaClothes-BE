@@ -1,0 +1,25 @@
+{
+  "export_date": "2026-01-16T16:40:49.835026",
+  "database_name": "allwear",
+  "total_collections": 16,
+  "successful_exports": 8,
+  "total_documents": 4771,
+  "collections": [
+    "materials",
+    "sizes",
+    "password_reset_audit",
+    "brands",
+    "outfit_history",
+    "content_sections",
+    "products",
+    "orders",
+    "user_addresses",
+    "categories",
+    "users",
+    "product_reviews",
+    "product_variants",
+    "user_interactions",
+    "promotions",
+    "colors"
+  ]
+}

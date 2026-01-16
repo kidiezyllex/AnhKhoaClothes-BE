@@ -635,7 +635,7 @@ class UserViewSet(viewsets.ViewSet):
         )
 
     @action(detail=True, methods=["get", "post"], url_path="outfits", permission_classes=[permissions.AllowAny], authentication_classes=[])
-    def outfits_list(self, request, pk=None):
+    def outfits(self, request, pk=None):
         """
         GET: Retrieve all outfits saved by the user.
         POST: Save an outfit to user's outfit history.

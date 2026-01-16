@@ -1,0 +1,194 @@
+[
+  {
+    "_id": {
+      "$oid": "695976c879d10e7c37f64dc1"
+    },
+    "name": "Chương trình Giảm giá mùa Đông",
+    "description": "Giảm giá đặc biệt cho bộ sưu tập Thu Đông 2025",
+    "discountValue": 20.0,
+    "discountType": "PERCENTAGE",
+    "startDate": {
+      "$date": "2025-12-29T20:06:29.963Z"
+    },
+    "endDate": {
+      "$date": "2026-01-28T20:06:29.963Z"
+    },
+    "applyTo": "ALL_PRODUCTS",
+    "productIds": [],
+    "status": "ACTIVE",
+    "created_at": {
+      "$date": "2026-01-03T20:06:29.964Z"
+    },
+    "updated_at": {
+      "$date": "2026-01-03T20:06:29.965Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "695976c879d10e7c37f64dc2"
+    },
+    "name": "Flash Sale Giữa Tuần",
+    "description": "Ưu đãi cực lớn chỉ trong 24h",
+    "discountValue": 50.0,
+    "discountType": "PERCENTAGE",
+    "startDate": {
+      "$date": "2026-01-03T18:06:29.963Z"
+    },
+    "endDate": {
+      "$date": "2026-01-04T18:06:29.963Z"
+    },
+    "applyTo": "ALL_PRODUCTS",
+    "productIds": [],
+    "status": "ACTIVE",
+    "created_at": {
+      "$date": "2026-01-03T20:06:32.092Z"
+    },
+    "updated_at": {
+      "$date": "2026-01-03T20:06:32.092Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "695976c879d10e7c37f64dc3"
+    },
+    "name": "Ưu đãi Khách hàng Mới",
+    "description": "Giảm ngay 100k cho đơn hàng đầu tiên",
+    "discountValue": 100000.0,
+    "discountType": "FIXED_AMOUNT",
+    "startDate": {
+      "$date": "2025-12-04T20:06:29.963Z"
+    },
+    "endDate": {
+      "$date": "2026-12-04T20:06:29.963Z"
+    },
+    "applyTo": "ALL_PRODUCTS",
+    "productIds": [],
+    "status": "ACTIVE",
+    "created_at": {
+      "$date": "2026-01-03T20:06:32.144Z"
+    },
+    "updated_at": {
+      "$date": "2026-01-03T20:06:32.144Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "695976c879d10e7c37f64dc4"
+    },
+    "name": "Sale Xả Hàng Cuối Năm",
+    "description": "Hàng trăm sản phẩm đồng giá 199k",
+    "discountValue": 199000.0,
+    "discountType": "FIXED_AMOUNT",
+    "startDate": {
+      "$date": "2026-01-02T20:06:29.963Z"
+    },
+    "endDate": {
+      "$date": "2026-01-17T20:06:29.963Z"
+    },
+    "applyTo": "ALL_PRODUCTS",
+    "productIds": [],
+    "status": "ACTIVE",
+    "created_at": {
+      "$date": "2026-01-03T20:06:32.196Z"
+    },
+    "updated_at": {
+      "$date": "2026-01-03T20:06:32.196Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "695976c879d10e7c37f64dc5"
+    },
+    "name": "Mừng Khai Trương Chi Nhánh Mới",
+    "description": "Quà tặng và giảm giá 15% cho mọi hóa đơn",
+    "discountValue": 15.0,
+    "discountType": "PERCENTAGE",
+    "startDate": {
+      "$date": "2025-12-31T20:06:29.963Z"
+    },
+    "endDate": {
+      "$date": "2026-01-10T20:06:29.963Z"
+    },
+    "applyTo": "ALL_PRODUCTS",
+    "productIds": [],
+    "status": "ACTIVE",
+    "created_at": {
+      "$date": "2026-01-03T20:06:32.246Z"
+    },
+    "updated_at": {
+      "$date": "2026-01-03T20:06:32.246Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "695976c879d10e7c37f64dc6"
+    },
+    "name": "Đại Tiệc Phụ Kiện",
+    "description": "Giảm giá sâu các mặt hàng phụ kiện nam và nữ",
+    "discountValue": 30.0,
+    "discountType": "PERCENTAGE",
+    "startDate": {
+      "$date": "2025-12-24T20:06:29.963Z"
+    },
+    "endDate": {
+      "$date": "2026-01-23T20:06:29.963Z"
+    },
+    "applyTo": "ALL_PRODUCTS",
+    "productIds": [],
+    "status": "ACTIVE",
+    "created_at": {
+      "$date": "2026-01-03T20:06:32.302Z"
+    },
+    "updated_at": {
+      "$date": "2026-01-03T20:06:32.302Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "695976c879d10e7c37f64dc7"
+    },
+    "name": "Tết Collection Pre-order",
+    "description": "Đặt trước bộ sưu tập Tết để nhận ưu đãi 10%",
+    "discountValue": 10.0,
+    "discountType": "PERCENTAGE",
+    "startDate": {
+      "$date": "2026-01-01T20:06:29.963Z"
+    },
+    "endDate": {
+      "$date": "2026-02-12T20:06:29.963Z"
+    },
+    "applyTo": "ALL_PRODUCTS",
+    "productIds": [],
+    "status": "ACTIVE",
+    "created_at": {
+      "$date": "2026-01-03T20:06:32.351Z"
+    },
+    "updated_at": {
+      "$date": "2026-01-03T20:06:32.351Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "695976c879d10e7c37f64dc8"
+    },
+    "name": "Weekend Special",
+    "description": "Ưu đãi cuối tuần cho khách mua tại store và online",
+    "discountValue": 50000.0,
+    "discountType": "FIXED_AMOUNT",
+    "startDate": {
+      "$date": "2026-01-02T20:06:29.963Z"
+    },
+    "endDate": {
+      "$date": "2026-01-04T20:06:29.963Z"
+    },
+    "applyTo": "ALL_PRODUCTS",
+    "productIds": [],
+    "status": "ACTIVE",
+    "created_at": {
+      "$date": "2026-01-03T20:06:32.404Z"
+    },
+    "updated_at": {
+      "$date": "2026-01-03T20:06:32.404Z"
+    }
+  }
+]
