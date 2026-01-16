@@ -8,12 +8,12 @@ class VoucherSerializer(serializers.Serializer):
     type = serializers.CharField()
     value = serializers.DecimalField(max_digits=10, decimal_places=2)
     quantity = serializers.IntegerField()
-    usedCount = serializers.IntegerField(source="used_count", required=False)
-    startDate = serializers.DateTimeField(source="start_date")
-    endDate = serializers.DateTimeField(source="end_date")
-    minOrderValue = serializers.DecimalField(source="min_order_value", max_digits=10, decimal_places=2)
-    maxDiscount = serializers.DecimalField(source="max_discount", max_digits=10, decimal_places=2)
-    status = serializers.CharField()
+    usedCount = serializers.IntegerField(source="used_count", required=False, default=0)
+    startDate = serializers.DateTimeField(source="start_date", required=False, allow_null=True)
+    endDate = serializers.DateTimeField(source="end_date", required=False, allow_null=True)
+    minOrderValue = serializers.DecimalField(source="min_order_value", max_digits=10, decimal_places=2, required=False, default=0)
+    maxDiscount = serializers.DecimalField(source="max_discount", max_digits=10, decimal_places=2, required=False, default=0)
+    status = serializers.CharField(required=False, default="ACTIVE")
 
     def get_id(self, obj):
         return str(obj.id)
