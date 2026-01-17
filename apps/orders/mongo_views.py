@@ -201,7 +201,7 @@ class OrderViewSet(viewsets.ViewSet):
             },
         )
 
-    @action(detail=True, methods=["put"], url_path="status")
+    @action(detail=True, methods=["put", "patch"], url_path="status")
     def update_status(self, request, pk=None):
         try:
              order = Order.objects.get(id=ObjectId(pk))
