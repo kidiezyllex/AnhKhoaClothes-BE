@@ -49,7 +49,7 @@ class OutfitViewSet(viewsets.ViewSet):
         )
         serializer = OutfitSerializer(outfit_list, many=True)
         return api_success(
-            "Outfits retrieved successfully",
+            "Lấy danh sách bộ trang phục thành công",
             {
                 "outfits": serializer.data,
                 "page": current_page,
@@ -70,7 +70,7 @@ class OutfitViewSet(viewsets.ViewSet):
             )
         serializer = OutfitSerializer(outfit)
         return api_success(
-            "Outfit retrieved successfully",
+            "Lấy thông tin bộ trang phục thành công",
             {
                 "outfit": serializer.data,
             },
@@ -82,7 +82,7 @@ class OutfitViewSet(viewsets.ViewSet):
         outfit = request_serializer.create(request_serializer.validated_data)
         response_serializer = OutfitSerializer(outfit)
         return api_success(
-            "Outfit created successfully",
+            "Tạo bộ trang phục thành công",
             {
                 "outfit": response_serializer.data,
             },
@@ -103,7 +103,7 @@ class OutfitViewSet(viewsets.ViewSet):
         outfit = request_serializer.update(outfit, request_serializer.validated_data)
         response_serializer = OutfitSerializer(outfit)
         return api_success(
-            "Outfit updated successfully",
+            "Cập nhật bộ trang phục thành công",
             {
                 "outfit": response_serializer.data,
             },
@@ -114,7 +114,7 @@ class OutfitViewSet(viewsets.ViewSet):
             outfit = Outfit.objects.get(id=ObjectId(pk))
             outfit.delete()
             return api_success(
-                "Outfit deleted successfully",
+                "Xóa bộ trang phục thành công",
                 data=None,
             )
         except (Outfit.DoesNotExist, Exception):
@@ -138,7 +138,7 @@ class RecommendationRequestViewSet(viewsets.ViewSet):
         )
         serializer = RecommendationRequestSerializer(requests, many=True)
         return api_success(
-            "Recommendation requests retrieved successfully",
+            "Lấy danh sách yêu cầu gợi ý thành công",
             {
                 "requests": serializer.data,
                 "page": current_page,
@@ -160,7 +160,7 @@ class RecommendationRequestViewSet(viewsets.ViewSet):
 
         serializer = RecommendationRequestSerializer(request_obj)
         return api_success(
-            "Recommendation request retrieved successfully",
+            "Lấy thông tin yêu cầu gợi ý thành công",
             {
                 "request": serializer.data,
             },
@@ -185,7 +185,7 @@ class RecommendationRequestViewSet(viewsets.ViewSet):
         RecommendationService.enqueue_recommendation(request_obj)
         response_serializer = RecommendationRequestSerializer(request_obj)
         return api_success(
-            "Recommendation request created successfully",
+            "Tạo yêu cầu gợi ý thành công",
             {
                 "request": response_serializer.data,
             },
@@ -207,7 +207,7 @@ class RecommendationRequestViewSet(viewsets.ViewSet):
         request_obj = request_serializer.update(request_obj, request_serializer.validated_data)
         response_serializer = RecommendationRequestSerializer(request_obj)
         return api_success(
-            "Recommendation request updated successfully",
+            "Cập nhật yêu cầu gợi ý thành công",
             {
                 "request": response_serializer.data,
             },
@@ -225,7 +225,7 @@ class RecommendationRequestViewSet(viewsets.ViewSet):
 
         request_obj.delete()
         return api_success(
-            "Recommendation request deleted successfully",
+            "Xóa yêu cầu gợi ý thành công",
             data=None,
         )
 
@@ -243,7 +243,7 @@ class RecommendationRequestViewSet(viewsets.ViewSet):
         RecommendationService.enqueue_recommendation(request_obj)
         response_serializer = RecommendationRequestSerializer(request_obj)
         return api_success(
-            "Request has been queued for processing.",
+            "Yêu cầu đã được đưa vào hàng đợi xử lý.",
             {
                 "request": response_serializer.data,
             },
@@ -264,7 +264,7 @@ class RecommendationResultViewSet(viewsets.ViewSet):
         )
         serializer = RecommendationResultSerializer(results, many=True)
         return api_success(
-            "Recommendation results retrieved successfully",
+            "Lấy kết quả gợi ý thành công",
             {
                 "results": serializer.data,
                 "page": current_page,
@@ -286,7 +286,7 @@ class RecommendationResultViewSet(viewsets.ViewSet):
 
         serializer = RecommendationResultSerializer(result)
         return api_success(
-            "Recommendation result retrieved successfully",
+            "Lấy thông tin kết quả gợi ý thành công",
             {
                 "result": serializer.data,
             },

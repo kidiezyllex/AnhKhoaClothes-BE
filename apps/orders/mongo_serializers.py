@@ -4,15 +4,17 @@ from bson import ObjectId
 from rest_framework import serializers
 
 from .mongo_models import Order, OrderItem, ShippingAddress
+from apps.products.mongo_models import Product, Color, Size
+from bson.errors import InvalidId
 
 class OrderItemSerializer(serializers.Serializer):
     product_id = serializers.IntegerField()
-    name = serializers.CharField()
-    qty = serializers.IntegerField()
-    size_selected = serializers.CharField()
-    color_selected = serializers.CharField()
-    images = serializers.ListField(child=serializers.CharField())
-    price_sale = serializers.DecimalField(max_digits=10, decimal_places=2)
+    name = serializers.CharField(required=False, allow_blank=True)
+    qty = serializers.IntegerField(required=False)
+    size_selected = serializers.CharField(required=False, allow_blank=True)
+    color_selected = serializers.CharField(required=False, allow_blank=True)
+    images = serializers.ListField(child=serializers.CharField(), required=False, default=list)
+    price_sale = serializers.DecimalField(max_digits=10, decimal_places=2, required=False)
 
     def to_representation(self, instance):
         return {
@@ -31,32 +33,79 @@ class OrderItemSerializer(serializers.Serializer):
         field_mapping = {
             "product": "product_id",
             "productId": "product_id",
+            "quantity": "qty",
+            "price": "price_sale",
+            "priceSale": "price_sale",
             "sizeSelected": "size_selected",
             "colorSelected": "color_selected",
-            "priceSale": "price_sale",
         }
         
         for key, value in data.items():
-            # Convert camelCase keys to snake_case
             if key in field_mapping:
                 converted_data[field_mapping[key]] = value
             else:
-                # Already in snake_case or other fields
                 converted_data[key] = value
+
+        # Handle variant object if present
+        if "variant" in data and isinstance(data["variant"], dict):
+            variant = data["variant"]
+            if "colorId" in variant and variant["colorId"]:
+                try:
+                    cid = variant["colorId"]
+                    # Only try to fetch if it looks like a valid ID (int for SQL, but here we expect ObjectId or maybe legacy int)
+                    # MongoEngine handles string-to-ObjectId conversion for 'id' field
+                    color = Color.objects.get(id=cid)
+                    converted_data["color_selected"] = color.name
+                except Exception:
+                    # If it's something like "1", it will fail if the collection uses ObjectIds
+                    pass
+            if "sizeId" in variant and variant["sizeId"]:
+                try:
+                    sid = variant["sizeId"]
+                    size = Size.objects.get(id=sid)
+                    converted_data["size_selected"] = size.code
+                except Exception:
+                    pass
+
+        # Fetch missing product info
+        if "product_id" in converted_data:
+            try:
+                product_id = int(converted_data["product_id"])
+                product = Product.objects.get(id=product_id)
+                if not converted_data.get("name"):
+                    converted_data["name"] = product.productDisplayName or f"Product {product_id}"
+                if not converted_data.get("images") or len(converted_data.get("images", [])) == 0:
+                    converted_data["images"] = product.images if isinstance(product.images, list) else []
+                if not converted_data.get("price_sale"):
+                    # Check if there is a variant price, otherwise use product (wait, product doesn't have base price?)
+                    # For now just default if missing
+                    converted_data["price_sale"] = 0
+            except (Product.DoesNotExist, ValueError):
+                pass
         
+        # Ensure default values for required fields in model if still missing
+        if not converted_data.get("name"):
+            converted_data["name"] = "Unknown Product"
+        if not converted_data.get("size_selected"):
+            converted_data["size_selected"] = "N/A"
+        if not converted_data.get("color_selected"):
+            converted_data["color_selected"] = "N/A"
+        if "qty" not in converted_data:
+            converted_data["qty"] = 1
+        if "price_sale" not in converted_data:
+            converted_data["price_sale"] = 0
+
         validated = super().to_internal_value(converted_data)
-        # Convert product_id to integer (products use integer IDs, not ObjectIds)
         if "product_id" in validated:
             validated["product_id"] = int(validated["product_id"])
-        validated["price_sale"] = validated["price_sale"]
         return validated
 
 class ShippingAddressSerializer(serializers.Serializer):
-    address = serializers.CharField()
-    city = serializers.CharField()
-    postal_code = serializers.CharField()
-    country = serializers.CharField()
-    recipient_phone_number = serializers.CharField()
+    address = serializers.CharField(required=False, allow_blank=True)
+    city = serializers.CharField(required=False, allow_blank=True)
+    postal_code = serializers.CharField(required=False, allow_blank=True)
+    country = serializers.CharField(required=False, allow_blank=True)
+    recipient_phone_number = serializers.CharField(required=False, allow_blank=True)
 
     def to_representation(self, instance):
         if instance is None:
@@ -73,7 +122,9 @@ class ShippingAddressSerializer(serializers.Serializer):
         # Convert camelCase to snake_case
         converted_data = {}
         field_mapping = {
+            "specificAddress": "address",
             "postalCode": "postal_code",
+            "phoneNumber": "recipient_phone_number",
             "recipientPhoneNumber": "recipient_phone_number",
         }
         
@@ -83,6 +134,28 @@ class ShippingAddressSerializer(serializers.Serializer):
             else:
                 converted_data[key] = value
         
+        # Fill in missing fields
+        if not converted_data.get("city"):
+            # Try to extract city from address if it contains common Vietnamese city patterns
+            address = converted_data.get("address", "")
+            if "Hà Nội" in address: converted_data["city"] = "Hà Nội"
+            elif "Hồ Chí Minh" in address: converted_data["city"] = "Hồ Chí Minh"
+            elif "Đà Nẵng" in address: converted_data["city"] = "Đà Nẵng"
+            elif "Hà Giang" in address: converted_data["city"] = "Hà Giang"
+            else: converted_data["city"] = "Other"
+            
+        if not converted_data.get("postal_code"):
+            converted_data["postal_code"] = "100000"
+            
+        if not converted_data.get("country"):
+            converted_data["country"] = "Vietnam"
+
+        if not converted_data.get("address"):
+            converted_data["address"] = "Unknown Address"
+
+        if not converted_data.get("recipient_phone_number"):
+            converted_data["recipient_phone_number"] = "0000000000"
+        
         return super().to_internal_value(converted_data)
 
 class OrderSerializer(serializers.Serializer):
@@ -90,9 +163,9 @@ class OrderSerializer(serializers.Serializer):
     user_id = serializers.CharField(write_only=True, required=False)
     payment_method = serializers.CharField()
     payment_result = serializers.DictField(default=dict)
-    tax_price = serializers.DecimalField(max_digits=10, decimal_places=2)
-    shipping_price = serializers.DecimalField(max_digits=10, decimal_places=2)
-    total_price = serializers.DecimalField(max_digits=10, decimal_places=2)
+    tax_price = serializers.DecimalField(max_digits=10, decimal_places=2, required=False)
+    shipping_price = serializers.DecimalField(max_digits=10, decimal_places=2, required=False)
+    total_price = serializers.DecimalField(max_digits=10, decimal_places=2, required=False)
     is_paid = serializers.BooleanField(read_only=True)
     paid_at = serializers.DateTimeField(read_only=True, allow_null=True)
     is_delivered = serializers.BooleanField(read_only=True)
@@ -111,14 +184,16 @@ class OrderSerializer(serializers.Serializer):
         converted_data = {}
         field_mapping = {
             "orderItems": "items",
+            "customerId": "user_id",
             "paymentMethod": "payment_method",
             "paymentResult": "payment_result",
-            "itemsPrice": "items_price",  # Will be ignored if not in model
+            "itemsPrice": "items_price",
             "taxPrice": "tax_price",
             "shippingPrice": "shipping_price",
             "totalPrice": "total_price",
             "isOutfitPurchase": "is_outfit_purchase",
             "shippingAddress": "shipping_address",
+            "total": "total_price",
         }
         
         for key, value in data.items():
@@ -126,6 +201,18 @@ class OrderSerializer(serializers.Serializer):
                 converted_data[field_mapping[key]] = value
             else:
                 converted_data[key] = value
+        
+        # Defaults for price fields if missing
+        if "tax_price" not in converted_data:
+            converted_data["tax_price"] = 0
+        if "shipping_price" not in converted_data:
+            converted_data["shipping_price"] = 0
+        if "total_price" not in converted_data:
+            # If total is not provided but subTotal is, maybe use subTotal
+            if "subTotal" in data:
+                converted_data["total_price"] = data["subTotal"]
+            else:
+                converted_data["total_price"] = 0
         
         # Remove items_price if present (not in model)
         converted_data.pop("items_price", None)

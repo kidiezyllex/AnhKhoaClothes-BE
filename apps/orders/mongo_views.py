@@ -41,7 +41,7 @@ class OrderViewSet(viewsets.ViewSet):
         )
         serializer = OrderSerializer(orders, many=True)
         return api_success(
-            "Orders retrieved successfully",
+            "Lấy danh sách đơn hàng thành công",
             {
                 "orders": serializer.data,
                 "page": current_page,
@@ -56,14 +56,14 @@ class OrderViewSet(viewsets.ViewSet):
             order = Order.objects.get(id=ObjectId(pk))
         except (Order.DoesNotExist, Exception):
             return api_error(
-                "Order does not exist.",
+                "Đơn hàng không tồn tại.",
                 data=None,
                 status_code=status.HTTP_404_NOT_FOUND,
             )
 
         serializer = OrderSerializer(order)
         return api_success(
-            "Order retrieved successfully",
+            "Lấy thông tin đơn hàng thành công",
             {
                 "order": serializer.data,
             },
@@ -79,7 +79,7 @@ class OrderViewSet(viewsets.ViewSet):
                 validated_data["user_id"] = str(request.user.id)
             else:
                 return api_error(
-                    "user_id is required when not logged in.",
+                    "Yêu cầu user_id khi chưa đăng nhập.",
                     data=None,
                     status_code=status.HTTP_400_BAD_REQUEST,
                 )
@@ -87,7 +87,7 @@ class OrderViewSet(viewsets.ViewSet):
         order = request_serializer.create(validated_data)
         response_serializer = OrderSerializer(order)
         return api_success(
-            "Order created successfully!",
+            "Đơn hàng đã được tạo thành công!",
             {
                 "order": response_serializer.data,
             },
@@ -106,7 +106,7 @@ class OrderViewSet(viewsets.ViewSet):
             order = Order.objects.get(id=ObjectId(pk))
         except (Order.DoesNotExist, Exception):
             return api_error(
-                "Order does not exist.",
+                "Đơn hàng không tồn tại.",
                 data=None,
                 status_code=status.HTTP_404_NOT_FOUND,
             )
@@ -116,7 +116,7 @@ class OrderViewSet(viewsets.ViewSet):
         order = request_serializer.update(order, request_serializer.validated_data)
         response_serializer = OrderSerializer(order)
         return api_success(
-            "Order updated successfully",
+            "Cập nhật đơn hàng thành công",
             {
                 "order": response_serializer.data,
             },
@@ -127,14 +127,14 @@ class OrderViewSet(viewsets.ViewSet):
             order = Order.objects.get(id=ObjectId(pk))
         except (Order.DoesNotExist, Exception):
             return api_error(
-                "Order does not exist.",
+                "Đơn hàng không tồn tại.",
                 data=None,
                 status_code=status.HTTP_404_NOT_FOUND,
             )
 
         order.delete()
         return api_success(
-            "Order deleted successfully",
+            "Xóa đơn hàng thành công",
             data=None,
         )
 
@@ -144,7 +144,7 @@ class OrderViewSet(viewsets.ViewSet):
             order = Order.objects.get(id=ObjectId(pk))
         except (Order.DoesNotExist, Exception):
             return api_error(
-                "Order does not exist.",
+                "Đơn hàng không tồn tại.",
                 data=None,
                 status_code=status.HTTP_404_NOT_FOUND,
             )
@@ -152,7 +152,7 @@ class OrderViewSet(viewsets.ViewSet):
         order.mark_paid()
         updated_serializer = OrderSerializer(order)
         return api_success(
-            "Order has been marked as paid.",
+            "Đơn hàng đã được đánh dấu là đã thanh toán.",
             {
                 "order": updated_serializer.data,
             },
@@ -164,7 +164,7 @@ class OrderViewSet(viewsets.ViewSet):
             order = Order.objects.get(id=ObjectId(pk))
         except (Order.DoesNotExist, Exception):
             return api_error(
-                "Order does not exist.",
+                "Đơn hàng không tồn tại.",
                 data=None,
                 status_code=status.HTTP_404_NOT_FOUND,
             )
@@ -174,7 +174,7 @@ class OrderViewSet(viewsets.ViewSet):
         order.save()
         updated_serializer = OrderSerializer(order)
         return api_success(
-            "Order has been delivered.",
+            "Đơn hàng đã được giao.",
             {
                 "order": updated_serializer.data,
             },
@@ -186,7 +186,7 @@ class OrderViewSet(viewsets.ViewSet):
             order = Order.objects.get(id=ObjectId(pk))
         except (Order.DoesNotExist, Exception):
             return api_error(
-                "Order does not exist.",
+                "Đơn hàng không tồn tại.",
                 data=None,
                 status_code=status.HTTP_404_NOT_FOUND,
             )
@@ -195,7 +195,7 @@ class OrderViewSet(viewsets.ViewSet):
         order.save()
         updated_serializer = OrderSerializer(order)
         return api_success(
-            "Order has been cancelled.",
+            "Đơn hàng đã bị hủy.",
             {
                 "order": updated_serializer.data,
             },
@@ -206,7 +206,7 @@ class OrderViewSet(viewsets.ViewSet):
         try:
              order = Order.objects.get(id=ObjectId(pk))
         except (Order.DoesNotExist, Exception):
-             return api_error("Order not found", status_code=status.HTTP_404_NOT_FOUND)
+             return api_error("Không tìm thấy đơn hàng", status_code=status.HTTP_404_NOT_FOUND)
         
         serializer = OrderStatusUpdateSerializer(data=request.data)
         serializer.is_valid(raise_exception=True)
@@ -225,7 +225,7 @@ class OrderViewSet(viewsets.ViewSet):
         order.save()
         
         return api_success(
-            "Order status updated", 
+            "Cập nhật trạng thái đơn hàng thành công", 
             {"order": OrderSerializer(order).data}
         )
 
@@ -237,7 +237,7 @@ class OrderViewSet(viewsets.ViewSet):
                 user_id = str(request.user.id)
             else:
                 return api_error(
-                    "user_id is required when not logged in.",
+                    "Yêu cầu user_id khi chưa đăng nhập.",
                     data=None,
                     status_code=status.HTTP_400_BAD_REQUEST,
                 )
@@ -249,7 +249,7 @@ class OrderViewSet(viewsets.ViewSet):
         )
         serializer = OrderSerializer(orders, many=True)
         return api_success(
-            "Orders retrieved successfully",
+            "Lấy danh sách đơn hàng thành công",
             {
                 "orders": serializer.data,
                 "page": current_page,
@@ -261,13 +261,13 @@ class OrderViewSet(viewsets.ViewSet):
     @action(detail=False, methods=["get"], url_path="user/(?P<user_id>[^/.]+)", permission_classes=[permissions.AllowAny], authentication_classes=[])
     def user_orders(self, request, user_id=None):
         if not user_id:
-            return api_error("User ID is required.", status_code=status.HTTP_400_BAD_REQUEST)
+            return api_error("Yêu cầu ID người dùng.", status_code=status.HTTP_400_BAD_REQUEST)
         
         try:
             from bson import ObjectId
             user_id_obj = ObjectId(user_id)
         except Exception:
-             return api_error("Invalid User ID format.", status_code=status.HTTP_400_BAD_REQUEST)
+             return api_error("Định dạng ID người dùng không hợp lệ.", status_code=status.HTTP_400_BAD_REQUEST)
 
         queryset = Order.objects.filter(user_id=user_id_obj).order_by("-created_at")
 
@@ -277,7 +277,7 @@ class OrderViewSet(viewsets.ViewSet):
         )
         serializer = OrderSerializer(orders, many=True)
         return api_success(
-            "User orders retrieved successfully",
+            "Lấy danh sách đơn hàng của người dùng thành công",
             {
                 "orders": serializer.data,
                 "page": current_page,

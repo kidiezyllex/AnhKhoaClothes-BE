@@ -14,7 +14,7 @@ class UploadViewSet(viewsets.ViewSet):
     def create(self, request):
         file_obj = request.FILES.get('file')
         if not file_obj:
-            return api_error("No file provided", status_code=status.HTTP_400_BAD_REQUEST)
+            return api_error("Không có tệp tin nào được cung cấp", status_code=status.HTTP_400_BAD_REQUEST)
         
         # Save file locally
         # Should ideally use distinct names or Cloudinary
@@ -35,7 +35,7 @@ class UploadViewSet(viewsets.ViewSet):
         url = f"{request.scheme}://{request.get_host()}{settings.MEDIA_URL}{path}"
         
         return api_success(
-            "File uploaded successfully",
+            "Tải tệp tin lên thành công",
             {
                 "url": url,
                 "publicId": filename # Mock publicId

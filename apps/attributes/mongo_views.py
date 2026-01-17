@@ -25,7 +25,7 @@ class AttributesViewSet(viewsets.ViewSet):
             article_types = sorted([str(t).strip() for t in article_types if t and str(t).strip()])
             
             return api_success(
-                "Article types retrieved successfully",
+                "Lấy danh sách các loại sản phẩm thành công",
                 {
                     "categories": article_types,
                     "count": len(article_types)
@@ -45,7 +45,7 @@ class AttributesViewSet(viewsets.ViewSet):
             colors = Color.objects.filter(status="ACTIVE").order_by("name")
             serializer = ColorSerializer(colors, many=True)
             return api_success(
-                "Colors retrieved successfully",
+                "Lấy danh sách màu sắc thành công",
                 {
                     "colors": serializer.data,
                     "count": len(serializer.data)
@@ -65,7 +65,7 @@ class AttributesViewSet(viewsets.ViewSet):
             sizes = Size.objects.filter(status="ACTIVE").order_by("name")
             serializer = SizeSerializer(sizes, many=True)
             return api_success(
-                "Sizes retrieved successfully",
+                "Lấy danh sách kích thước thành công",
                 {
                     "sizes": serializer.data,
                     "count": len(serializer.data)

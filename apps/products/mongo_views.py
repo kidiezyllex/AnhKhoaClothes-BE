@@ -60,7 +60,7 @@ class BrandViewSet(viewsets.ViewSet):
         )
         serializer = BrandSerializer(paginated, many=True)
         return api_success(
-            "Brands retrieved successfully",
+            "Lấy danh sách thương hiệu thành công",
             {
                 "brands": serializer.data,
                 "page": current_page,
@@ -76,13 +76,13 @@ class BrandViewSet(viewsets.ViewSet):
         except (Brand.DoesNotExist, Exception):
             return api_error("Brand does not exist.", status_code=status.HTTP_404_NOT_FOUND)
         serializer = BrandSerializer(brand)
-        return api_success("Brand retrieved successfully", {"brand": serializer.data})
+        return api_success("Lấy thông tin thương hiệu thành công", {"brand": serializer.data})
 
     def create(self, request):
         serializer = BrandSerializer(data=request.data)
         serializer.is_valid(raise_exception=True)
         brand = serializer.create(serializer.validated_data)
-        return api_success("Brand created successfully", {"brand": BrandSerializer(brand).data}, status_code=status.HTTP_201_CREATED)
+        return api_success("Tạo thương hiệu thành công", {"brand": BrandSerializer(brand).data}, status_code=status.HTTP_201_CREATED)
 
     def update(self, request, pk=None):
         try:
@@ -92,13 +92,13 @@ class BrandViewSet(viewsets.ViewSet):
         serializer = BrandSerializer(data=request.data)
         serializer.is_valid(raise_exception=True)
         brand = serializer.update(brand, serializer.validated_data)
-        return api_success("Brand updated successfully", {"brand": BrandSerializer(brand).data})
+        return api_success("Cập nhật thương hiệu thành công", {"brand": BrandSerializer(brand).data})
 
     def destroy(self, request, pk=None):
         try:
             brand = Brand.objects.get(id=ObjectId(pk))
             brand.delete()
-            return api_success("Brand deleted successfully")
+            return api_success("Xóa thương hiệu thành công")
         except Brand.DoesNotExist:
             return api_error("Brand does not exist.", status_code=status.HTTP_404_NOT_FOUND)
 
@@ -114,7 +114,7 @@ class MaterialViewSet(viewsets.ViewSet):
         )
         serializer = MaterialSerializer(paginated, many=True)
         return api_success(
-            "Materials retrieved successfully",
+            "Lấy danh sách chất liệu thành công",
             {
                 "materials": serializer.data,
                 "page": current_page,
@@ -130,13 +130,13 @@ class MaterialViewSet(viewsets.ViewSet):
         except (Material.DoesNotExist, Exception):
             return api_error("Material does not exist.", status_code=status.HTTP_404_NOT_FOUND)
         serializer = MaterialSerializer(material)
-        return api_success("Material retrieved successfully", {"material": serializer.data})
+        return api_success("Lấy thông tin chất liệu thành công", {"material": serializer.data})
 
     def create(self, request):
         serializer = MaterialSerializer(data=request.data)
         serializer.is_valid(raise_exception=True)
         material = serializer.create(serializer.validated_data)
-        return api_success("Material created successfully", {"material": MaterialSerializer(material).data}, status_code=status.HTTP_201_CREATED)
+        return api_success("Tạo chất liệu thành công", {"material": MaterialSerializer(material).data}, status_code=status.HTTP_201_CREATED)
 
     def update(self, request, pk=None):
         try:
@@ -146,13 +146,13 @@ class MaterialViewSet(viewsets.ViewSet):
         serializer = MaterialSerializer(data=request.data)
         serializer.is_valid(raise_exception=True)
         material = serializer.update(material, serializer.validated_data)
-        return api_success("Material updated successfully", {"material": MaterialSerializer(material).data})
+        return api_success("Cập nhật chất liệu thành công", {"material": MaterialSerializer(material).data})
 
     def destroy(self, request, pk=None):
         try:
             material = Material.objects.get(id=ObjectId(pk))
             material.delete()
-            return api_success("Material deleted successfully")
+            return api_success("Xóa chất liệu thành công")
         except Material.DoesNotExist:
             return api_error("Material does not exist.", status_code=status.HTTP_404_NOT_FOUND)
 
@@ -208,7 +208,7 @@ class CategoryViewSet(viewsets.ViewSet):
             })
 
         return api_success(
-            "Categories retrieved successfully",
+            "Lấy danh sách danh mục thành công",
             {
                 "hierarchy": hierarchy,
                 "masterCategories": sorted(master_categories_set),
@@ -228,7 +228,7 @@ class CategoryViewSet(viewsets.ViewSet):
             )
         serializer = CategorySerializer(category)
         return api_success(
-            "Category retrieved successfully",
+            "Lấy thông tin danh mục thành công",
             {
                 "category": serializer.data,
             },
@@ -240,7 +240,7 @@ class CategoryViewSet(viewsets.ViewSet):
         category = request_serializer.create(request_serializer.validated_data)
         response_serializer = CategorySerializer(category)
         return api_success(
-            "Category created successfully",
+            "Tạo danh mục thành công",
             {
                 "category": response_serializer.data,
             },
@@ -261,7 +261,7 @@ class CategoryViewSet(viewsets.ViewSet):
         category = request_serializer.update(category, request_serializer.validated_data)
         response_serializer = CategorySerializer(category)
         return api_success(
-            "Category updated successfully",
+            "Cập nhật danh mục thành công",
             {
                 "category": response_serializer.data,
             },
@@ -272,7 +272,7 @@ class CategoryViewSet(viewsets.ViewSet):
             category = Category.objects.get(id=ObjectId(pk))
             category.delete()
             return api_success(
-                "Category deleted successfully",
+                "Xóa danh mục thành công",
                 data=None,
             )
         except (Category.DoesNotExist, Exception):
@@ -293,7 +293,7 @@ class ColorViewSet(viewsets.ViewSet):
         )
         serializer = ColorSerializer(paginated, many=True)
         return api_success(
-            "Colors retrieved successfully",
+            "Lấy danh sách màu sắc thành công",
             {
                 "colors": serializer.data,
                 "page": current_page,
@@ -314,7 +314,7 @@ class ColorViewSet(viewsets.ViewSet):
             )
         serializer = ColorSerializer(color)
         return api_success(
-            "Color retrieved successfully",
+            "Lấy thông tin màu sắc thành công",
             {
                 "color": serializer.data,
             },
@@ -327,7 +327,7 @@ class ColorViewSet(viewsets.ViewSet):
         color.save()
         response_serializer = ColorSerializer(color)
         return api_success(
-            "Color created successfully",
+            "Tạo màu sắc thành công",
             {
                 "color": response_serializer.data,
             },
@@ -350,7 +350,7 @@ class ColorViewSet(viewsets.ViewSet):
         color.save()
         response_serializer = ColorSerializer(color)
         return api_success(
-            "Color updated successfully",
+            "Cập nhật màu sắc thành công",
             {
                 "color": response_serializer.data,
             },
@@ -361,7 +361,7 @@ class ColorViewSet(viewsets.ViewSet):
             color = Color.objects.get(id=ObjectId(pk))
             color.delete()
             return api_success(
-                "Color deleted successfully",
+                "Xóa màu sắc thành công",
                 data=None,
             )
         except (Color.DoesNotExist, Exception):
@@ -381,7 +381,7 @@ class SizeViewSet(viewsets.ViewSet):
         )
         serializer = SizeSerializer(paginated, many=True)
         return api_success(
-            "Sizes retrieved successfully",
+            "Lấy danh sách kích thước thành công",
             {
                 "sizes": serializer.data,
                 "page": current_page,
@@ -402,7 +402,7 @@ class SizeViewSet(viewsets.ViewSet):
             )
         serializer = SizeSerializer(size)
         return api_success(
-            "Size retrieved successfully",
+            "Lấy thông tin kích thước thành công",
             {
                 "size": serializer.data,
             },
@@ -415,7 +415,7 @@ class SizeViewSet(viewsets.ViewSet):
         size.save()
         response_serializer = SizeSerializer(size)
         return api_success(
-            "Size created successfully",
+            "Tạo kích thước thành công",
             {
                 "size": response_serializer.data,
             },
@@ -438,7 +438,7 @@ class SizeViewSet(viewsets.ViewSet):
         size.save()
         response_serializer = SizeSerializer(size)
         return api_success(
-            "Size updated successfully",
+            "Cập nhật kích thước thành công",
             {
                 "size": response_serializer.data,
             },
@@ -449,7 +449,7 @@ class SizeViewSet(viewsets.ViewSet):
             size = Size.objects.get(id=ObjectId(pk))
             size.delete()
             return api_success(
-                "Size deleted successfully",
+                "Xóa kích thước thành công",
                 data=None,
             )
         except (Size.DoesNotExist, Exception):
@@ -544,7 +544,7 @@ class ProductViewSet(viewsets.ViewSet):
             serializer = ProductSerializer(products, many=True)
             total_count = queryset.count()
             return api_success(
-                "Products retrieved successfully",
+                "Lấy danh sách sản phẩm thành công",
                 {
                     "products": serializer.data,
                     "page": 1,
@@ -559,7 +559,7 @@ class ProductViewSet(viewsets.ViewSet):
         )
         serializer = ProductSerializer(products, many=True)
         return api_success(
-            "Products retrieved successfully",
+            "Lấy danh sách sản phẩm thành công",
             {
                 "products": serializer.data,
                 "page": current_page,
@@ -584,7 +584,7 @@ class ProductViewSet(viewsets.ViewSet):
             )
         serializer = ProductSerializer(product)
         return api_success(
-            "Product retrieved successfully",
+            "Lấy thông tin sản phẩm thành công",
             {
                 "product": serializer.data,
             },
@@ -603,7 +603,7 @@ class ProductViewSet(viewsets.ViewSet):
         product = request_serializer.create(validated_data)
         response_serializer = ProductSerializer(product)
         return api_success(
-            "Product created successfully",
+            "Tạo sản phẩm thành công",
             {
                 "product": response_serializer.data,
             },
@@ -634,7 +634,7 @@ class ProductViewSet(viewsets.ViewSet):
         product = request_serializer.update(product, validated_data)
         response_serializer = ProductSerializer(product)
         return api_success(
-            "Product updated successfully",
+            "Cập nhật sản phẩm thành công",
             {
                 "product": response_serializer.data,
             },
@@ -649,7 +649,7 @@ class ProductViewSet(viewsets.ViewSet):
                 product = Product.objects.get(id=ObjectId(pk))
             product.delete()
             return api_success(
-                "Product deleted successfully",
+                "Xóa sản phẩm thành công",
                 data=None,
             )
         except (Product.DoesNotExist, Exception):
@@ -688,7 +688,7 @@ class ProductViewSet(viewsets.ViewSet):
 
         serializer = ProductSerializer(selected, many=True)
         return api_success(
-            "Top products retrieved successfully",
+            "Lấy danh sách sản phẩm hàng đầu thành công",
             {
                 "products": serializer.data,
             },
@@ -884,7 +884,7 @@ class ProductViewSet(viewsets.ViewSet):
                 
                 serializer = ProductSerializer(paginated_products, many=True)
                 return api_success(
-                    "Products filtered successfully",
+                    "Lọc sản phẩm thành công",
                     {
                         "products": serializer.data,
                         "page": current_page,
@@ -905,7 +905,7 @@ class ProductViewSet(viewsets.ViewSet):
             total_pages = math.ceil(total_count / page_size) if page_size > 0 else 1
             
             return api_success(
-                f"Found {total_count} product(s) matching '{search_term}'",
+                f"Tìm thấy {total_count} sản phẩm khớp với '{search_term}'",
                 {
                     "products": serializer.data,
                     "pagination": {
@@ -967,7 +967,7 @@ class ProductViewSet(viewsets.ViewSet):
 
         review_serializer = ProductReviewSerializer(review)
         return api_success(
-            "Review has been updated",
+            "Đánh giá đã được cập nhật",
             {
                 "review": review_serializer.data,
                 "created": created,
@@ -992,7 +992,7 @@ class ProductViewSet(viewsets.ViewSet):
         variants = ProductVariant.objects(product_id=product.id)
         serializer = ProductVariantSerializer(variants, many=True)
         return api_success(
-            "Product variants retrieved successfully",
+            "Lấy biến thể sản phẩm thành công",
             {
                 "variants": serializer.data,
             },
@@ -1007,7 +1007,7 @@ class ProductViewSet(viewsets.ViewSet):
         )
         serializer = ProductSerializer(products, many=True)
         return api_success(
-            "Latest products retrieved successfully",
+            "Lấy sản phẩm mới nhất thành công",
             {
                 "products": serializer.data,
                 "page": current_page,
@@ -1026,7 +1026,7 @@ class ProductViewSet(viewsets.ViewSet):
         )
         serializer = ProductSerializer(products, many=True)
         return api_success(
-            "Sale products retrieved successfully",
+            "Lấy sản phẩm đang giảm giá thành công",
             {
                 "products": serializer.data,
                 "page": current_page,
@@ -1298,7 +1298,7 @@ class ProductViewSet(viewsets.ViewSet):
         )
         serializer = ProductSerializer(products, many=True)
         return api_success(
-            "Products filtered successfully",
+            "Lọc sản phẩm thành công",
             {
                 "products": serializer.data,
                 "page": current_page,
@@ -1464,7 +1464,7 @@ class ProductViewSet(viewsets.ViewSet):
             serializer = ProductSerializer(products, many=True)
             
             return api_success(
-                "Products searched successfully",
+                "Tìm kiếm sản phẩm thành công",
                 {
                     "products": serializer.data,
                     "page": current_page,
@@ -1491,7 +1491,7 @@ class ContentSectionViewSet(viewsets.ViewSet):
         )
         serializer = ContentSectionSerializer(paginated, many=True)
         return api_success(
-            "Content sections retrieved successfully",
+            "Lấy danh sách nội dung thành công",
             {
                 "contentSections": serializer.data,
                 "page": current_page,
@@ -1512,7 +1512,7 @@ class ContentSectionViewSet(viewsets.ViewSet):
             )
         serializer = ContentSectionSerializer(section)
         return api_success(
-            "Content section retrieved successfully",
+            "Lấy thông tin nội dung thành công",
             {
                 "contentSection": serializer.data,
             },
@@ -1524,7 +1524,7 @@ class ContentSectionViewSet(viewsets.ViewSet):
         section = request_serializer.create(request_serializer.validated_data)
         response_serializer = ContentSectionSerializer(section)
         return api_success(
-            "Content section created successfully",
+            "Tạo nội dung thành công",
             {
                 "contentSection": response_serializer.data,
             },
@@ -1545,7 +1545,7 @@ class ContentSectionViewSet(viewsets.ViewSet):
         section = request_serializer.update(section, request_serializer.validated_data)
         response_serializer = ContentSectionSerializer(section)
         return api_success(
-            "Content section updated successfully",
+            "Cập nhật nội dung thành công",
             {
                 "contentSection": response_serializer.data,
             },
@@ -1556,7 +1556,7 @@ class ContentSectionViewSet(viewsets.ViewSet):
             section = ContentSection.objects.get(id=ObjectId(pk))
             section.delete()
             return api_success(
-                "Content section deleted successfully",
+                "Xóa nội dung thành công",
                 data=None,
             )
         except (ContentSection.DoesNotExist, Exception):

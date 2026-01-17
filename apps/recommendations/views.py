@@ -38,7 +38,7 @@ class RecommendationRequestViewSet(viewsets.ModelViewSet):
         request_obj = self.get_object()
         RecommendationService.enqueue_recommendation(request_obj)
         return api_success(
-            "Request has been queued for processing.",
+            "Yêu cầu đã được đưa vào hàng đợi xử lý.",
             {
                 "request": RecommendationRequestSerializer(request_obj).data,
             },

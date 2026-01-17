@@ -44,9 +44,9 @@ class StatisticsViewSet(viewsets.ViewSet):
                     for item in monthly_stats
                 ]
             except Exception as e:
-                return api_error(f"Error calculating monthly stats: {str(e)}")
+                return api_error(f"Lỗi khi tính toán thống kê hàng tháng: {str(e)}")
 
-            return api_success("Monthly statistics", {"data": formatted_stats})
+            return api_success("Thống kê hàng tháng", {"data": formatted_stats})
 
         # Default summary
         total_revenue = sum(float(o.total_price) for o in Order.objects(is_paid=True))
@@ -54,7 +54,7 @@ class StatisticsViewSet(viewsets.ViewSet):
         total_products = Product.objects.count()
 
         return api_success(
-            "General statistics",
+            "Thống kê chung",
             {
                 "totalRevenue": total_revenue,
                 "totalOrders": total_orders,
@@ -86,7 +86,7 @@ class StatisticsViewSet(viewsets.ViewSet):
                     "$lte": end_date
                 }
             except ValueError:
-                 return api_error("Invalid date format. Use YYYY-MM-DD.", status_code=status.HTTP_400_BAD_REQUEST)
+                 return api_error("Định dạng ngày không hợp lệ. Sử dụng YYYY-MM-DD.", status_code=status.HTTP_400_BAD_REQUEST)
 
         # Aggregation to sum total_price and count orders
         pipeline.append({
@@ -108,14 +108,14 @@ class StatisticsViewSet(viewsets.ViewSet):
                  order_count = 0
                  
              return api_success(
-                "Revenue report",
+                "Báo cáo doanh thu",
                 {
                     "totalRevenue": total_revenue,
                     "orderCount": order_count,
                 }
             )
         except Exception as e:
-            return api_error(f"Error generating revenue report: {str(e)}")
+            return api_error(f"Lỗi khi tạo báo cáo doanh thu: {str(e)}")
     
     @action(detail=False, methods=["get"], url_path="top-products")
     def top_products(self, request):
@@ -144,4 +144,4 @@ class StatisticsViewSet(viewsets.ViewSet):
             for item in top_sold
         ]
         
-        return api_success("Top products", {"products": result})
+        return api_success("Sản phẩm bán chạy nhất", {"products": result})

@@ -40,15 +40,15 @@ class MongoEngineJWTAuthentication(JWTAuthentication):
         try:
             user_id = validated_token["user_id"]
         except KeyError:
-            raise InvalidToken("Token does not contain user_id")
+            raise InvalidToken("Token không chứa user_id")
 
         try:
             user = User.objects.get(id=user_id)
         except User.DoesNotExist:
-            raise exceptions.AuthenticationFailed("User does not exist")
+            raise exceptions.AuthenticationFailed("Người dùng không tồn tại")
 
         if not user.is_active:
-            raise exceptions.AuthenticationFailed("User has been disabled")
+            raise exceptions.AuthenticationFailed("Người dùng đã bị vô hiệu hóa")
 
         return user
 
@@ -64,18 +64,18 @@ class MongoEngineTokenObtainPairSerializer:
         password = attrs.get("password")
 
         if not email or not password:
-            raise exceptions.ValidationError("Email and password are required.")
+            raise exceptions.ValidationError("Email và mật khẩu là bắt buộc.")
 
         try:
             user = User.objects.get(email=email)
         except User.DoesNotExist:
-            raise exceptions.AuthenticationFailed("Email or password is incorrect.")
+            raise exceptions.AuthenticationFailed("Email hoặc mật khẩu không chính xác.")
 
         if not user.check_password(password):
             raise exceptions.AuthenticationFailed("Email or password is incorrect.")
 
         if not user.is_active:
-            raise exceptions.AuthenticationFailed("Account has been disabled.")
+            raise exceptions.AuthenticationFailed("Tài khoản đã bị vô hiệu hóa.")
 
         self.user = user
         refresh = self.get_token(user)
@@ -104,7 +104,7 @@ class MongoEngineTokenObtainPairView:
         serializer = self.serializer_class()
         data = serializer.validate(request.data)
         return api_success(
-            "Login successfully.",
+            "Đăng nhập thành công.",
             {
                 "tokens": data,
             },

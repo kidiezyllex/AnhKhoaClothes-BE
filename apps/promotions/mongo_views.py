@@ -16,7 +16,7 @@ class PromotionViewSet(viewsets.ViewSet):
         )
         serializer = PromotionSerializer(paginated, many=True)
         return api_success(
-            "Promotions retrieved successfully",
+            "Lấy danh sách khuyến mãi thành công",
             {
                 "promotions": serializer.data,
                 "page": current_page,
@@ -31,7 +31,7 @@ class PromotionViewSet(viewsets.ViewSet):
         serializer.is_valid(raise_exception=True)
         promotion = serializer.save()
         return api_success(
-            "Promotion created successfully",
+            "Tạo khuyến mãi thành công",
             {"promotion": PromotionSerializer(promotion).data},
             status_code=status.HTTP_201_CREATED
         )
@@ -41,7 +41,7 @@ class PromotionViewSet(viewsets.ViewSet):
             promotion = Promotion.objects.get(id=ObjectId(pk))
         except Promotion.DoesNotExist:
             return api_error("Promotion not found", status_code=status.HTTP_404_NOT_FOUND)
-        return api_success("Promotion retrieved", {"promotion": PromotionSerializer(promotion).data})
+        return api_success("Lấy thông tin khuyến mãi thành công", {"promotion": PromotionSerializer(promotion).data})
 
     def update(self, request, pk=None):
         try:
@@ -52,12 +52,12 @@ class PromotionViewSet(viewsets.ViewSet):
         serializer = PromotionSerializer(promotion, data=request.data, partial=True)
         serializer.is_valid(raise_exception=True)
         serializer.save()
-        return api_success("Promotion updated", {"promotion": serializer.data})
+        return api_success("Cập nhật khuyến mãi thành công", {"promotion": serializer.data})
         
     def destroy(self, request, pk=None):
         try:
              promotion = Promotion.objects.get(id=ObjectId(pk))
              promotion.delete()
-             return api_success("Promotion deleted")
+             return api_success("Xóa khuyến mãi thành công")
         except Promotion.DoesNotExist:
              return api_error("Promotion not found", status_code=status.HTTP_404_NOT_FOUND)

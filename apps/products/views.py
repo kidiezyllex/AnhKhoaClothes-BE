@@ -77,7 +77,7 @@ class ProductViewSet(viewsets.ModelViewSet):
 
         serializer = self.get_serializer(selected, many=True)
         return api_success(
-            "Top products retrieved successfully",
+            "Lấy danh sách sản phẩm hàng đầu thành công",
             {
                 "products": serializer.data,
             },
@@ -101,7 +101,7 @@ class ProductViewSet(viewsets.ModelViewSet):
         product.rating = stats["avg"] or 0
         product.save(update_fields=["rating"])
         return api_success(
-            "Review has been updated",
+            "Đánh giá đã được cập nhật",
             {
                 "product": ProductSerializer(product).data,
             },
@@ -112,7 +112,7 @@ class ProductViewSet(viewsets.ModelViewSet):
         product = self.get_object()
         serializer = ProductVariantSerializer(product.variants.all(), many=True)
         return api_success(
-            "Product variants retrieved successfully",
+            "Lấy biến thể sản phẩm thành công",
             {
                 "variants": serializer.data,
             },

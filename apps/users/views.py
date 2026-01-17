@@ -52,7 +52,7 @@ class UserViewSet(viewsets.ModelViewSet):
     def me(self, request):
         serializer = self.get_serializer(request.user)
         return api_success(
-            "Current user retrieved successfully",
+            "Lấy thông tin người dùng hiện tại thành công",
             {
                 "user": serializer.data,
             },
@@ -69,7 +69,7 @@ class UserViewSet(viewsets.ModelViewSet):
             )
             serializer = ProductSerializer(favorites_page, many=True)
             return api_success(
-                "Favorites retrieved successfully",
+                "Lấy danh sách yêu thích thành công",
                 {
                     "favorites": serializer.data,
                     "page": current_page,
@@ -84,7 +84,7 @@ class UserViewSet(viewsets.ModelViewSet):
         if request.method == "POST":
             user.favorites.add(product)
             return api_success(
-                "Product added to favorites.",
+                "Đã thêm sản phẩm vào danh sách yêu thích.",
                 {
                     "product": ProductSerializer(product).data,
                     "favoritesCount": user.favorites.count(),
@@ -93,7 +93,7 @@ class UserViewSet(viewsets.ModelViewSet):
             )
         user.favorites.remove(product)
         return api_success(
-            "Product removed from favorites.",
+            "Đã xóa sản phẩm khỏi danh sách yêu thích.",
             {
                 "product": ProductSerializer(product).data,
                 "favoritesCount": user.favorites.count(),
@@ -109,7 +109,7 @@ class UserViewSet(viewsets.ModelViewSet):
             "order_count": count,
         })
         return api_success(
-            "Purchase history checked successfully",
+            "Kiểm tra lịch sử mua hàng thành công",
             {
                 "summary": serializer.data,
             },
@@ -123,7 +123,7 @@ class UserViewSet(viewsets.ModelViewSet):
             "gender": user.gender,
         })
         return api_success(
-            "Gender checked successfully",
+            "Kiểm tra giới tính thành công",
             {
                 "summary": serializer.data,
             },
@@ -138,7 +138,7 @@ class UserViewSet(viewsets.ModelViewSet):
             "style": style,
         })
         return api_success(
-            "Style preference checked successfully",
+            "Kiểm tra sở thích phong cách thành công",
             {
                 "summary": serializer.data,
             },
@@ -151,14 +151,14 @@ class UserViewSet(viewsets.ModelViewSet):
         user = request.user
         if not user.check_password(serializer.validated_data["old_password"]):
             return api_error(
-                "Old password is incorrect.",
+                "Mật khẩu cũ không chính xác.",
                 data=None,
                 status_code=status.HTTP_400_BAD_REQUEST,
             )
         user.set_password(serializer.validated_data["new_password"])
         user.save(update_fields=["password"])
         return api_success(
-            "Password changed successfully.",
+            "Đổi mật khẩu thành công.",
             data=None,
         )
 
@@ -167,7 +167,7 @@ class UserViewSet(viewsets.ModelViewSet):
         query_type = request.query_params.get("type")
         if query_type not in {"personalization", "outfit-suggestions"}:
             return api_error(
-                "Invalid type parameter.",
+                "Tham số type không hợp lệ.",
                 data=None,
                 status_code=status.HTTP_400_BAD_REQUEST,
             )
@@ -178,7 +178,7 @@ class UserViewSet(viewsets.ModelViewSet):
         )
         serializer = UserForTestingSerializer(page_items, many=True)
         return api_success(
-            "Testing data retrieved successfully",
+            "Lấy dữ liệu kiểm tra thành công",
             {
                 "type": query_type,
                 "users": serializer.data,

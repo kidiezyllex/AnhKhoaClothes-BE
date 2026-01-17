@@ -74,7 +74,7 @@ class UserViewSet(viewsets.ViewSet):
 
         serializer = UserSerializer(user_list, many=True)
         return api_success(
-            "Users retrieved successfully",
+            "Lấy danh sách người dùng thành công",
             {
                 "users": serializer.data,
                 "page": current_page,
@@ -89,14 +89,14 @@ class UserViewSet(viewsets.ViewSet):
             user = User.objects.get(id=ObjectId(pk))
         except (User.DoesNotExist, Exception):
             return api_error(
-                "User does not exist.",
+                "Người dùng không tồn tại.",
                 data=None,
                 status_code=status.HTTP_404_NOT_FOUND,
             )
 
         serializer = UserDetailSerializer(user)
         return api_success(
-            "User retrieved successfully",
+            "Lấy thông tin người dùng thành công",
             {
                 "user": serializer.data,
             },
@@ -107,7 +107,7 @@ class UserViewSet(viewsets.ViewSet):
             user = User.objects.get(id=ObjectId(pk))
         except (User.DoesNotExist, Exception):
             return api_error(
-                "User does not exist.",
+                "Người dùng không tồn tại.",
                 data=None,
                 status_code=status.HTTP_404_NOT_FOUND,
             )
@@ -117,7 +117,7 @@ class UserViewSet(viewsets.ViewSet):
         user = request_serializer.update(user, request_serializer.validated_data)
         response_serializer = UserDetailSerializer(user)
         return api_success(
-            "User updated successfully",
+            "Cập nhật người dùng thành công",
             {
                 "user": response_serializer.data,
             },
@@ -128,12 +128,12 @@ class UserViewSet(viewsets.ViewSet):
             user = User.objects.get(id=ObjectId(pk))
             user.delete()
             return api_success(
-                "User deleted successfully",
+                "Xóa người dùng thành công",
                 data=None,
             )
         except (User.DoesNotExist, Exception):
             return api_error(
-                "User does not exist.",
+                "Người dùng không tồn tại.",
                 data=None,
                 status_code=status.HTTP_404_NOT_FOUND,
             )
@@ -142,13 +142,13 @@ class UserViewSet(viewsets.ViewSet):
     def me(self, request):
         if not request.user or not hasattr(request.user, 'id') or not request.user.is_authenticated:
             return api_error(
-                "Login required.",
+                "Yêu cầu đăng nhập.",
                 data=None,
                 status_code=status.HTTP_401_UNAUTHORIZED,
             )
         serializer = UserDetailSerializer(request.user)
         return api_success(
-            "Current user retrieved successfully",
+            "Lấy thông tin người dùng hiện tại thành công",
             {
                 "user": serializer.data,
             },
@@ -160,7 +160,7 @@ class UserViewSet(viewsets.ViewSet):
             user = User.objects.get(id=ObjectId(pk))
         except (User.DoesNotExist, Exception):
             return api_error(
-                "User does not exist.",
+                "Người dùng không tồn tại.",
                 data=None,
                 status_code=status.HTTP_404_NOT_FOUND,
             )
@@ -173,7 +173,7 @@ class UserViewSet(viewsets.ViewSet):
             )
             serializer = ProductSerializer(paginated, many=True)
             return api_success(
-                "Favorites retrieved successfully",
+                "Lấy danh sách yêu thích thành công",
                 {
                     "favorites": serializer.data,
                     "page": current_page,
@@ -192,7 +192,7 @@ class UserViewSet(viewsets.ViewSet):
         )
         if not product_id:
             return api_error(
-                "Product ID is required.",
+                "Yêu cầu ID sản phẩm.",
                 data=None,
                 status_code=status.HTTP_400_BAD_REQUEST,
             )
@@ -203,7 +203,7 @@ class UserViewSet(viewsets.ViewSet):
             product = Product.objects.get(id=product_id_int)
         except (Product.DoesNotExist, ValueError, Exception) as e:
             return api_error(
-                f"Product does not exist. Error: {str(e)}",
+                f"Sản phẩm không tồn tại. Lỗi: {str(e)}",
                 data=None,
                 status_code=status.HTTP_404_NOT_FOUND,
             )
@@ -216,7 +216,7 @@ class UserViewSet(viewsets.ViewSet):
                 user.favorites.append(product_int_id)
                 user.save()
             return api_success(
-                "Product added to favorites.",
+                "Đã thêm sản phẩm vào danh sách yêu thích.",
                 {
                     "product": ProductSerializer(product).data,
                     "favoritesCount": len(user.favorites),
@@ -228,7 +228,7 @@ class UserViewSet(viewsets.ViewSet):
                 user.favorites.remove(product_int_id)
                 user.save()
             return api_success(
-                "Product removed from favorites.",
+                "Đã xóa sản phẩm khỏi danh sách yêu thích.",
                 {
                     "product": ProductSerializer(product).data,
                     "favoritesCount": len(user.favorites),
@@ -241,7 +241,7 @@ class UserViewSet(viewsets.ViewSet):
             user = User.objects.get(id=ObjectId(pk))
         except (User.DoesNotExist, Exception):
             return api_error(
-                "User does not exist.",
+                "Người dùng không tồn tại.",
                 data=None,
                 status_code=status.HTTP_404_NOT_FOUND,
             )
@@ -252,7 +252,7 @@ class UserViewSet(viewsets.ViewSet):
             "order_count": count,
         })
         return api_success(
-            "Purchase history checked successfully",
+            "Kiểm tra lịch sử mua hàng thành công",
             {
                 "summary": serializer.data,
             },
@@ -264,7 +264,7 @@ class UserViewSet(viewsets.ViewSet):
             user = User.objects.get(id=ObjectId(pk))
         except (User.DoesNotExist, Exception):
             return api_error(
-                "User does not exist.",
+                "Người dùng không tồn tại.",
                 data=None,
                 status_code=status.HTTP_404_NOT_FOUND,
             )
@@ -274,7 +274,7 @@ class UserViewSet(viewsets.ViewSet):
             "gender": user.gender,
         })
         return api_success(
-            "Gender checked successfully",
+            "Kiểm tra giới tính thành công",
             {
                 "summary": serializer.data,
             },
@@ -286,7 +286,7 @@ class UserViewSet(viewsets.ViewSet):
             user = User.objects.get(id=ObjectId(pk))
         except (User.DoesNotExist, Exception):
             return api_error(
-                "User does not exist.",
+                "Người dùng không tồn tại.",
                 data=None,
                 status_code=status.HTTP_404_NOT_FOUND,
             )
@@ -297,7 +297,7 @@ class UserViewSet(viewsets.ViewSet):
             "style": style,
         })
         return api_success(
-            "Style preference checked successfully",
+            "Kiểm tra sở thích phong cách thành công",
             {
                 "summary": serializer.data,
             },
@@ -312,13 +312,13 @@ class UserViewSet(viewsets.ViewSet):
         if request.method == "GET":
             if not request.user or not hasattr(request.user, "id") or not request.user.is_authenticated:
                 return api_error(
-                    "Login required.",
+                    "Yêu cầu đăng nhập.",
                     data=None,
                     status_code=status.HTTP_401_UNAUTHORIZED,
                 )
             serializer = UserDetailSerializer(request.user)
             return api_success(
-                "User profile retrieved successfully",
+                "Lấy thông tin cá nhân thành công",
                 {
                     "user": serializer.data,
                 },
@@ -327,7 +327,7 @@ class UserViewSet(viewsets.ViewSet):
         email = request.data.get("email")
         if not email:
             return api_error(
-                "Email is required.",
+                "Yêu cầu email.",
                 data=None,
                 status_code=status.HTTP_400_BAD_REQUEST,
             )
@@ -336,13 +336,13 @@ class UserViewSet(viewsets.ViewSet):
             user = User.objects.get(email=email)
         except User.DoesNotExist:
             return api_error(
-                "User does not exist.",
+                "Người dùng không tồn tại.",
                 data=None,
                 status_code=status.HTTP_404_NOT_FOUND,
             )
         except Exception as e:
             return api_error(
-                f"Error finding user: {str(e)}",
+                f"Lỗi khi tìm người dùng: {str(e)}",
                 data=None,
                 status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
             )
@@ -361,7 +361,7 @@ class UserViewSet(viewsets.ViewSet):
         
         response_serializer = UserDetailSerializer(user)
         return api_success(
-            "User profile updated successfully",
+            "Cập nhật thông tin cá nhân thành công",
             {
                 "user": response_serializer.data,
             },
@@ -371,7 +371,7 @@ class UserViewSet(viewsets.ViewSet):
     def change_password(self, request):
         if not request.user or not hasattr(request.user, 'id') or not request.user.is_authenticated:
             return api_error(
-                "Login required.",
+                "Yêu cầu đăng nhập.",
                 data=None,
                 status_code=status.HTTP_401_UNAUTHORIZED,
             )
@@ -381,7 +381,7 @@ class UserViewSet(viewsets.ViewSet):
 
         if not user.check_password(serializer.validated_data["old_password"]):
             return api_error(
-                "Old password is incorrect.",
+                "Mật khẩu cũ không chính xác.",
                 data=None,
                 status_code=status.HTTP_400_BAD_REQUEST,
             )
@@ -389,7 +389,7 @@ class UserViewSet(viewsets.ViewSet):
         user.set_password(serializer.validated_data["new_password"])
         user.save()
         return api_success(
-            "Password changed successfully.",
+            "Đổi mật khẩu thành công.",
             data=None,
         )
 
@@ -402,7 +402,7 @@ class UserViewSet(viewsets.ViewSet):
         query_type = request.query_params.get("type")
         if query_type not in {"personalization", "outfit-suggestions"}:
             return api_error(
-                "Invalid type parameter.",
+                "Tham số type không hợp lệ.",
                 data=None,
                 status_code=status.HTTP_400_BAD_REQUEST,
             )
@@ -427,7 +427,7 @@ class UserViewSet(viewsets.ViewSet):
             results.append(user_data)
 
         return api_success(
-            "Testing data retrieved successfully",
+            "Lấy dữ liệu kiểm tra thành công",
             {
                 "type": query_type,
                 "users": results,
@@ -452,7 +452,7 @@ class UserViewSet(viewsets.ViewSet):
             user = User.objects.get(id=ObjectId(pk))
         except (User.DoesNotExist, Exception):
             return api_error(
-                "User does not exist.",
+                "Người dùng không tồn tại.",
                 data=None,
                 status_code=status.HTTP_404_NOT_FOUND,
             )
@@ -508,7 +508,7 @@ class UserViewSet(viewsets.ViewSet):
         user.save()
 
         return api_success(
-            "Interaction added to user history successfully",
+            "Đã thêm tương tác vào lịch sử người dùng thành công",
             {
                 "user_id": str(user.id),
                 "interaction": interaction_entry,
@@ -532,7 +532,7 @@ class UserViewSet(viewsets.ViewSet):
             user = User.objects.get(id=ObjectId(pk))
         except (User.DoesNotExist, Exception):
             return api_error(
-                "User does not exist.",
+                "Người dùng không tồn tại.",
                 data=None,
                 status_code=status.HTTP_404_NOT_FOUND,
             )
@@ -623,7 +623,7 @@ class UserViewSet(viewsets.ViewSet):
         user.save()
 
         return api_success(
-            "Interaction updated successfully",
+            "Cập nhật tương tác thành công",
             {
                 "user_id": str(user.id),
                 "product_id": product_id_int,
@@ -646,12 +646,12 @@ class UserViewSet(viewsets.ViewSet):
         except (User.DoesNotExist, Exception) as e:
             if isinstance(e, User.DoesNotExist):
                 return api_error(
-                    "User does not exist.",
+                    "Người dùng không tồn tại.",
                     data=None,
                     status_code=status.HTTP_404_NOT_FOUND,
                 )
             return api_error(
-                f"Error retrieving user: {str(e)}",
+                f"Lỗi khi lấy người dùng: {str(e)}",
                 data=None,
                 status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
             )
@@ -679,7 +679,7 @@ class UserViewSet(viewsets.ViewSet):
             ) if outfits else []
 
             return api_success(
-                "Outfits retrieved successfully",
+                "Lấy danh sách bộ trang phục thành công",
                 {
                     "outfits": sorted_outfits,
                     "user_id": str(user.id),
@@ -717,7 +717,7 @@ class UserViewSet(viewsets.ViewSet):
         user.save()
 
         return api_success(
-            "Outfit saved successfully",
+            "Lưu bộ trang phục thành công",
             {
                 "outfit": outfit_entry,
                 "user_id": str(user.id),
@@ -736,12 +736,12 @@ class UserViewSet(viewsets.ViewSet):
         try:
             user = User.objects.get(id=ObjectId(pk))
         except (User.DoesNotExist, Exception) as e:
-            return api_error(f"User error: {str(e)}", status_code=status.HTTP_404_NOT_FOUND)
+            return api_error(f"Lỗi người dùng: {str(e)}", status_code=status.HTTP_404_NOT_FOUND)
 
         outfit_identifier = request.query_params.get("outfit_identifier") or request.data.get("outfit_identifier")
 
         if not outfit_identifier:
-            return api_error("outfit_identifier is required.", status_code=status.HTTP_400_BAD_REQUEST)
+            return api_error("Yêu cầu outfit_identifier.", status_code=status.HTTP_400_BAD_REQUEST)
 
         # Initialize outfit_history if it doesn't exist
         if not user.outfit_history:
@@ -760,13 +760,13 @@ class UserViewSet(viewsets.ViewSet):
                 new_history.append(outfit)
         
         if len(new_history) == initial_count:
-            return api_error(f"Outfit '{outfit_identifier}' not found.", status_code=status.HTTP_404_NOT_FOUND)
+            return api_error(f"Không tìm thấy bộ trang phục '{outfit_identifier}'.", status_code=status.HTTP_404_NOT_FOUND)
 
         user.outfit_history = new_history
         user.save()
 
         return api_success(
-            "Outfit deleted successfully",
+            "Xóa bộ trang phục thành công",
             {
                 "deleted_outfit": deleted_outfit,
                 "user_id": str(user.id),
@@ -784,7 +784,7 @@ class UserAddressViewSet(viewsets.ViewSet):
         addresses = UserAddress.objects.filter(user_id=request.user.id)
         serializer = UserAddressSerializer(addresses, many=True)
         return api_success(
-            "Addresses retrieved successfully",
+            "Lấy danh sách địa chỉ thành công",
             {
                 "addresses": serializer.data
             }
@@ -799,7 +799,7 @@ class UserAddressViewSet(viewsets.ViewSet):
         serializer.save()
         
         return api_success(
-            "Address created successfully",
+            "Tạo địa chỉ thành công",
             serializer.data,
             status_code=status.HTTP_201_CREATED
         )
@@ -818,7 +818,7 @@ class UserAddressViewSet(viewsets.ViewSet):
         serializer.save()
         
         return api_success(
-            "Address updated successfully",
+            "Cập nhật địa chỉ thành công",
             serializer.data
         )
 
@@ -829,7 +829,7 @@ class UserAddressViewSet(viewsets.ViewSet):
         try:
             address = UserAddress.objects.get(id=ObjectId(pk), user_id=request.user.id)
             address.delete()
-            return api_success("Address deleted successfully", data=None)
+            return api_success("Xóa địa chỉ thành công", data=None)
         except UserAddress.DoesNotExist:
             return api_error("Address not found", status_code=status.HTTP_404_NOT_FOUND)
 
@@ -847,7 +847,7 @@ class UserInteractionViewSet(viewsets.ViewSet):
         )
         serializer = UserInteractionSerializer(interactions, many=True)
         return api_success(
-            "User interactions retrieved successfully",
+            "Lấy danh sách tương tác người dùng thành công",
             {
                 "interactions": serializer.data,
                 "page": current_page,
@@ -933,7 +933,7 @@ class UserInteractionViewSet(viewsets.ViewSet):
         
         response_serializer = UserInteractionSerializer(interaction)
         return api_success(
-            "User interaction created successfully",
+            "Tạo tương tác người dùng thành công",
             {
                 "interaction": response_serializer.data,
             },
@@ -954,7 +954,7 @@ class OutfitHistoryViewSet(viewsets.ViewSet):
         )
         serializer = OutfitHistorySerializer(histories, many=True)
         return api_success(
-            "Outfit history retrieved successfully",
+            "Lấy lịch sử bộ trang phục thành công",
             {
                 "histories": serializer.data,
                 "page": current_page,
@@ -982,7 +982,7 @@ class OutfitHistoryViewSet(viewsets.ViewSet):
         history = request_serializer.create(validated_data)
         response_serializer = OutfitHistorySerializer(history)
         return api_success(
-            "Outfit history created successfully",
+            "Tạo lịch sử bộ trang phục thành công",
             {
                 "history": response_serializer.data,
             },

@@ -59,7 +59,7 @@ class ProductFilterViewSet(viewsets.ViewSet):
                 "usages": sorted(list(usages)),
             }
 
-            return api_success("Filter options retrieved successfully", data)
+            return api_success("Lấy các tùy chọn lọc thành công", data)
 
         except Exception as e:
             return api_error(f"Error retrieving filter options: {str(e)}", status_code=status.HTTP_500_INTERNAL_SERVER_ERROR)

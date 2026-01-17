@@ -80,7 +80,7 @@ class AdminStatsViewSet(viewsets.ViewSet):
             user_growth = ((new_users_this_month - new_users_last_month) / new_users_last_month) * 100
         
         return api_success(
-            "Overview statistics retrieved successfully",
+            "Lấy thống kê tổng quan thành công",
             {
                 "totals": {
                     "users": total_users,
@@ -162,7 +162,7 @@ class AdminStatsViewSet(viewsets.ViewSet):
         order_counts = [order_count_data[label] for label in labels]
         
         return api_success(
-            "Revenue chart data retrieved successfully",
+            "Lấy dữ liệu biểu đồ doanh thu thành công",
             {
                 "period": period,
                 "group_by": group_by,
@@ -237,7 +237,7 @@ class AdminStatsViewSet(viewsets.ViewSet):
             product['revenue'] = round(product['revenue'], 2)
         
         return api_success(
-            "Top products retrieved successfully",
+            "Lấy danh sách sản phẩm bán chạy nhất thành công",
             {
                 "sort_by": sort_by,
                 "limit": limit,
@@ -289,7 +289,7 @@ class AdminStatsViewSet(viewsets.ViewSet):
                 age_groups["55+"] += 1
         
         return api_success(
-            "User demographics retrieved successfully",
+            "Lấy thông tin nhân khẩu học người dùng thành công",
             {
                 "gender": {
                     "labels": ["Male", "Female", "Other", "Not Specified"],
@@ -323,7 +323,7 @@ class AdminStatsViewSet(viewsets.ViewSet):
         ).count()
         
         return api_success(
-            "Order status statistics retrieved successfully",
+            "Lấy thống kê trạng thái đơn hàng thành công",
             {
                 "payment_status": {
                     "labels": ["Paid", "Unpaid"],
@@ -353,7 +353,7 @@ class AdminStatsViewSet(viewsets.ViewSet):
         serializer = OrderSerializer(recent_orders, many=True)
         
         return api_success(
-            "Recent orders retrieved successfully",
+            "Lấy danh sách đơn hàng gần đây thành công",
             {
                 "limit": limit,
                 "orders": serializer.data
@@ -388,7 +388,7 @@ class AdminStatsViewSet(viewsets.ViewSet):
         data = [item['count'] for item in category_stats]
         
         return api_success(
-            "Product category distribution retrieved successfully",
+            "Lấy phân bố danh mục sản phẩm thành công",
             {
                 "labels": labels,
                 "data": data
@@ -437,7 +437,7 @@ class AdminStatsViewSet(viewsets.ViewSet):
         data = [round(gender_revenue[label], 2) for label in labels]
         
         return api_success(
-            "Sales by gender retrieved successfully",
+            "Lấy doanh thu theo giới tính thành công",
             {
                 "labels": labels,
                 "data": data

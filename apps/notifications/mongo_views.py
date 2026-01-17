@@ -19,7 +19,7 @@ class NotificationViewSet(viewsets.ViewSet):
         )
         serializer = NotificationSerializer(paginated, many=True)
         return api_success(
-            "Notifications retrieved",
+            "Lấy danh sách thông báo thành công",
             {
                 "notifications": serializer.data,
                 "page": current_page,
@@ -33,7 +33,7 @@ class NotificationViewSet(viewsets.ViewSet):
         serializer.is_valid(raise_exception=True)
         notification = serializer.save()
         return api_success(
-            "Notification created",
+            "Tạo thông báo thành công",
             {"notification": NotificationSerializer(notification).data},
             status_code=status.HTTP_201_CREATED
         )

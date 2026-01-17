@@ -25,7 +25,7 @@ class VoucherViewSet(viewsets.ViewSet):
         
         serializer = VoucherSerializer(vouchers, many=True)
         return api_success(
-            "Vouchers retrieved successfully",
+            "Lấy danh sách mã giảm giá thành công",
             {
                 "vouchers": serializer.data,
                 "page": current_page,
@@ -39,17 +39,17 @@ class VoucherViewSet(viewsets.ViewSet):
         try:
             voucher = Voucher.objects.get(id=ObjectId(pk))
         except (Voucher.DoesNotExist, Exception):
-            return api_error("Voucher not found", status_code=status.HTTP_404_NOT_FOUND)
+            return api_error("Không tìm thấy mã giảm giá", status_code=status.HTTP_404_NOT_FOUND)
         
         serializer = VoucherSerializer(voucher)
-        return api_success("Voucher retrieved successfully", {"voucher": serializer.data})
+        return api_success("Lấy thông tin mã giảm giá thành công", {"voucher": serializer.data})
 
     def create(self, request):
         serializer = VoucherSerializer(data=request.data)
         serializer.is_valid(raise_exception=True)
         voucher = serializer.save()
         return api_success(
-            "Voucher created successfully",
+            "Tạo mã giảm giá thành công",
             {"voucher": VoucherSerializer(voucher).data},
             status_code=status.HTTP_201_CREATED
         )
@@ -64,18 +64,18 @@ class VoucherViewSet(viewsets.ViewSet):
         try:
             voucher = Voucher.objects.get(id=ObjectId(pk))
         except (Voucher.DoesNotExist, Exception):
-            return api_error("Voucher not found", status_code=status.HTTP_404_NOT_FOUND)
+            return api_error("Không tìm thấy mã giảm giá", status_code=status.HTTP_404_NOT_FOUND)
             
         serializer = VoucherSerializer(voucher, data=request.data, partial=partial)
         serializer.is_valid(raise_exception=True)
         voucher = serializer.save()
-        return api_success("Voucher updated successfully", {"voucher": VoucherSerializer(voucher).data})
+        return api_success("Cập nhật mã giảm giá thành công", {"voucher": VoucherSerializer(voucher).data})
 
     def destroy(self, request, pk=None):
         try:
             voucher = Voucher.objects.get(id=ObjectId(pk))
             voucher.delete()
-            return api_success("Voucher deleted successfully")
+            return api_success("Xóa mã giảm giá thành công")
         except (Voucher.DoesNotExist, Exception):
             return api_error("Voucher not found", status_code=status.HTTP_404_NOT_FOUND)
 
@@ -90,24 +90,24 @@ class VoucherViewSet(viewsets.ViewSet):
         try:
             voucher = Voucher.objects.get(code=code)
         except Voucher.DoesNotExist:
-             return api_error("Voucher not found", status_code=status.HTTP_404_NOT_FOUND)
+             return api_error("Không tìm thấy mã giảm giá", status_code=status.HTTP_404_NOT_FOUND)
         
         # Check validity
         if voucher.status != "ACTIVE":
-             return api_error("Voucher is not active", status_code=status.HTTP_400_BAD_REQUEST)
+             return api_error("Mã giảm giá không hoạt động", status_code=status.HTTP_400_BAD_REQUEST)
         
         now = datetime.utcnow()
         if voucher.start_date and voucher.start_date > now:
-             return api_error("Voucher has not started yet", status_code=status.HTTP_400_BAD_REQUEST)
+             return api_error("Mã giảm giá chưa đến thời gian áp dụng", status_code=status.HTTP_400_BAD_REQUEST)
              
         if voucher.end_date and voucher.end_date < now:
-             return api_error("Voucher has expired", status_code=status.HTTP_400_BAD_REQUEST)
+             return api_error("Mã giảm giá đã hết hạn", status_code=status.HTTP_400_BAD_REQUEST)
              
         if voucher.quantity <= voucher.used_count:
-             return api_error("Voucher out of stock", status_code=status.HTTP_400_BAD_REQUEST)
+             return api_error("Mã giảm giá đã hết số lượng", status_code=status.HTTP_400_BAD_REQUEST)
              
         if voucher.min_order_value > order_value:
-             return api_error(f"Order value must be at least {voucher.min_order_value}", status_code=status.HTTP_400_BAD_REQUEST)
+             return api_error(f"Giá trị đơn hàng phải từ {voucher.min_order_value}", status_code=status.HTTP_400_BAD_REQUEST)
         
         # Calculate discount
         discount_amount = 0
@@ -119,7 +119,7 @@ class VoucherViewSet(viewsets.ViewSet):
                 discount_amount = min(discount_amount, voucher.max_discount)
                 
         return api_success(
-            "Voucher is valid",
+            "Mã giảm giá hợp lệ",
             {
                 "voucher": {
                     "code": voucher.code,

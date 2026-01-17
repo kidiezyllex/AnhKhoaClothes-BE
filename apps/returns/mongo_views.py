@@ -26,7 +26,7 @@ class ReturnRequestViewSet(viewsets.ViewSet):
         )
         serializer = ReturnRequestSerializer(paginated, many=True)
         return api_success(
-            "Return requests retrieved",
+            "Lấy danh sách yêu cầu đổi trả thành công",
             {
                 "returns": serializer.data,
                 "page": current_page,
@@ -38,13 +38,13 @@ class ReturnRequestViewSet(viewsets.ViewSet):
     @action(detail=False, methods=["post"], url_path="request")
     def create_request(self, request):
         if not request.user or not request.user.is_authenticated:
-             return api_error("Login required", status_code=status.HTTP_401_UNAUTHORIZED)
+             return api_error("Yêu cầu đăng nhập", status_code=status.HTTP_401_UNAUTHORIZED)
              
         serializer = ReturnRequestSerializer(data=request.data, context={'request': request})
         serializer.is_valid(raise_exception=True)
         return_req = serializer.save()
         return api_success(
-            "Return request created",
+            "Tạo yêu cầu đổi trả thành công",
             {"returnRequest": ReturnRequestSerializer(return_req).data},
             status_code=status.HTTP_201_CREATED
         )
@@ -54,7 +54,7 @@ class ReturnRequestViewSet(viewsets.ViewSet):
         try:
             return_req = ReturnRequest.objects.get(id=ObjectId(pk))
         except ReturnRequest.DoesNotExist:
-             return api_error("Return request not found", status_code=status.HTTP_404_NOT_FOUND)
+             return api_error("Không tìm thấy yêu cầu đổi trả", status_code=status.HTTP_404_NOT_FOUND)
         
         serializer = ReturnStatusUpdateSerializer(data=request.data)
         serializer.is_valid(raise_exception=True)
@@ -62,4 +62,4 @@ class ReturnRequestViewSet(viewsets.ViewSet):
         return_req.status = serializer.validated_data["status"]
         return_req.save()
         
-        return api_success("Return status updated", {"returnRequest": ReturnRequestSerializer(return_req).data})
+        return api_success("Cập nhật trạng thái đổi trả thành công", {"returnRequest": ReturnRequestSerializer(return_req).data})

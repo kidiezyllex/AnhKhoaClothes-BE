@@ -32,7 +32,7 @@ class MongoEngineTokenObtainPairView(APIView):
             if user_data is not None:
                 user_data["isAdmin"] = bool(getattr(user, "is_admin", False))
             return api_success(
-                "Login successfully.",
+                "Đăng nhập thành công.",
                 {
                     "tokens": data,
                     "user": user_data,

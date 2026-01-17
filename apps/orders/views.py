@@ -30,7 +30,7 @@ class OrderViewSet(viewsets.ModelViewSet):
         order = self.get_object()
         order.mark_paid()
         return api_success(
-            "Order has been marked as paid.",
+            "Đơn hàng đã được đánh dấu là đã thanh toán.",
             {
                 "order": OrderSerializer(order).data,
             },
@@ -43,7 +43,7 @@ class OrderViewSet(viewsets.ModelViewSet):
         order.delivered_at = timezone.now()
         order.save(update_fields=["is_delivered", "delivered_at"])
         return api_success(
-            "Order has been delivered.",
+            "Đơn hàng đã được giao.",
             {
                 "order": OrderSerializer(order).data,
             },
@@ -55,7 +55,7 @@ class OrderViewSet(viewsets.ModelViewSet):
         order.is_cancelled = True
         order.save(update_fields=["is_cancelled"])
         return api_success(
-            "Order has been cancelled.",
+            "Đơn hàng đã bị hủy.",
             {
                 "order": OrderSerializer(order).data,
             },
