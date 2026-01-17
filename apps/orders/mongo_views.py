@@ -211,16 +211,27 @@ class OrderViewSet(viewsets.ViewSet):
         serializer = OrderStatusUpdateSerializer(data=request.data)
         serializer.is_valid(raise_exception=True)
         
-        new_status = serializer.validated_data["status"]
-        order.status = new_status
-        
-        # Sync booleans
-        if new_status == "DA_GIAO_HANG" or new_status == "HOAN_THANH":
-            order.is_delivered = True
-            if not order.delivered_at:
-                order.delivered_at = datetime.utcnow()
-        if new_status == "DA_HUY":
-            order.is_cancelled = True
+        if "status" in serializer.validated_data:
+            new_status = serializer.validated_data["status"]
+            order.status = new_status
+            
+            # Sync booleans
+            if new_status == "DA_GIAO_HANG" or new_status == "HOAN_THANH":
+                order.is_delivered = True
+                if not order.delivered_at:
+                    order.delivered_at = datetime.utcnow()
+            if new_status == "DA_HUY":
+                order.is_cancelled = True
+
+        if "paymentStatus" in serializer.validated_data:
+            payment_status = serializer.validated_data["paymentStatus"]
+            if payment_status == "PAID":
+                order.is_paid = True
+                if not order.paid_at:
+                    order.paid_at = datetime.utcnow()
+            elif payment_status == "UNPAID":
+                order.is_paid = False
+                order.paid_at = None
         
         order.save()
         

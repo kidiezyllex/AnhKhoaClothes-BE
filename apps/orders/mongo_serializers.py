@@ -297,4 +297,5 @@ class OrderStatusUpdateSerializer(serializers.Serializer):
         "DA_GIAO_HANG", 
         "HOAN_THANH", 
         "DA_HUY"
-    ])
+    ], required=False)
+    paymentStatus = serializers.ChoiceField(choices=["PAID", "UNPAID"], required=False)

@@ -10,11 +10,19 @@ def connect_mongodb() -> None:
     db_name = getattr(settings, "MONGODB_DB_NAME", "config")
 
     try:
-        mongoengine.connect(
-            db=db_name,
-            host=mongo_uri,
-            alias="default",
-        )
+        connect_kwargs = {
+            "db": db_name,
+            "host": mongo_uri,
+            "alias": "default",
+        }
+        
+        try:
+            import certifi
+            connect_kwargs["tlsCAFile"] = certifi.where()
+        except ImportError:
+            pass
+
+        mongoengine.connect(**connect_kwargs)
         print(f"Connected to MongoDB: {db_name}")
     except Exception as e:
         print(f"MongoDB connection error: {e}")
