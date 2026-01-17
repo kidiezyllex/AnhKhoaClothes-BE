@@ -129,3 +129,34 @@ class VoucherViewSet(viewsets.ViewSet):
                 "discountAmount": float(discount_amount)
             }
         )
+
+    @action(detail=False, methods=["get"], url_path="user/(?P<user_id>[^/.]+)")
+    def user_vouchers(self, request, user_id=None):
+        # Hiện tại trả về tất cả voucher đang active và còn hạn
+        # Trong tương lai có thể thêm logic lọc voucher đã lưu/đã dùng của riêng user
+        
+        now = datetime.utcnow()
+        queryset = Voucher.objects.filter(
+            status="ACTIVE",
+            start_date__lte=now,
+            end_date__gte=now
+        )
+        
+        # Filter logic manually for those that cannot be easily done with mongoengine filter if complex,
+        # but here basic fields are fine.
+        # Check quantity > used_count. MongoEngine Q objects usually needed for field comparison so doing partial python filter
+        
+        valid_vouchers = []
+        for voucher in queryset:
+            if voucher.quantity > voucher.used_count:
+                valid_vouchers.append(voucher)
+                
+        serializer = VoucherSerializer(valid_vouchers, many=True)
+        
+        return api_success(
+            "Lấy danh sách mã giảm giá cho người dùng thành công",
+            {
+                "vouchers": serializer.data,
+                "count": len(valid_vouchers)
+            }
+        )
